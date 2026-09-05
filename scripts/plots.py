@@ -239,7 +239,9 @@ def render_bands(series, xlabel, ylabel, path, ylim=None, logy=False, legend_anc
             ax.minorticks_off()
         if ylim:
             ax.set_ylim(*ylim)
-        ax.set_xlim(0, max(x for _, xs, *_ in series for x in xs) * 1.02)
+        ticks = sorted({x for _, xs, *_ in series for x in xs})
+        ax.set_xticks(ticks)
+        ax.set_xlim(0, max(ticks) * 1.02)
         ax.grid(False)
         for side in ("top", "right"):
             ax.spines[side].set_visible(False)

@@ -533,8 +533,12 @@ worth knowing before trusting any of these rates.
 
 Seed spread is large, as expected for the noisier concept: at `coeff = 4` the
 vocabulary-mean direction ranges over 0.024 to 0.213 opener mass across three
-seeds. In the rate panel the compliance and random series are both identically
-zero and overlap.
+seeds, which is the shaded band.
+
+The two figures plot only the abliteration direction and the J-lens derived one
+(the vocabulary-mean negative, labelled just "derived from J lens"). The
+compliance-negative and random-control series are still swept and scored; their
+numbers are in the table above and in `refusal_methods_eval.json`.
 
 ## A note on this network
 

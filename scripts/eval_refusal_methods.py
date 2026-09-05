@@ -35,6 +35,8 @@ LABELS = {
     "random": "norm-matched random",
 }
 ORDER = ["abliteration", "vocab", "compliance", "random"]
+PLOT_SERIES = ["abliteration", "vocab"]
+PLOT_LABELS = {"abliteration": "abliteration direction", "vocab": "derived from J lens"}
 
 METRICS_PATH = ARTIFACTS / "refusal_methods_eval.json"
 SAMPLES_PATH = ARTIFACTS / "refusal_methods_samples.json"
@@ -106,13 +108,13 @@ def build_plots(result):
         ),
     ):
         series = []
-        for name in ORDER:
+        for name in PLOT_SERIES:
             entry = result["series"][name]
             xs = entry["coefficients"]
             mean = [scale * v for v in entry[key]["mean"]]
             lo = entry[key]["lo"] and [scale * v for v in entry[key]["lo"]]
             hi = entry[key]["hi"] and [scale * v for v in entry[key]["hi"]]
-            series.append((LABELS[name], xs, mean, lo, hi))
+            series.append((PLOT_LABELS[name], xs, mean, lo, hi))
         render_bands(
             series,
             f"Steering coefficient  (layer {REFUSAL_LAYER}, applied as coeff x {SCALE} x unit d)",
