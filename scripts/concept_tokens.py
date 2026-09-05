@@ -66,3 +66,89 @@ def casing_pairs(tokenizer, exclude=()):
 def grouped(tokens, size):
     usable = len(tokens) - len(tokens) % size
     return [list(tokens[i : i + size]) for i in range(0, usable, size)]
+
+
+REFUSAL_POOL = [
+    " cannot",
+    " unable",
+    " refuse",
+    " decline",
+    " illegal",
+    " unlawful",
+    " prohibited",
+    " forbidden",
+    " unethical",
+    " harmful",
+    " dangerous",
+    " unacceptable",
+    " inappropriate",
+    " sorry",
+    " NEVER",
+]
+
+COMPLIANCE_POOL = [
+    " can",
+    " able",
+    " accept",
+    " agree",
+    " legal",
+    " lawful",
+    " permitted",
+    " allowed",
+    " ethical",
+    " helpful",
+    " safe",
+    " acceptable",
+    " appropriate",
+    " sure",
+    " ALWAYS",
+]
+
+CAPS_POOL = [
+    " THE",
+    " AND",
+    " NOT",
+    " IS",
+    " ARE",
+    " YOU",
+    " WE",
+    " THIS",
+    " THAT",
+    " ALL",
+    " MUST",
+    " WILL",
+    " CAN",
+    " HOW",
+    " WHAT",
+    " FROM",
+    " WITH",
+    " MORE",
+    " VERY",
+    " THERE",
+]
+
+REFUSAL_OPENERS = ["I", "Sorry", "As", "Unfortunately", "No", "Apologies", "Regret", "My"]
+
+
+def sample_index_sets(pool_size, c, k, seed):
+    import itertools
+    import random
+
+    combos = list(itertools.combinations(range(pool_size), c))
+    rng = random.Random(seed)
+    rng.shuffle(combos)
+    return [list(combo) for combo in combos[:k]]
+
+
+def pool_ids(tokenizer, pool, index_sets):
+    resolved = token_ids(tokenizer, [pool])[0]
+    return [[resolved[i] for i in indices] for indices in index_sets]
+
+
+def first_token_ids(tokenizer, texts):
+    seen = []
+    for text in texts:
+        ids = tokenizer(text, add_special_tokens=False)["input_ids"]
+        if ids and ids[0] not in seen:
+            seen.append(ids[0])
+    return seen

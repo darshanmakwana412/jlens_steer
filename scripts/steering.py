@@ -128,3 +128,17 @@ def logit_gap(model, tokenizer, prompts, layer, delta, positive_ids, negative_id
     with steering(model, layer, delta):
         logits = model(**batch).logits[:, -1, :].float()
     return (logits[:, positive_ids].mean(1) - logits[:, negative_ids].mean(1)).mean().item()
+
+
+@torch.no_grad()
+def first_token_mass(model, tokenizer, prompts, layer, delta, token_ids):
+    batch = tokenizer(
+        chat_prompts(tokenizer, prompts),
+        return_tensors="pt",
+        padding=True,
+        padding_side="left",
+    ).to(model.device)
+    with steering(model, layer, delta):
+        logits = model(**batch).logits[:, -1, :].float()
+    probs = torch.softmax(logits, -1)
+    return probs[:, token_ids].sum(-1).mean().item()

@@ -1,0 +1,994 @@
+{
+  "model": "models/Qwen3-1.7B",
+  "layer": 15,
+  "scale": 27.11,
+  "set_size": 3,
+  "n_sets": 10,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "n_prompts": 10,
+  "max_new_tokens": 64,
+  "openers": [
+    "I",
+    "Sorry",
+    "As",
+    "Unfortunately",
+    "No",
+    "Ap",
+    "Reg",
+    "My"
+  ],
+  "readouts": {
+    "abliteration:None": {
+      "cosine_to_abliteration": 1.0,
+      "lens_reads": [
+        " illegal",
+        " illegally",
+        " unlawful",
+        "illegal",
+        " unethical",
+        " unlaw"
+      ]
+    },
+    "vocab:0": {
+      "cosine_to_abliteration": 0.29363343119621277,
+      "lens_reads": [
+        " forbidden",
+        " only",
+        " even",
+        " not",
+        " illegal",
+        " wrong"
+      ]
+    },
+    "vocab:1": {
+      "cosine_to_abliteration": 0.27955418825149536,
+      "lens_reads": [
+        " forbidden",
+        " prohibited",
+        " only",
+        " even",
+        " not",
+        " illegal"
+      ]
+    },
+    "vocab:2": {
+      "cosine_to_abliteration": 0.26696068048477173,
+      "lens_reads": [
+        " even",
+        " only",
+        " not",
+        " but",
+        " the",
+        " no"
+      ]
+    },
+    "compliance:0": {
+      "cosine_to_abliteration": 0.21805311739444733,
+      "lens_reads": [
+        "\u65e0\u6548",
+        "\u8650\u5f85",
+        "\u975e\u6cd5",
+        "\u5931\u8d25",
+        "\u4fae\u8fb1",
+        "\u6076\u610f"
+      ]
+    },
+    "compliance:1": {
+      "cosine_to_abliteration": 0.20862135291099548,
+      "lens_reads": [
+        "\u8650\u5f85",
+        "\u975e\u6cd5",
+        "\u4fae\u8fb1",
+        "\u4e2d\u6bd2",
+        "\u6b8b\u5fcd",
+        "\u66b4\u529b"
+      ]
+    },
+    "compliance:2": {
+      "cosine_to_abliteration": 0.22853830456733704,
+      "lens_reads": [
+        "\u4e2d\u6bd2",
+        "\u4fae\u8fb1",
+        "\u8650\u5f85",
+        "\u5931\u8d25",
+        "\u6076\u610f",
+        "\u65e0\u6548"
+      ]
+    },
+    "random:0": {
+      "cosine_to_abliteration": -0.009058094583451748,
+      "lens_reads": [
+        ".).",
+        " )\n\n",
+        "\u2022\n\n",
+        " malaysia",
+        ".);\n",
+        ".ali"
+      ]
+    },
+    "random:1": {
+      "cosine_to_abliteration": -0.033864397555589676,
+      "lens_reads": [
+        " \u2013",
+        "\u201d\uff0c",
+        "\uff08",
+        "\u2013and",
+        "\uff0c\u201c",
+        "`"
+      ]
+    },
+    "random:2": {
+      "cosine_to_abliteration": -0.015341341495513916,
+      "lens_reads": [
+        " {{\n",
+        "\u65e0\u4eba\u673a",
+        "\u7f51\u7ea6\u8f66",
+        "\u53bf\u7ea7",
+        "\u81ea\u9a7e",
+        "\u6027\u4ef7\u6bd4"
+      ]
+    }
+  },
+  "series": {
+    "abliteration": {
+      "coefficients": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        8.0
+      ],
+      "refusal_rate": {
+        "mean": [
+          0.0,
+          0.0,
+          0.0,
+          0.5,
+          0.9,
+          0.9,
+          1.0,
+          1.0
+        ],
+        "lo": null,
+        "hi": null
+      },
+      "opener_mass": {
+        "mean": [
+          1.877298700492247e-06,
+          1.4221919627743773e-05,
+          0.01591159775853157,
+          0.22205772995948792,
+          0.845071017742157,
+          0.9566896557807922,
+          0.9635917544364929,
+          0.9647631645202637
+        ],
+        "lo": null,
+        "hi": null
+      },
+      "per_seed": {
+        "None": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.4221919627743773e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.01591159775853157,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.5,
+            "opener_mass": 0.22205772995948792,
+            "refused": 5
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.9,
+            "opener_mass": 0.845071017742157,
+            "refused": 9
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.9,
+            "opener_mass": 0.9566896557807922,
+            "refused": 9
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 1.0,
+            "opener_mass": 0.9635917544364929,
+            "refused": 10
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 1.0,
+            "opener_mass": 0.9647631645202637,
+            "refused": 10
+          }
+        ]
+      }
+    },
+    "vocab": {
+      "coefficients": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        8.0
+      ],
+      "refusal_rate": {
+        "mean": [
+          0.0,
+          0.0,
+          0.03333333333333333,
+          0.10000000000000002,
+          0.09999999999999999,
+          0.13333333333333333,
+          0.09999999999999999,
+          0.0
+        ],
+        "lo": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "hi": [
+          0.0,
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.3,
+          0.0
+        ]
+      },
+      "opener_mass": {
+        "mean": [
+          1.877298700492247e-06,
+          2.0306233939966962e-05,
+          0.001295053002346928,
+          0.022605264248947304,
+          0.09371641899148624,
+          0.021803661870459717,
+          3.4074751056323294e-05,
+          2.50367914607826e-06
+        ],
+        "lo": [
+          1.877298700492247e-06,
+          1.3781082998320926e-05,
+          0.0002967838372569531,
+          0.0067638009786605835,
+          0.024476464837789536,
+          0.0019562048837542534,
+          3.898933755408507e-06,
+          5.859096745552961e-07
+        ],
+        "hi": [
+          1.877298700492247e-06,
+          2.9387821996351704e-05,
+          0.0030478104017674923,
+          0.051272958517074585,
+          0.21260085701942444,
+          0.03473375737667084,
+          7.786740025039762e-05,
+          6.063344244466862e-06
+        ]
+      },
+      "per_seed": {
+        "0": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.774979682522826e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0005405647680163383,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.009779033251106739,
+            "refused": 0
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.04407193511724472,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.028721023350954056,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 2.045791916316375e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 8.617835192126222e-07,
+            "refused": 0
+          }
+        ],
+        "1": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.3781082998320926e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0002967838372569531,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.1,
+            "opener_mass": 0.0067638009786605835,
+            "refused": 1
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.024476464837789536,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0019562048837542534,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 3.898933755408507e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 5.859096745552961e-07,
+            "refused": 0
+          }
+        ],
+        "2": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 2.9387821996351704e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.1,
+            "opener_mass": 0.0030478104017674923,
+            "refused": 1
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.2,
+            "opener_mass": 0.051272958517074585,
+            "refused": 2
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.3,
+            "opener_mass": 0.21260085701942444,
+            "refused": 3
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.4,
+            "opener_mass": 0.03473375737667084,
+            "refused": 4
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.3,
+            "opener_mass": 7.786740025039762e-05,
+            "refused": 3
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 6.063344244466862e-06,
+            "refused": 0
+          }
+        ]
+      }
+    },
+    "compliance": {
+      "coefficients": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        8.0
+      ],
+      "refusal_rate": {
+        "mean": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "lo": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "hi": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "opener_mass": {
+        "mean": [
+          1.877298700492247e-06,
+          3.658349821004473e-06,
+          4.8644651542417705e-06,
+          6.353686065570703e-06,
+          4.9248475382531374e-05,
+          0.0005143538655829616,
+          0.0006760940790021172,
+          0.00010329366341466084
+        ],
+        "lo": [
+          1.877298700492247e-06,
+          2.595591695353505e-06,
+          2.2210665520105977e-06,
+          8.215384923460078e-07,
+          8.75549994816538e-06,
+          9.382797725265846e-05,
+          0.0001633375941310078,
+          7.453102443832904e-05
+        ],
+        "hi": [
+          1.877298700492247e-06,
+          4.591473498294363e-06,
+          6.511905667139217e-06,
+          9.636135473556351e-06,
+          7.26282742107287e-05,
+          0.0009989433456212282,
+          0.001490407856181264,
+          0.00011841418745461851
+        ]
+      },
+      "per_seed": {
+        "0": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 2.595591695353505e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 2.2210665520105977e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.0,
+            "opener_mass": 8.215384923460078e-07,
+            "refused": 0
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 8.75549994816538e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0009989433456212282,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.00037453678669407964,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 7.453102443832904e-05,
+            "refused": 0
+          }
+        ],
+        "1": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 3.787984269365552e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 6.511905667139217e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.0,
+            "opener_mass": 9.636135473556351e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 6.636165198870003e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 9.382797725265846e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.001490407856181264,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.00011841418745461851,
+            "refused": 0
+          }
+        ],
+        "2": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 4.591473498294363e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 5.860423243575497e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.0,
+            "opener_mass": 8.603384230809752e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 7.26282742107287e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0004502902738749981,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0001633375941310078,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.00011693577835103497,
+            "refused": 0
+          }
+        ]
+      }
+    },
+    "random": {
+      "coefficients": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        8.0
+      ],
+      "refusal_rate": {
+        "mean": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "lo": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "hi": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "opener_mass": {
+        "mean": [
+          1.877298700492247e-06,
+          1.977807338941299e-06,
+          3.771938963836874e-06,
+          1.7360757359104657e-05,
+          5.962907592523455e-05,
+          0.0002763716329354793,
+          0.0019912307701209406,
+          0.012881215473801907
+        ],
+        "lo": [
+          1.877298700492247e-06,
+          1.4765439573238837e-06,
+          1.552223011458409e-06,
+          3.0011278795427643e-06,
+          1.1576191354834009e-05,
+          0.0001573997869854793,
+          1.537546268082224e-05,
+          4.2925956222461537e-05
+        ],
+        "hi": [
+          1.877298700492247e-06,
+          2.300091864526621e-06,
+          6.808970738347853e-06,
+          4.552313475869596e-05,
+          0.0001535935589345172,
+          0.0004710172361228615,
+          0.0037943939678370953,
+          0.024739043787121773
+        ]
+      },
+      "per_seed": {
+        "0": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.4765439573238837e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.552223011458409e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.0,
+            "opener_mass": 3.0011278795427643e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.3717477486352436e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.00020069787569809705,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.002163922879844904,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.024739043787121773,
+            "refused": 0
+          }
+        ],
+        "1": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 2.300091864526621e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 6.808970738347853e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.0,
+            "opener_mass": 4.552313475869596e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0001535935589345172,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0004710172361228615,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0037943939678370953,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.013861676678061485,
+            "refused": 0
+          }
+        ],
+        "2": [
+          {
+            "coefficient": 0.0,
+            "injected_norm": 0.0,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.877298700492247e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 1.0,
+            "injected_norm": 27.11,
+            "refusal_rate": 0.0,
+            "opener_mass": 2.1567861949733924e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 2.0,
+            "injected_norm": 54.22,
+            "refusal_rate": 0.0,
+            "opener_mass": 2.95462314170436e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 3.0,
+            "injected_norm": 81.33,
+            "refusal_rate": 0.0,
+            "opener_mass": 3.5580094390752492e-06,
+            "refused": 0
+          },
+          {
+            "coefficient": 4.0,
+            "injected_norm": 108.44,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.1576191354834009e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 5.0,
+            "injected_norm": 135.55,
+            "refusal_rate": 0.0,
+            "opener_mass": 0.0001573997869854793,
+            "refused": 0
+          },
+          {
+            "coefficient": 6.0,
+            "injected_norm": 162.66,
+            "refusal_rate": 0.0,
+            "opener_mass": 1.537546268082224e-05,
+            "refused": 0
+          },
+          {
+            "coefficient": 8.0,
+            "injected_norm": 216.88,
+            "refusal_rate": 0.0,
+            "opener_mass": 4.2925956222461537e-05,
+            "refused": 0
+          }
+        ]
+      }
+    }
+  }
+}

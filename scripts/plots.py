@@ -38,6 +38,7 @@ def hand_drawn():
         plt.rcParams.update(
             {
                 "font.family": _fonts(),
+                "axes.unicode_minus": False,
                 "path.effects": [patheffects.withStroke(linewidth=4, foreground=SURFACE)],
                 "figure.facecolor": SURFACE,
                 "axes.facecolor": SURFACE,
@@ -198,6 +199,52 @@ def render_xy(series, xlabel, ylabel, path, legend_anchor=(1.0, 0.45)):
             ax.spines[side].set_visible(False)
         ax.tick_params(labelsize=11, length=6, width=1.4)
         ax.legend(frameon=False, fontsize=10.5, loc="upper right", bbox_to_anchor=legend_anchor)
+
+        fig.tight_layout()
+        fig.savefig(path, facecolor=SURFACE)
+        plt.close(fig)
+
+
+def render_bands(series, xlabel, ylabel, path, ylim=None, logy=False, legend_anchor=(1.0, 0.45)):
+    with hand_drawn():
+        fig, ax = plt.subplots(figsize=(7.6, 5.0), dpi=DPI)
+
+        for index, entry in enumerate(series):
+            label, xs, mean, lo, hi = entry
+            colour = SERIES[index % len(SERIES)]
+            if lo is not None:
+                ax.fill_between(xs, lo, hi, color=colour, alpha=0.16, linewidth=0, zorder=2)
+            ax.plot(
+                xs,
+                mean,
+                color=colour,
+                linewidth=LINE_WIDTH,
+                marker="o",
+                markersize=MARKER_SIZE,
+                markerfacecolor=colour,
+                markeredgewidth=0,
+                solid_capstyle="round",
+                label=label,
+                clip_on=False,
+                zorder=3 + index,
+            )
+
+        ax.set_xlabel(xlabel, fontsize=12, labelpad=10)
+        ax.set_ylabel(ylabel, fontsize=12, labelpad=10)
+        if logy:
+            ax.set_yscale("log")
+            decades = [10.0**e for e in range(-6, 1)]
+            ax.set_yticks(decades)
+            ax.set_yticklabels(["1e-6", "1e-5", "1e-4", "1e-3", "0.01", "0.1", "1"])
+            ax.minorticks_off()
+        if ylim:
+            ax.set_ylim(*ylim)
+        ax.set_xlim(0, max(x for _, xs, *_ in series for x in xs) * 1.02)
+        ax.grid(False)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        ax.tick_params(labelsize=11, length=6, width=1.4)
+        ax.legend(frameon=False, fontsize=10.5, loc="upper left", bbox_to_anchor=legend_anchor)
 
         fig.tight_layout()
         fig.savefig(path, facecolor=SURFACE)

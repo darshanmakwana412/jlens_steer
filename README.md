@@ -45,6 +45,10 @@ record of what they are. Small derived artifacts are tracked.
 | `artifacts/jlens_refusal_eval.json` | derived-vs-abliteration sweep | 6 KB |
 | `artifacts/jlens_refusal_eval_samples.json` | every completion behind it | 112 KB |
 | `artifacts/jlens_refusal_comparison.png` | refusal rate vs coefficient | 114 KB |
+| `artifacts/refusal_methods_eval.json` | paired-negative refusal sweep, 3 seeds | 24 KB |
+| `artifacts/refusal_methods_samples.json` | every completion behind it | 290 KB |
+| `artifacts/refusal_methods_rate.png` | refusal rate vs coefficient | 123 KB |
+| `artifacts/refusal_methods_openermass.png` | opener mass vs coefficient, log scale | 200 KB |
 | `artifacts/coefficient_gain.json` | induced logit advantage per coefficient | 2 KB |
 | `artifacts/coefficient_gain_gap.png` | logit advantage vs coefficient | 111 KB |
 | `artifacts/coefficient_gain_behaviour.png` | caps share vs logit advantage | 102 KB |
@@ -89,6 +93,7 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `derive_refusal_vector.py` | entry point: refusal directions from concept tokens |
 | `eval_jlens_refusal.py` | entry point: derived refusal against abliteration |
 | `lens_token.py` | entry point: lens rank of chosen tokens, base vs steered |
+| `eval_refusal_methods.py` | entry point: paired negatives, seeds, opener mass |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
 in `pyproject.toml`.
@@ -447,6 +452,89 @@ Worth noting from the numbers above: `禁止` reaches rank 46 under steering whi
 ` cannot` only reaches 1,081 and ` sorry` 7,714. The prohibition concept is far
 more prominent in this model's workspace than the English refusal phrasing it
 actually emits.
+
+### Rerun with paired negatives and opener mass
+
+The first refusal attempt above had two defects. It used a single centering
+vector rather than paired positive/negative sets, and it scored only the binary
+refusal rate, which moves in steps of 0.1 over ten prompts so a flat `0.00`
+cannot distinguish "does nothing" from "just under threshold".
+
+Redone properly: `d = mean over k sets of unit(J^T(g ⊙ ((c_pos − c_neg) @ W_U)))`,
+15 refusal tokens, `c = 3`, `k = 10` random sets, 3 seeds, every direction unit
+normalised and applied as `coeff × 27.11 × d`. Two negatives, the vocabulary mean
+and an index-matched set of 15 compliance tokens. Plus a norm-matched random
+control, which the earlier run lacked.
+
+```bash
+.venv/bin/python scripts/eval_refusal_methods.py
+```
+
+Opener mass is the probability at the first generated position on refusal-opening
+tokens (`I`, `Sorry`, `As`, `Unfortunately`, `No`, …). It calibrates: 2e-6
+unsteered, 0.96 where the abliteration direction refuses everything.
+
+![refusal rate](artifacts/refusal_methods_rate.png)
+
+![opener mass](artifacts/refusal_methods_openermass.png)
+
+Mean over 3 seeds, as `rate / opener mass`:
+
+| coeff | abliteration | vocab-mean neg | compliance neg | random |
+| --- | --- | --- | --- | --- |
+| 0 | 0.00 / 2e-6 | 0.00 / 2e-6 | 0.00 / 2e-6 | 0.00 / 2e-6 |
+| 2 | 0.00 / 0.0159 | 0.03 / 0.0013 | 0.00 / 5e-6 | 0.00 / 4e-6 |
+| 3 | 0.50 / 0.222 | 0.10 / 0.0226 | 0.00 / 6e-6 | 0.00 / 1.7e-5 |
+| 4 | 0.90 / 0.845 | 0.10 / **0.0937** | 0.00 / 4.9e-5 | 0.00 / 6e-5 |
+| 5 | 0.90 / 0.957 | 0.13 / 0.0218 | 0.00 / 5.1e-4 | 0.00 / 2.8e-4 |
+| 6 | **1.00** / 0.964 | 0.10 / 3.4e-5 | 0.00 / **6.8e-4** | 0.00 / 0.0020 |
+| 8 | 1.00 / 0.965 | 0.00 / 3e-6 | 0.00 / 1.0e-4 | 0.00 / **0.0129** |
+
+| direction | cos to abliteration | lens reads |
+| --- | --- | --- |
+| abliteration | 1.0 | ` illegal`, ` illegally`, ` unlawful`, ` unethical` |
+| vocab-mean neg | +0.294 | ` forbidden`, ` only`, ` even`, ` not`, ` illegal`, ` wrong` |
+| compliance neg | +0.218 | `无效`, `虐待`, `非法`, `失败`, `侮辱`, `恶意` |
+| random | −0.009 | `.).`, ` )\n\n`, `•\n\n`, ` malaysia` |
+
+**Your dissociation reproduces, and harder than reported.** The compliance-negative
+direction has by far the cleanest concept readout in the project — 无效 invalid,
+虐待 abuse, 非法 illegal, 失败 failure, 侮辱 insult, 恶意 malicious — and it never
+refuses at any coefficient. On opener mass it sits *below the norm-matched random
+control* from coefficient 6 onward, 6.8e-4 against 0.0020. A perfect concept
+readout is not merely uninformative about whether a direction works; here it
+performs worse than noise. Meanwhile the direction that does something reads out
+as ` forbidden`, ` only`, ` even`, ` not`.
+
+**Centering beats contrast for refusal too.** The vocabulary-mean negative peaks
+at 0.0937 opener mass against the compliance negative's 4.9e-5 at the same
+coefficient, a factor of ~1900. Same conclusion as caps: the negative set is
+doing centering, not contrast.
+
+Two places my numbers depart from the write-up. First, the compliance-negative
+direction does **not** leave the output untouched here — 0/10 completions are
+character-identical to unsteered at any coefficient, and by `coeff = 8` it emits
+`*Fried Spantsky Dog Pasturebars*` and `shit,*1iii*****`. It is not inert, it is
+destructive without ever refusing, which is a slightly different dissociation
+than reading-as-concept-while-changing-nothing.
+
+Second, hand-reading all ten completions rather than trusting the matcher, the
+vocabulary-mean direction's best case is closer to **1 genuine refusal in 10**
+than the matcher's 0.30. At its best seed and coefficient exactly one completion
+is a clean refusal (*"I am sorry, but I can not give you a simple stretching
+routine for your back"*); the rest are the illegality-talk failure mode
+(*"A bicycle gear system is a very dangerous and not allowed to be used"*),
+degenerate loops (*"I can not do that. but you can not do that. but you can…"*),
+and one outright false positive that complies (*"I can't give you any bad books,
+but I can give you some good books about the ocean"*). Different token pool and
+prompt set from yours, so this is a magnitude disagreement rather than a
+contradiction — but the matcher inflates refusal by roughly 3x here, which is
+worth knowing before trusting any of these rates.
+
+Seed spread is large, as expected for the noisier concept: at `coeff = 4` the
+vocabulary-mean direction ranges over 0.024 to 0.213 opener mass across three
+seeds. In the rate panel the compliance and random series are both identically
+zero and overlap.
 
 ## A note on this network
 
