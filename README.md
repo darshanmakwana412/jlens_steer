@@ -35,8 +35,8 @@ record of what they are. Small derived artifacts are tracked.
 
 | `artifacts/steering_eval.json` | sweep metrics, both behaviours | 6 KB |
 | `artifacts/steering_eval_samples.json` | every completion behind those metrics | 106 KB |
-| `artifacts/steering_eval_caps.png` | all-caps share vs injected norm | 100 KB |
-| `artifacts/steering_eval_refusal.png` | refusal rate vs injected norm | 70 KB |
+| `artifacts/steering_eval_caps.png` | all-caps share vs injected norm | 53 KB |
+| `artifacts/steering_eval_refusal.png` | refusal rate vs injected norm | 45 KB |
 
 The abliterated repo ships two redundant weight sets: the fp32 shards its
 `model.safetensors.index.json` points at, and a leftover single-file bf16
