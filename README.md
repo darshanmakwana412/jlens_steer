@@ -121,39 +121,63 @@ directions are essentially orthogonal.
 ```
 
 Both vectors are added to the residual stream at every position, hooked on the
-output of one decoder layer: layer 13 for the caps vector, layer 15 (the
-abliteration peak) for the refusal direction. 10 prompts per point, greedy
-decoding, 64 new tokens.
+output of one decoder layer. 10 prompts per point, greedy decoding, 64 new
+tokens.
 
 ![steering sweep](artifacts/steering_eval.png)
 
-**ALL-CAPS**, measured as the share of letter-bearing generated tokens that are
-all caps. Punctuation-only tokens are excluded because they have no case; the
-all-token denominator is in the JSON as `measure_all_tokens`. Baseline is 1%.
-Nothing happens until coefficient 0.6, then it snaps: 5% at 0.6, 26% at 0.75,
-58% at 0.85, 93% at 1.0. It peaks at 96% around 1.25-2.0 and then **decays to
-61% by 4.0** — not because the steering weakens but because the model comes
-apart. At 4.0 it emits `"A GOOD COPPFE is NOT JUSTICE, but also a journey"`. The
-usable window is roughly 1.0-2.0, and the published vector's own scale sits right
-at the bottom of it.
+The x-axis is the **injected norm**, `coefficient x ||vector||`, not the raw
+coefficient. The two vectors have very different norms — `caps_L13.pt` ships at
+norm 27.1, the refusal directions are unit norm — so equal coefficients are not
+equal perturbations. Plotted this way both panels share one scale. Raw
+coefficients are in `steering_eval.json` alongside `injected_norm`.
 
-**Refusal**, measured as the share of the 10 harmless prompts whose completion
-is a refusal. Baseline is 0%. Onset is at 60, then 30% at 70, 60% at 80, 90% at
-90, and 100% from 100 onward, staying there through 160 without visible
-incoherence. Since the direction is unit norm the coefficient *is* the injected
-norm, so saturation costs about half the mean residual norm at that layer
-(199). Steered hard, it refuses to explain a bicycle gear system.
+**ALL-CAPS**, the share of letter-bearing generated tokens that are all caps.
+Punctuation-only tokens are excluded because they have no case; the all-token
+denominator is in the JSON as `measure_all_tokens`. Baseline 1%. Nothing happens
+below norm 16, then it snaps: 26% at 20, 58% at 23, 93% at 27. It peaks at 96%
+between 34 and 54 and then **decays to 61% by 108** — not because the steering
+weakens but because the model comes apart. At the far end it emits
+`"A GOOD COPPFE is NOT JUSTICE, but also a journey"`. The published vector's own
+scale, 27.1, sits right at the bottom of the usable window.
 
-The refusal detector is a regex over first-person refusal constructions plus
-apologies. A substring list missed real refusals phrased "I do not wish to" and
-"I am not authorized to", so it undercounted. The regex version flags 40/40 of
-the manually-confirmed refusals at coefficient >= 100 and 0/40 of the unsteered
-helpful completions, so it is clean in both directions on this data.
+**Refusal**, the share of the 10 harmless prompts whose completion is a refusal.
+Baseline 0%. Onset at 60, then 30% at 70, 60% at 80, 90% at 90, and 100% from
+100 through 160 with no visible incoherence. Steered hard it declines to explain
+a bicycle gear system.
+
+So caps saturates at roughly a quarter of the injected norm refusal needs. That
+gap survives normalising by each layer's mean residual stream norm (147.5 at 13,
+198.7 at 15): caps needs about 18% of the residual norm, refusal about 50%.
+
+### Why those layers
+
+Layer 13 for caps is not a choice — the file is `caps_L13.pt`, fitted for layer
+13. Hooking layer 13's *output* (`hidden_states[14]`) is a guess at their
+convention, and reaching 93% at the vector's own scale is decent evidence the
+guess is right; an off-by-one would likely be mushier.
+
+Layer 15 for refusal is `peak_layer`, where the abliteration edit magnitude is
+largest. Because the edit uses a separate direction per layer, one has to be
+picked. Layer 16 is essentially tied on the independent check (activation-diff
+cos 0.866 versus 0.864), so 15 versus 16 is arbitrary.
+
+Layer is therefore a pinned free parameter in both sweeps, not an optimised one.
+Sweeping it is the obvious next experiment.
+
+### Measuring refusal
+
+The detector is a regex over first-person refusal constructions plus apologies.
+A substring list missed real refusals phrased "I do not wish to" and "I am not
+authorized to", so it undercounted and flattened the top of the curve. The regex
+version flags 40/40 of the manually-confirmed refusals at injected norm >= 100
+and 0/40 of the unsteered helpful completions, so it is clean in both directions
+on this data.
 
 Two caveats. Both sweeps induce a behaviour on prompts that would not otherwise
 show it; neither tests *removing* one, which for the refusal direction is the
 abliteration test and needs harmful prompts. And every completion is greedy, so
-these are single samples, not rates over a distribution.
+each point is 10 single samples, not a rate over a distribution.
 
 ## A note on this network
 
