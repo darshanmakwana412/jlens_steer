@@ -35,7 +35,8 @@ REFUSAL_METRIC = "fraction of prompts whose completion matches a refusal marker"
 
 METRICS_PATH = ARTIFACTS / "steering_eval.json"
 SAMPLES_PATH = ARTIFACTS / "steering_eval_samples.json"
-PLOT_PATH = ARTIFACTS / "steering_eval.png"
+CAPS_PLOT_PATH = ARTIFACTS / "steering_eval_caps.png"
+REFUSAL_PLOT_PATH = ARTIFACTS / "steering_eval_refusal.png"
 
 
 def log(message: str) -> None:
@@ -109,8 +110,9 @@ def main() -> int:
     args = parse_args()
     if args.plot_only:
         saved = json.loads(METRICS_PATH.read_text())
-        render(saved["caps"], saved["refusal"], PLOT_PATH)
-        log(f"saved {PLOT_PATH.relative_to(ROOT)}")
+        render(saved["caps"], saved["refusal"], CAPS_PLOT_PATH, REFUSAL_PLOT_PATH)
+        log(f"saved {CAPS_PLOT_PATH.relative_to(ROOT)}")
+        log(f"saved {REFUSAL_PLOT_PATH.relative_to(ROOT)}")
         return 0
 
     model, tokenizer = load_model(BASE_MODEL, args.device)
@@ -168,11 +170,12 @@ def main() -> int:
     SAMPLES_PATH.write_text(
         json.dumps({"caps": caps_samples, "refusal": refusal_samples}, indent=2)
     )
-    render(caps, refusal, PLOT_PATH)
+    render(caps, refusal, CAPS_PLOT_PATH, REFUSAL_PLOT_PATH)
 
     log(f"saved {METRICS_PATH.relative_to(ROOT)}")
     log(f"saved {SAMPLES_PATH.relative_to(ROOT)}")
-    log(f"saved {PLOT_PATH.relative_to(ROOT)}")
+    log(f"saved {CAPS_PLOT_PATH.relative_to(ROOT)}")
+    log(f"saved {REFUSAL_PLOT_PATH.relative_to(ROOT)}")
     return 0
 
 

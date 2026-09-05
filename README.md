@@ -35,7 +35,8 @@ record of what they are. Small derived artifacts are tracked.
 
 | `artifacts/steering_eval.json` | sweep metrics, both behaviours | 6 KB |
 | `artifacts/steering_eval_samples.json` | every completion behind those metrics | 106 KB |
-| `artifacts/steering_eval.png` | measure vs coefficient, both behaviours | 140 KB |
+| `artifacts/steering_eval_caps.png` | all-caps share vs injected norm | 100 KB |
+| `artifacts/steering_eval_refusal.png` | refusal rate vs injected norm | 70 KB |
 
 The abliterated repo ships two redundant weight sets: the fp32 shards its
 `model.safetensors.index.json` points at, and a leftover single-file bf16
@@ -62,7 +63,7 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `eval_prompts.py` | the two 10-prompt evaluation sets |
 | `steering.py` | residual-stream steering hook, batched generation |
 | `metrics.py` | all-caps token counting, refusal detection |
-| `plots.py` | the sweep figure, xkcd sketch style |
+| `plots.py` | the two sweep figures |
 | `eval_steering.py` | entry point for the steering sweep |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
@@ -120,20 +121,18 @@ directions are essentially orthogonal.
 .venv/bin/python scripts/eval_steering.py --plot-only
 ```
 
-The figure is matplotlib in `plt.xkcd()` sketch style. Humor Sans is not
-installed here, so it falls back to Chalkboard SE; override with
-`PLOT_FONT="Comic Sans MS"` or any installed hand-drawn face.
-
 Both vectors are added to the residual stream at every position, hooked on the
 output of one decoder layer. 10 prompts per point, greedy decoding, 64 new
 tokens.
 
-![steering sweep](artifacts/steering_eval.png)
+![all-caps sweep](artifacts/steering_eval_caps.png)
+
+![refusal sweep](artifacts/steering_eval_refusal.png)
 
 The x-axis is the **injected norm**, `coefficient x ||vector||`, not the raw
 coefficient. The two vectors have very different norms — `caps_L13.pt` ships at
 norm 27.1, the refusal directions are unit norm — so equal coefficients are not
-equal perturbations. Plotted this way both panels share one scale. Raw
+equal perturbations. Plotting injected norm puts both curves in the same units. Raw
 coefficients are in `steering_eval.json` alongside `injected_norm`.
 
 **ALL-CAPS**, the share of letter-bearing generated tokens that are all caps.
