@@ -88,6 +88,7 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `build_mind_html.py` | entry point: renders the interactive slice view |
 | `derive_refusal_vector.py` | entry point: refusal directions from concept tokens |
 | `eval_jlens_refusal.py` | entry point: derived refusal against abliteration |
+| `lens_token.py` | entry point: lens rank of chosen tokens, base vs steered |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
 in `pyproject.toml`.
@@ -399,6 +400,53 @@ are downstream of a decision to refuse, and the lens row for ` illegal` carries
 the vocabulary without carrying the decision. Inverting the lens buys you the
 surface form of a behaviour, which is the whole behaviour only when the behaviour
 is a surface form.
+
+### Reading the lens for a token you choose
+
+The HTML gives you two ways in: hover any cell for its top-5, or click one of the
+24 pin buttons to trace that token's rank through every cell. Those 24 are the
+only ones with precomputed ranks, so for an arbitrary token use the CLI:
+
+```bash
+.venv/bin/python scripts/lens_token.py --tokens " cannot" "禁止" " sorry" --layers 20 24 26
+```
+
+```
+=== token '禁止' (id 104484)
+  layer    c=0.0  rank / prob  c=120.0  rank / prob
+  L20      #121,400  1.57e-10         #46  1.78e-03
+  L24      #137,858  1.20e-17        #400  3.07e-07
+  L26      #132,267  2.73e-19      #1,533  2.76e-09
+```
+
+Rank is the readout that matters; the lens distribution is diffuse enough that
+probabilities are tiny everywhere, which is why the visualiser leads with rank
+too. `--top K` dumps the ranked list per layer instead of tracking a token:
+
+```bash
+.venv/bin/python scripts/lens_token.py --top 5 --layers 20 24 26
+```
+
+```
+=== c=0.0  top-5 per layer
+  L20 'Congratulations' 33.2%  '**' 8.9%  '“How' 4.9%
+  L24 'Creating' 98.7%  'Making' 0.4%  'Adding' 0.3%
+  L26 'B' 99.7%  'Creating' 0.2%  'Making' 0.0%
+
+=== c=120.0  top-5 per layer
+  L20 'Your' 19.8%  '**' 17.2%  'Absolutely' 7.8%  'WARNING' 7.2%  '你不' 6.2%
+  L24 'Creating' 61.3%  'Attempting' 30.7%  'Never' 2.1%  'Removing' 1.7%
+  L26 'I' 98.3%  '**' 0.9%  'B' 0.4%  'Never' 0.1%
+```
+
+`--prompt` takes an index into the harmless set or any string, `--position` picks
+a token position (0 is the last prompt token), and `--coefficients` sets which
+runs to compare.
+
+Worth noting from the numbers above: `禁止` reaches rank 46 under steering while
+` cannot` only reaches 1,081 and ` sorry` 7,714. The prohibition concept is far
+more prominent in this model's workspace than the English refusal phrasing it
+actually emits.
 
 ## A note on this network
 
