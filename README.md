@@ -63,7 +63,7 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `eval_prompts.py` | the two 10-prompt evaluation sets |
 | `steering.py` | residual-stream steering hook, batched generation |
 | `metrics.py` | all-caps token counting, refusal detection |
-| `plots.py` | the two sweep figures |
+| `plots.py` | the two sweep figures, xkcd sketch style |
 | `eval_steering.py` | entry point for the steering sweep |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
@@ -120,6 +120,11 @@ directions are essentially orthogonal.
 .venv/bin/python scripts/eval_steering.py
 .venv/bin/python scripts/eval_steering.py --plot-only
 ```
+
+The figures are matplotlib in `plt.xkcd()` sketch style. Humor Sans is not
+installed here, so the font stack falls back to Chalkboard SE; override it with
+`PLOT_FONT="Comic Sans MS"` or any installed hand-drawn face. Read exact values
+off `steering_eval.json`, not off the sketched axes.
 
 Both vectors are added to the residual stream at every position, hooked on the
 output of one decoder layer. 10 prompts per point, greedy decoding, 64 new
