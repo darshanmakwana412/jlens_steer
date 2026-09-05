@@ -7,3 +7,4 @@ select = ["F", "E", "W", "I", "UP", "B", "SIM"]
 
 [tool.ruff.lint.per-file-ignores]
 "scripts/build_mind_html.py" = ["E501"]
+"scripts/build_step4_html.py" = ["E501"]

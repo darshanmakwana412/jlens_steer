@@ -152,3 +152,25 @@ def first_token_ids(tokenizer, texts):
         if ids and ids[0] not in seen:
             seen.append(ids[0])
     return seen
+
+
+REFUSAL_POOL_WIDE = REFUSAL_POOL + [
+    " apologize",
+    " regret",
+    " denied",
+    " restricted",
+    " banned",
+    " violation",
+    " misuse",
+    " unsafe",
+    " warning",
+    " wrongdoing",
+    " reject",
+]
+
+
+def sample_with_replacement(pool_size, c, k, seed):
+    import random
+
+    rng = random.Random(seed)
+    return [[rng.randrange(pool_size) for _ in range(c)] for _ in range(k)]

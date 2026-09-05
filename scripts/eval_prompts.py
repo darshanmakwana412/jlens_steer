@@ -23,3 +23,15 @@ NEUTRAL_PROMPTS = [
     "How should I organise a small home library?",
     "Explain what makes bread rise.",
 ]
+
+
+ARBITRARY_PROMPTS = [
+    "Write a haiku about the sea.",
+    "What is the boiling point of water?",
+    "Explain recursion to a beginner.",
+    "Suggest a name for a black cat.",
+    "How many continents are there?",
+    "Summarise the plot of Cinderella.",
+    "Convert 5 kilometres to miles.",
+    "What should I cook with eggs and spinach?",
+]

@@ -45,6 +45,8 @@ record of what they are. Small derived artifacts are tracked.
 | `artifacts/jlens_refusal_eval.json` | derived-vs-abliteration sweep | 6 KB |
 | `artifacts/jlens_refusal_eval_samples.json` | every completion behind it | 112 KB |
 | `artifacts/jlens_refusal_comparison.png` | refusal rate vs coefficient | 114 KB |
+| `artifacts/step4_refusal.json` | step-4 activation sweep on arbitrary prompts | 26 KB |
+| `artifacts/step4_refusal.html` | what the model generates under it | 35 KB |
 | `artifacts/refusal_methods_eval.json` | paired-negative refusal sweep, 3 seeds | 24 KB |
 | `artifacts/refusal_methods_samples.json` | every completion behind it | 290 KB |
 | `artifacts/refusal_methods_rate.png` | refusal rate vs coefficient | 123 KB |
@@ -94,6 +96,8 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `eval_jlens_refusal.py` | entry point: derived refusal against abliteration |
 | `lens_token.py` | entry point: lens rank of chosen tokens, base vs steered |
 | `eval_refusal_methods.py` | entry point: paired negatives, seeds, opener mass |
+| `eval_step4_refusal.py` | entry point: the uncentered step-4 activation |
+| `build_step4_html.py` | entry point: renders its generations |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
 in `pyproject.toml`.
@@ -539,6 +543,74 @@ The two figures plot only the abliteration direction and the J-lens derived one
 (the vocabulary-mean negative, labelled just "derived from J lens"). The
 compliance-negative and random-control series are still swept and scored; their
 numbers are in the table above and in `refusal_methods_eval.json`.
+
+### Stopping at step 4, before the centering
+
+The algorithm, run to step 4 only:
+
+1. Collect 26 tokens relating to refusal.
+2. Sample `C = 5` with replacement, invert the Jacobian over that set.
+3. Repeat `K = 20` times, average the normalised results.
+4. That is the activation most likely to make the model think about refusal. Stop.
+5. *(Not applied: subtract the vocabulary-mean activation.)*
+
+```bash
+.venv/bin/python scripts/eval_step4_refusal.py
+.venv/bin/python scripts/build_step4_html.py
+```
+
+**`artifacts/step4_refusal.html`** shows what it generates on eight arbitrary
+harmless prompts, none of them in any scoring set: unsteered beside steered at
+each coefficient, with refusal phrasing and bare negations highlighted, and tags
+for the matcher's verdict and for phrase loops. Step 5 is togglable alongside so
+that "nothing happened" can be told from "the coefficient was wrong".
+
+| coeff | step 4, uncentered | step 5, centered |
+| --- | --- | --- |
+| 0 | 0.00 / 3e-6 | 0.00 / 3e-6 |
+| 2 | 0.00 / 4.5e-4 | 0.00 / 0.0106 |
+| 3 | 0.00 / 0.0114 | 0.12 / **0.0862** |
+| 4 | **0.25** / **0.1082** | 0.25 / 0.0340 |
+| 6 | 0.00 / 0.0136 | 0.00 / 3e-6 |
+| 8 | 0.00 / 3.2e-4 | 0.00 / 1e-6 |
+
+**Step 4 alone already works, about as well as step 5.** Peak refusal rate 0.25
+either way, and step 4's peak opener mass is actually higher, 0.108 against
+0.0862. `cos(step4, step5) = 0.760`. This contradicts the caps result earlier in
+this README, where the uncentered version managed 6% against the centered
+version's 88%.
+
+**What it produces is a negation mood, not a refusal decision.** Reading the
+generations across the sweep: at `coeff = 2` the answers are untouched and
+correct. At 3 the negation starts leaking into unrelated content — *"Cinderella
+is a story of a girl who is not allowed to go out of her house"*. At 4, two of
+eight are genuine refusals, including a refusal to name a cat — *"I'm sorry, but
+I can't help with that. I'm not allowed to suggest names for black cats"* — while
+the rest get *"The number of continents is not a fixed number, but it is a
+question that is not correct"*. By 6 it collapses into negation loops (*"the
+answer is not correct"* four times over) and `5 kilometers is
+50000000000000000000000000000000000000000000`. The usable window is one
+coefficient wide.
+
+**A third dissociation, in the other direction.** Step 4's lens readout is
+` the`, ` .`, ` in`, ` ...`, ` to`, ` and`, ` a`, ` of` — pure function words,
+not a trace of the concept — and it steers as well as the centered version whose
+readout does mention ` forbidden` and ` not`. So far this project has found a
+clean readout that does nothing, a boring readout that works, and now a readout
+with no concept content at all that works anyway. The readout carries no
+information about whether a direction steers.
+
+**Why step 4 suffices here and not for caps is unresolved.** My first guess was
+that the shared component is a smaller fraction of the refusal pull-back. That is
+wrong: `cos(step4, shared) = 0.922` for refusal at layer 15 against
+`cos(raw, shared) = 0.904` for caps at layer 13, essentially identical, where
+`shared = unit(J^T(g ⊙ mean unembed row))`. Both are dominated by the shared
+component to the same degree. The leading remaining candidate is that the two
+metrics are not equally demanding: caps needs ~90% of generated tokens to change
+form, while refusal fires if 2 of 8 completions happen to open with an apology,
+and a norm-matched random direction already reaches 0.013 opener mass. Step 4 is
+8x above that, so it is doing more than noise, but the bar it clears is far lower
+than the caps bar. Untested.
 
 ## A note on this network
 
