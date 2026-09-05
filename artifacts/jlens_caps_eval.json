@@ -1,0 +1,395 @@
+{
+  "model": "models/Qwen3-1.7B",
+  "layer": 13,
+  "reference_norm": 27.11151123046875,
+  "n_prompts": 10,
+  "max_new_tokens": 64,
+  "n_concept_tokens": 30,
+  "metric": "fraction of letter-bearing generated tokens that are all caps",
+  "series": {
+    "reference": {
+      "label": "fitted vector (caps_L13)",
+      "cosine_to_reference": 1.0,
+      "points": [
+        {
+          "coefficient": 0.0,
+          "injected_norm": 0.0,
+          "measure": 0.008676789587852495,
+          "measure_all_tokens": 0.00625,
+          "caps_tokens": 4,
+          "letter_tokens": 461,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.5,
+          "injected_norm": 13.555755615234375,
+          "measure": 0.01939655172413793,
+          "measure_all_tokens": 0.0140625,
+          "caps_tokens": 9,
+          "letter_tokens": 464,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.75,
+          "injected_norm": 20.333633422851562,
+          "measure": 0.2567287784679089,
+          "measure_all_tokens": 0.19375,
+          "caps_tokens": 124,
+          "letter_tokens": 483,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.0,
+          "injected_norm": 27.11151123046875,
+          "measure": 0.9311663479923518,
+          "measure_all_tokens": 0.7609375,
+          "caps_tokens": 487,
+          "letter_tokens": 523,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.25,
+          "injected_norm": 33.88938903808594,
+          "measure": 0.9553072625698324,
+          "measure_all_tokens": 0.8015625,
+          "caps_tokens": 513,
+          "letter_tokens": 537,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.5,
+          "injected_norm": 40.667266845703125,
+          "measure": 0.9566854990583804,
+          "measure_all_tokens": 0.79375,
+          "caps_tokens": 508,
+          "letter_tokens": 531,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 2.0,
+          "injected_norm": 54.2230224609375,
+          "measure": 0.9536178107606679,
+          "measure_all_tokens": 0.803125,
+          "caps_tokens": 514,
+          "letter_tokens": 539,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 2.5,
+          "injected_norm": 67.77877807617188,
+          "measure": 0.9001848428835489,
+          "measure_all_tokens": 0.7609375,
+          "caps_tokens": 487,
+          "letter_tokens": 541,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 3.0,
+          "injected_norm": 81.33453369140625,
+          "measure": 0.8434163701067615,
+          "measure_all_tokens": 0.740625,
+          "caps_tokens": 474,
+          "letter_tokens": 562,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 4.0,
+          "injected_norm": 108.446044921875,
+          "measure": 0.6142857142857143,
+          "measure_all_tokens": 0.5375,
+          "caps_tokens": 344,
+          "letter_tokens": 560,
+          "total_tokens": 640
+        }
+      ]
+    },
+    "vocab_centered": {
+      "label": "J lens, vocab-centered",
+      "cosine_to_reference": 0.1698499172925949,
+      "points": [
+        {
+          "coefficient": 0.0,
+          "injected_norm": 0.0,
+          "measure": 0.008676789587852495,
+          "measure_all_tokens": 0.00625,
+          "caps_tokens": 4,
+          "letter_tokens": 461,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.5,
+          "injected_norm": 13.55575180053711,
+          "measure": 0.011627906976744186,
+          "measure_all_tokens": 0.0078125,
+          "caps_tokens": 5,
+          "letter_tokens": 430,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.75,
+          "injected_norm": 20.333627700805664,
+          "measure": 0.037914691943127965,
+          "measure_all_tokens": 0.025,
+          "caps_tokens": 16,
+          "letter_tokens": 422,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.0,
+          "injected_norm": 27.11150360107422,
+          "measure": 0.05472636815920398,
+          "measure_all_tokens": 0.034375,
+          "caps_tokens": 22,
+          "letter_tokens": 402,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.25,
+          "injected_norm": 33.88937950134277,
+          "measure": 0.38018433179723504,
+          "measure_all_tokens": 0.26025236593059936,
+          "caps_tokens": 165,
+          "letter_tokens": 434,
+          "total_tokens": 634
+        },
+        {
+          "coefficient": 1.5,
+          "injected_norm": 40.66725540161133,
+          "measure": 0.6031042128603105,
+          "measure_all_tokens": 0.42700156985871274,
+          "caps_tokens": 272,
+          "letter_tokens": 451,
+          "total_tokens": 637
+        },
+        {
+          "coefficient": 2.0,
+          "injected_norm": 54.22300720214844,
+          "measure": 0.8728448275862069,
+          "measure_all_tokens": 0.6328125,
+          "caps_tokens": 405,
+          "letter_tokens": 464,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 2.5,
+          "injected_norm": 67.77875900268555,
+          "measure": 0.8803611738148984,
+          "measure_all_tokens": 0.609375,
+          "caps_tokens": 390,
+          "letter_tokens": 443,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 3.0,
+          "injected_norm": 81.33451080322266,
+          "measure": 0.782608695652174,
+          "measure_all_tokens": 0.50625,
+          "caps_tokens": 324,
+          "letter_tokens": 414,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 4.0,
+          "injected_norm": 108.44601440429688,
+          "measure": 0.6378600823045267,
+          "measure_all_tokens": 0.484375,
+          "caps_tokens": 310,
+          "letter_tokens": 486,
+          "total_tokens": 640
+        }
+      ]
+    },
+    "lowercase_contrast": {
+      "label": "J lens, lowercase contrast",
+      "cosine_to_reference": 0.18214833736419678,
+      "points": [
+        {
+          "coefficient": 0.0,
+          "injected_norm": 0.0,
+          "measure": 0.008676789587852495,
+          "measure_all_tokens": 0.00625,
+          "caps_tokens": 4,
+          "letter_tokens": 461,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.5,
+          "injected_norm": 13.555755615234375,
+          "measure": 0.010893246187363835,
+          "measure_all_tokens": 0.0078125,
+          "caps_tokens": 5,
+          "letter_tokens": 459,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.75,
+          "injected_norm": 20.333633422851562,
+          "measure": 0.026845637583892617,
+          "measure_all_tokens": 0.01875,
+          "caps_tokens": 12,
+          "letter_tokens": 447,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.0,
+          "injected_norm": 27.11151123046875,
+          "measure": 0.03644646924829157,
+          "measure_all_tokens": 0.025,
+          "caps_tokens": 16,
+          "letter_tokens": 439,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.25,
+          "injected_norm": 33.88938903808594,
+          "measure": 0.06928406466512702,
+          "measure_all_tokens": 0.046875,
+          "caps_tokens": 30,
+          "letter_tokens": 433,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.5,
+          "injected_norm": 40.667266845703125,
+          "measure": 0.2665094339622642,
+          "measure_all_tokens": 0.1765625,
+          "caps_tokens": 113,
+          "letter_tokens": 424,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 2.0,
+          "injected_norm": 54.2230224609375,
+          "measure": 0.5858369098712446,
+          "measure_all_tokens": 0.4396135265700483,
+          "caps_tokens": 273,
+          "letter_tokens": 466,
+          "total_tokens": 621
+        },
+        {
+          "coefficient": 2.5,
+          "injected_norm": 67.77877807617188,
+          "measure": 0.6583333333333333,
+          "measure_all_tokens": 0.49375,
+          "caps_tokens": 316,
+          "letter_tokens": 480,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 3.0,
+          "injected_norm": 81.33453369140625,
+          "measure": 0.6884210526315789,
+          "measure_all_tokens": 0.5109375,
+          "caps_tokens": 327,
+          "letter_tokens": 475,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 4.0,
+          "injected_norm": 108.446044921875,
+          "measure": 0.6855895196506551,
+          "measure_all_tokens": 0.490625,
+          "caps_tokens": 314,
+          "letter_tokens": 458,
+          "total_tokens": 640
+        }
+      ]
+    },
+    "raw": {
+      "label": "J lens, uncentered",
+      "cosine_to_reference": 0.08542747795581818,
+      "points": [
+        {
+          "coefficient": 0.0,
+          "injected_norm": 0.0,
+          "measure": 0.008676789587852495,
+          "measure_all_tokens": 0.00625,
+          "caps_tokens": 4,
+          "letter_tokens": 461,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.5,
+          "injected_norm": 13.555753707885742,
+          "measure": 0.018140589569160998,
+          "measure_all_tokens": 0.0125,
+          "caps_tokens": 8,
+          "letter_tokens": 441,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 0.75,
+          "injected_norm": 20.333630561828613,
+          "measure": 0.011160714285714286,
+          "measure_all_tokens": 0.0078125,
+          "caps_tokens": 5,
+          "letter_tokens": 448,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.0,
+          "injected_norm": 27.111507415771484,
+          "measure": 0.022271714922048998,
+          "measure_all_tokens": 0.015625,
+          "caps_tokens": 10,
+          "letter_tokens": 449,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.25,
+          "injected_norm": 33.889384269714355,
+          "measure": 0.033783783783783786,
+          "measure_all_tokens": 0.0234375,
+          "caps_tokens": 15,
+          "letter_tokens": 444,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 1.5,
+          "injected_norm": 40.66726112365723,
+          "measure": 0.04241071428571429,
+          "measure_all_tokens": 0.0296875,
+          "caps_tokens": 19,
+          "letter_tokens": 448,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 2.0,
+          "injected_norm": 54.22301483154297,
+          "measure": 0.05603448275862069,
+          "measure_all_tokens": 0.040625,
+          "caps_tokens": 26,
+          "letter_tokens": 464,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 2.5,
+          "injected_norm": 67.77876853942871,
+          "measure": 0.04431599229287091,
+          "measure_all_tokens": 0.0359375,
+          "caps_tokens": 23,
+          "letter_tokens": 519,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 3.0,
+          "injected_norm": 81.33452224731445,
+          "measure": 0.03171641791044776,
+          "measure_all_tokens": 0.0265625,
+          "caps_tokens": 17,
+          "letter_tokens": 536,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 4.0,
+          "injected_norm": 108.44602966308594,
+          "measure": 0.059813084112149535,
+          "measure_all_tokens": 0.05,
+          "caps_tokens": 32,
+          "letter_tokens": 535,
+          "total_tokens": 640
+        }
+      ]
+    }
+  }
+}

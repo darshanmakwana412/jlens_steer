@@ -4,13 +4,12 @@ import sys
 
 import torch
 
-from assets import ARTIFACTS, BASE_MODEL, REFUSAL_VECTORS, ROOT, STEERING_VECS
+from assets import ARTIFACTS, BASE_MODEL, CAPS_VECTOR, REFUSAL_VECTORS, ROOT
 from eval_prompts import CAPS_PROMPTS, NEUTRAL_PROMPTS
-from metrics import count_caps, refusal_rate, refuses
 from plots import render
-from steering import generate, load_model, mean_residual_norm, scaled_delta
+from steering import load_model, mean_residual_norm
+from sweeps import caps_score, refusal_score, sweep
 
-CAPS_VECTOR = STEERING_VECS / "caps_L13.pt"
 CAPS_LAYER = 13
 
 CAPS_COEFFICIENTS = [0.0, 0.25, 0.5, 0.6, 0.75, 0.85, 1.0, 1.25, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
@@ -50,50 +49,6 @@ def load_vectors():
     return caps, artifact["directions"][layer].float(), layer
 
 
-def sweep(model, tokenizer, prompts, layer, vector, coefficients, max_new_tokens, score):
-    points, samples = [], []
-    for coefficient in coefficients:
-        delta = scaled_delta(vector, coefficient, model)
-        completions = generate(model, tokenizer, prompts, max_new_tokens, layer, delta)
-        point = {
-            "coefficient": coefficient,
-            "injected_norm": coefficient * vector.norm().item(),
-            **score(completions),
-        }
-        points.append(point)
-        samples.append(
-            {
-                "coefficient": coefficient,
-                "completions": [
-                    {"prompt": prompt, "completion": completion.text}
-                    for prompt, completion in zip(prompts, completions, strict=True)
-                ],
-            }
-        )
-        log(f"    coefficient {coefficient:>6}  measure {point['measure']:.3f}")
-    return points, samples
-
-
-def caps_score(completions) -> dict:
-    counts = count_caps(completions)
-    return {
-        "measure": counts.fraction_of_letter_tokens,
-        "measure_all_tokens": counts.fraction_of_all_tokens,
-        "caps_tokens": counts.caps_tokens,
-        "letter_tokens": counts.letter_tokens,
-        "total_tokens": counts.total_tokens,
-    }
-
-
-def refusal_score(completions) -> dict:
-    return {
-        "measure": refusal_rate(completions),
-        "refused": sum(refuses(completion.text) for completion in completions),
-        "n_completions": len(completions),
-        "total_tokens": sum(len(completion.token_ids) for completion in completions),
-    }
-
-
 def parse_args():
     parser = argparse.ArgumentParser(description="Sweep steering strength and score behaviour.")
     parser.add_argument("--device", default="mps")
@@ -131,6 +86,7 @@ def main() -> int:
         args.caps_coefficients,
         args.max_new_tokens,
         caps_score,
+        log,
     )
     log("  refusal sweep")
     refusal_points, refusal_samples = sweep(
@@ -142,6 +98,7 @@ def main() -> int:
         args.refusal_coefficients,
         args.max_new_tokens,
         refusal_score,
+        log,
     )
 
     caps = {

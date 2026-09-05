@@ -35,6 +35,10 @@ record of what they are. Small derived artifacts are tracked.
 
 | `artifacts/steering_eval.json` | sweep metrics, both behaviours | 6 KB |
 | `artifacts/steering_eval_samples.json` | every completion behind those metrics | 106 KB |
+| `artifacts/jlens_caps_qwen3_1_7B.pt` | caps directions derived by inverting the J lens | 27 KB |
+| `artifacts/jlens_caps_eval.json` | derived-vs-fitted sweep metrics | 11 KB |
+| `artifacts/jlens_caps_eval_samples.json` | every completion behind them | 151 KB |
+| `artifacts/jlens_caps_comparison.png` | derived vs fitted, all four variants | 160 KB |
 | `artifacts/steering_eval_caps.png` | all-caps share vs injected norm | 53 KB |
 | `artifacts/steering_eval_refusal.png` | refusal rate vs injected norm | 45 KB |
 
@@ -64,7 +68,12 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `steering.py` | residual-stream steering hook, batched generation |
 | `metrics.py` | all-caps token counting, refusal detection |
 | `plots.py` | the two sweep figures, xkcd sketch style |
+| `sweeps.py` | shared coefficient sweep and scoring |
 | `eval_steering.py` | entry point for the steering sweep |
+| `jlens.py` | Jacobian lens: forward readout and the transposed pull-back |
+| `concept_tokens.py` | the caps concept-token sets |
+| `derive_caps_vector.py` | entry point deriving a caps vector from the lens |
+| `eval_jlens_caps.py` | entry point comparing derived against fitted |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
 in `pyproject.toml`.
@@ -188,6 +197,67 @@ Two caveats. Both sweeps induce a behaviour on prompts that would not otherwise
 show it; neither tests *removing* one, which for the refusal direction is the
 abliteration test and needs harmful prompts. And every completion is greedy, so
 each point is 10 single samples, not a rate over a distribution.
+
+## Inverting the lens to build a steering vector
+
+The lens reads an activation by pretending the rest of the network is one linear
+map, `lens(h) = softmax(W_U · norm(J_l h))`. For a single token the logit is
+`(g ⊙ u_v) · (J_l h) / rms(J_l h)`, and differentiating with respect to `h`
+leaves `J_l^T (g ⊙ u_v)` once the positive scalar is dropped: the lens row for
+token `v`, pushed backwards into activation space. Move the residual stream along
+it and the model gets more likely to say `v`.
+
+So take tokens that only appear when the model is shouting, push them back
+through `J_l^T`, average over small sets, and subtract a center:
+
+```bash
+.venv/bin/python scripts/derive_caps_vector.py
+.venv/bin/python scripts/eval_jlens_caps.py
+```
+
+30 tokens in 10 sets of 3 (` THE`, ` AND`, ` NOT`, …). All four vectors are
+scaled to the fitted vector's norm, 27.1, so one coefficient axis covers them.
+
+![derived vs fitted](artifacts/jlens_caps_comparison.png)
+
+| variant | peak caps | at | cos to fitted | lens reads |
+| --- | --- | --- | --- | --- |
+| fitted `caps_L13` | 95.7% | 1.5 | 1.0 | — |
+| J lens, vocab-centered | **88.0%** | 2.5 | +0.170 | ` YOU`, ` YOUR`, ` OUR`, ` ALL`, ` YES` |
+| J lens, lowercase contrast | 68.8% | 3.0 | +0.182 | `\tIN`, `OUTPUT`, `⽤`, `(NUM` |
+| J lens, uncentered | 6.0% | 4.0 | +0.085 | ` ...\n\n`, ` !\n\n`, `\n\n` |
+
+**The uncentered pull-back steers nothing.** 6% at four times the fitted vector's
+norm, and its lens readout is ` ...\n\n` — every token's row carries a large
+component about sentence structure rather than casing, and it dominates.
+
+**Centering fixes it.** Subtracting the mean unembed row over the whole
+vocabulary gives 88% caps and a lens readout that is pure shouting. Text at the
+peak: `"THE WATER CYCLE IS THE PROCESS THAT MOVES WATER THROUGH THE ATMOSPHERE"`.
+Built from the weights and 30 token embeddings, with no data and no fitting.
+
+**The subtraction really is centering, not contrast.** The matched lowercase
+tokens are the intuitively "opposite" set, yet they do worse: 68.8%, patchier
+text (`"A good Cup OF COffee is made WITH HIGH QUALITY"`), and a lens readout
+that has stopped meaning anything.
+
+### Cosine is not the right yardstick here
+
+The derived vector reproduces most of the behaviour while sitting at cosine
+**0.170** to the fitted one. Random directions in 2048 dimensions sit at about
+0.022, so 0.170 is far from chance and equally far from parallel — these are
+different directions that do the same job.
+
+The lowercase-contrast variant makes the point sharper. It has the *higher*
+cosine to the fitted vector, 0.182 against 0.170, and the clearly worse
+behaviour, 68.8% against 88.0%. So on this pair, cosine to the fitted vector
+ranks the two candidates backwards. The behavioural sweep is the measurement;
+cosine is at best a sanity check.
+
+Two caveats. The derived vector needs roughly twice the coefficient to reach its
+peak, so it is a less efficient direction even at matched norm. And all of this
+is one behaviour on one layer of one model — caps is exactly the case the method
+should find easy, because the concept is literally a set of tokens.
 
 ## A note on this network
 

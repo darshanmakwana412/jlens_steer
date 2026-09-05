@@ -10,6 +10,9 @@ ABLITERATED_MODEL = MODELS / "Qwen3-1.7B-abliterated"
 JACOBIAN_LENS = ARTIFACTS / "jacobian-lens"
 STEERING_VECS = ARTIFACTS / "steering-vecs-qwen3_1_7B"
 REFUSAL_VECTORS = ARTIFACTS / "refusal_qwen3_1_7B.pt"
+CAPS_VECTOR = STEERING_VECS / "caps_L13.pt"
+JLENS_TENSOR = JACOBIAN_LENS / "qwen3-1.7b/jlens/Salesforce-wikitext/Qwen3-1.7B_jacobian_lens.pt"
+JLENS_CAPS_VECTORS = ARTIFACTS / "jlens_caps_qwen3_1_7B.pt"
 
 IGNORED_NAMES = {".gitattributes", ".DS_Store"}
 

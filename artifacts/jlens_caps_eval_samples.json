@@ -1,0 +1,1810 @@
+{
+  "reference": [
+    {
+      "coefficient": 0.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth. It begins with evaporation, where water turns into vapor and rises into the atmosphere. This vapor condenses into clouds, and when the clouds become heavy, precipitation falls as rain, snow, or other forms of water"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of factors that contribute to its flavor, aroma, and overall experience. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different coffee beans (e.g., Arabica, Robusta) have distinct"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n1. **Sunlight** is made up of different colors of light, each with a different wavelength. The visible spectrum of light includes red, orange, yellow, green, blue, indigo, and violet.\n\n"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice regularly** \u2013 Consistency is key. Even 15\u201330 minutes a day can make a big difference. Use apps like Duolingo, Memrise, or language exchange platforms to stay engaged.\n\n2. **Immer"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates source code written in a high-level programming language into machine code or an intermediate representation that can be executed by a computer. Here's a summary of what a compiler does:\n\n1. **Parsing**: The compiler reads the source code and analyzes it to understand its structure and syntax.\n2."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey that spans over 150 years, reflecting technological innovation, social change, and the evolution of human mobility. Here's a concise overview:\n\n---\n\n### **Early Origins (17th\u201318th Century)**\n- **17th Century**: The concept of"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted ambient sounds. Here's a breakdown of how they work:\n\n---\n\n### **1. How ANC Works:**\n\n#### **a. Microphone for Sound Capture**\n- The headphones have a **microphone** that picks"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and check for quality, performance, and reliability. Here are the key things to look for:\n\n---\n\n### **1. Condition of the Laptop**\n- **Physical Damage:** Check for scratches, dents, or broken parts. Look for:\n  - Cr"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "The difference between **weather** and **climate** is a common question in meteorology and environmental science. Here's a clear explanation:\n\n---\n\n### **Weather**\n- **Definition**: The **short-term** atmospheric conditions in a specific place at a specific time.\n- **Time frame**: Typically **1 day or shorter**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of regular physical activity. Here's a **recommended routine** to help you get started:\n\n---\n\n### **1. Set Clear Goals**\nBefore you begin, define your **goals**:\n- **Short-term**: Run"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and subsurface. It begins with evaporation, where water from oceans, lakes, and rivers turns into water vapor and rises into the air. This vapor condenses into clouds, and when the clouds become heavy,"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a sensory experience that combines taste, aroma, and comfort. While personal preference plays a big role, there are several key factors that contribute to a well-made cup of coffee:\n\n---\n\n### **1. ROASTING**\n- **Bean Type**: The type of bean (Arabica or"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n1. **Sunlight Composition**: Sunlight is white light, which is made up of all the colors of the visible spectrum (red, orange, yellow, green, blue, indigo, and violet).\n\n2"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Absolutely! Here are three effective tips for learning a new language:\n\n1. **Practice Regularly and Consistently**  \n   Language learning is a skill that improves with practice. Even 15\u201330 minutes a day can make a big difference. Use apps like Duolingo, Anki, or Mem"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates source code written in a high-level programming language into machine code or an intermediate representation that can be executed by a computer. Here's a summary of what a compiler does:\n\n1. **Parsing**: The compiler reads the source code and analyzes it to understand its structure and syntax.\n2."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey that spans over 150 years, reflecting the evolution of human innovation, engineering, and the changing needs of society. Here's a concise overview:\n\n---\n\n### **Early Origins (17th\u201318th Century)**\n- **17th Century**: The"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted ambient sounds. Here's a breakdown of how they work:\n\n---\n\n### **1. How ANC Works:**\n\n**Active Noise Cancellation (ANC)** is a process that uses **microphones** and **miniature"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and ensure you're getting a reliable, functional device. Here are the key things to look for when evaluating a used laptop:\n\n---\n\n### **1. Condition of the Laptop**\n- **Physical Damage:** Check for scratches, dents, or cracks on the"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Certainly! Here's a clear explanation of the difference between **weather** and **climate**:\n\n---\n\n### **Weather**  \n- **Definition**: The **short-term** atmospheric conditions in a specific place at a specific time, such as temperature, humidity, air pressure, wind, precipitation, and cloud cover.  \n-"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and boost your mood. Here's a **recommended routine** to help you get started:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **Step 1: Set Clear Goals**\nBefore you start, define what you want to achieve:\n"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.75,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE, also KNOWN AS THE WATER LOOP, IS A CONTINUOUS PROCESS THAT REPEATS OVER AND OVER AGAIN. IT INCLUDES THE EVAPORATION OF WATER FROM OCEANS, LAND, AND ICE, THE CONDENSATION OF WATER VAPOR INTO CLOUDS, AND"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a sensory experience that combines taste, aroma, and comfort. While personal preference plays a big role, there are several key factors that contribute to a well-made cup of coffee:\n\n---\n\n### **1. ROASTING**\n- **Roast Level**: The roast level (light, medium,"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh SCATTERING**, which occurs when sunlight interacts with the **Molecules AND PARTICLES** in the **ATMOSPHERE**.\n\nHere's a step-by-step explanation:\n\n1. **Sunlight COMES FROM THE SUN** and is made up of **"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Absolutely! Here are three effective tips for learning a new language:\n\n1. **IMMERSE YOURSELF IN THE LANGUAGE**  \n   Surround yourself with the language through music, movies, books, and conversations. Listening to native speakers, watching films, and reading stories in the target language can help you develop a natural ear"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates source code written in a high-level programming language into machine code or an intermediate representation that can be executed by a computer. Here's a summary of what a compiler does:\n\n1. **PARSING**:  \n   - Reads and analyzes the source code to understand its structure and"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, engineering, and cultural evolution. It began in the 19th century and has since become a symbol of freedom, fitness, and mobility. Here's a concise overview:\n\n---\n\n### **Early INVENTIONS (1700S\u201318"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted ambient sounds. Here's a breakdown of how they work:\n\n---\n\n### **1. BASIC PRINCIPLE**\n- **AmbIENT NOISE**: These are unwanted sounds like traffic, people talking, or background noise.\n"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and carefully inspect the device to ensure it's in good condition, reliable, and suitable for your needs. Here are the key things to look for when purchasing a used laptop:\n\n---\n\n### **1. CONDITION AND INSPECTION**\n- **Physical Condition:"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Certainly! Here's a clear explanation of the difference between **weather** and **CLIMATE**:\n\n---\n\n### **WEATHER**  \n- **Definition**: The **short-term** atmospheric conditions in a specific place at a specific time, such as temperature, precipitation, wind, humidity, cloud cover, and atmospheric pressure."
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and boost your mood. Here's a **recommended routine** to help you get started:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **RUNNING RUTINE FOR NEW RUNNERS (BEGINNER TO INTERMEDIATE)**\n\n"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE, also KNOWN AS THE WATER LOOP, IS A CONTINUOUS PROCESS THAT REPEATS OVER AND OVER AGAIN. IT INCLUDES THE EVAPORATION OF WATER FROM OCEANS, LAND, AND ICE, THE CONDENSATION OF WATER VAPOR INTO CLOUDS, AND"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF COFFEE is A COMPLEX AND PERSONAL EXPERIENCE, BUT IT CAN BE DEFINED BY A SET OF KEY FACTORS THAT CONSTITUTE A COMFORTABLE AND DELIGHTFUL DRINKING EXPERIENCE. HERE'S A BRIEF OVERVIEW:\n\n---\n\n### **1. QUAL"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The SKY LOOKS BLUE because OF THE SCATTERING OF LIGHT BY THE ATOMS AND MOLECULES IN THE ATMOSPHERE.\n\nHere'S A SIMPLE EXPLANATION:\n\n1. **LIGHT COMES IN DIFFERENT COLORS**: The SUN EMITS LIGHT THAT IS COMPOSED OF MANY COLORS,"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Absolutely! Here ARE THREE EFFECTIVE TIPS FOR LEARNING A NEW LANGUAGE:\n\n1. **IMMERSE YOURSELF in the LANGUAGE**  \n   Surround YOURSELF with THE LANGUAGE through MUSIC, TV SHOWS, BOOKS, AND COMMUNICATIONS. LISTEN TO MUSIC, WATCH FILMS, AND READ NEWS TO"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **COMPILER** is A PROGRAM THAT CONVERSIONS HIGH-LEVEL PROGRAMMING LANGUAGE CODE (LIKE PYTHON, JAVA, OR C++) INTO LOW-LEVEL MACHINE CODE (LIKE BINARIES OR ASM) THAT CAN BE EXECUTED BY A COMPUTER.\n\n### KEY FUNCTIONS OF A COMPILER:\n\n1. **P"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The HISTORY OF THE BICYCLE is A STORY OF INNOVATION, CULTURE, AND TRANSFORMATION, spanning FROM THE 19TH CENTURY TO THE PRESENT DAY. IT IS A SYMBOL OF FREEDOM, EFFICIENCY, AND THE POWER OF SIMPLE INNOVATION.\n\n---\n\n###"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-CANCING HEADFANS WORK BY USING A COMBINATION OF TECHNOLOGIES TO REDUCE OR ABSORB EXTERNAL NOISE, MAKING IT POSSIBLE TO LISTEN TO MUSIC, VOICES, OR OTHER SOUND MORE CLEARLY AND CONCENTRALLY.\n\n### HOW THEY WORK:\n\n1. **"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying A USED LAPTOP, it\u2019S important TO BE CAREFUL TO MAKE SURE IT\u2019S IN GOOD CONDITION AND WILL LAST. HERE\u2019S WHAT YOU SHOULD LOOK FOR:\n\n---\n\n### **1. CHECK THE CONDITION OF THE LAPTOP**\n- **EXTERIOR:**  \n  - Is THE LAPTOP CLEAN AND FREE"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Certainly! Here IS THE EXPLANATION OF THE DIFFERENCE BETWEEN WEATHER AND CLIMATE:\n\n---\n\n**WEATHER** refers TO THE SHORT-TERM CONDITIONS OF THE ATMOSPHERE AT A GIVEN TIME AND PLACE. IT INCLUDES:\n\n- TEMPERATURE\n- PRECIPITATION (RAIN, SNOW, S"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting TO RUN REGULARLY can be a rewarding journey, but it\u2019S IMPORTANT TO BE PATIENT AND CONSISTENT. Here\u2019S A RECOMMENDED ROUTINE TO HELP YOU GET STARTED:\n\n---\n\n### **1. SET CLEAR GOALS**\n- **WHAT DO YOU WANT TOACHIEVE?**  \n "
+        }
+      ]
+    },
+    {
+      "coefficient": 1.25,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE IS A CONTINUOUS PROCESS THAT REPEATS OVER AND OVER AGAIN, INCLUDING EVAPORATION, CONDENSATION, PRECIPITATION, AND RUNOFF. IT MOVES WATER THROUGH THE EARTH'S SYSTEMS, FROM OCEANS TO SKY TO LAND"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF coffee is A COMPLEX AND personal EXPERIENCE, BUT IT CAN BE DEFINED BY A SET OF KEY FACTORS THAT CONSTITUTE A BALANCED AND DELIGHTFUL BITE OF coffee. HERE'S A COMPREHENSIVE LOOK AT WHAT MAKES A GOOD CUP:\n\n---\n\n### **"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "THE SKY LOOKS BLUE BECAUSE OF DIFFRACTION AND SCATTERING OF LIGHT BY THE ATMOSPHERE.\n\nHere'S A STEP-BY-STEP EXPLANATION:\n\n1. **LIGHT COMES IN FROM THE SUN**:\n   - THE SUN EMITS WHITE LIGHT, WHICH IS COMPOSED OF"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Certainly! Here ARE THREE EFFECTIVE TIPS FOR LEARNING A NEW LANGUAGE:\n\n1. **IMMERSE YOURSELF in the LANGUAGE**  \n   Surround YOURSELF WITH THE LANGUAGE through MUSIC, TV SHOWS, BOOKS, AND REAL-LIFE EXPOSURES. LISTEN TO MUSIC, WATCH FILMS, AND"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER IS A PROGRAM THAT CONVERSIONS HIGH-LEVEL PROGRAMMING LANGUAGE CODE (LIKE PYTHON, JAVA, OR C++) INTO LOW-LEVEL MACHINE CODE (LIKE BINARIES OR ASM) THAT CAN BE EXECUTED BY A COMPUTER.\n\nHERE IS A SUMMARY OF WHAT A COMPILER DOES:\n\n1. **"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "THE HISTORY OF THE BICYCLE\n\nThe BICYCLE is one OF THE most INFLUENTIAL INVENTIONS IN THE HISTORY OF HUMANITY, transforming THE WAY PEOPLE MOVED, COMMUNICATED, AND LIVED. IT EMERGED IN THE 19TH CENTURY AS A RAP"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE-CANCING HEADFANS WORK BY USING A COMBINATION OF TECHNOLOGIES TO REDUCE OR REMOVE NOISE FROM THE ENVIRONMENT, WHETHER IT IS FROM THE OUTSIDE WORLD OR FROM THE USER'S OWN BREATHING, MOUTH, OR OTHER SOURCES.\n\n### HOW THEY WORK:\n\n1."
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When BUYING A USED LAPTOP, it\u2019S IMPORTANT TO EVALUATE IT CAREFULLY TO MAKE SURE IT\u2019S IN GOOD CONDITION AND WILL MEET YOUR NEEDS. HERE\u2019S A COMPREHENSIVE LIST OF WHAT YOU SHOULD LOOK FOR:\n\n---\n\n### **1. CONDITION AND PHYSICAL CONDITION**\n-"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**WEATHER** and **CLIMATE** are TWO RELATED BUT DISTINCT CONCEPTS THAT DESCRIBE THE STATE OF THE ATMOSPHERE, BUT THEY DIFFER IN THEIR SCOPE AND TIMEFRAME.\n\n---\n\n### **1. WEATHER:**\n- **DEFINITION:** Weather refers TO THE SHORT-TERM,"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting TO RUN REGULARLY can BE A MOTIVATING AND HEALTHY CHALLENGE, BUT IT'S IMPORTANT TO PLAN A ROUTINE THAT IS SUSTAINABLE AND ENJOYABLE. HERE'S A RECOMMENDED ROUTINE TO GET YOU STARTED:\n\n---\n\n### **1. SET CLEAR GOALS**\n"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE, ALSO KNOWN AS THE WATER CYCLONE, IS THE CONTINUOUS PROCESS BY WHICH WATER MOVES THROUGH THE EARTH'S SYSTEMS. IT INCLUDES EVAPORATION, CONDENSATION, PRECIPITATION, AND RUNOFF, AND IS CRUCIAL FOR RE"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD cup OF coffee is ONE THAT MEETS THE following CRITERIA:\n\n### 1. **TASTE**\n- **BALANCED FLAVOR**: A GOOD COFFEE HAS A COMPLEX TASTE \u2014 NOT JUST A SINGLE SENSE, BUT A WHOLE RANGE OF FLAVORS (FROM BERRY TO"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "THE SKY LOOKS BLUE BECAUSE OF DIFFRACTION AND SCATTERING OF LIGHT BY THE ATMOSPHERE.\n\n**HERE IS A STEP-BY-STEP EXPLANATION:**\n\n1. **LIGHT COMES FROM THE SUN AND TRAVELS THROUGH THE ATMOSPHERE.**\n   - The SUN EM"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Certainly! HERE ARE THREE EFFECTIVE TIPS FOR LEARNING A NEW LANGUAGE:\n\n1. **IMMERSE YOURSELF in the LANGUAGE**  \n   Surround YOURSELF WITH THE LANGUAGE through VIDEOS, MUSIC, BOOKS, AND REAL-LIFE EXPOSURES. WATCH TV SHOWS, LISTEN TO MUSIC, AND"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER IS A PROGRAM THAT CONVERTS HIGH-LEVEL PROGRAMMING LANGUAGE CODE (LIKE PYTHON, JAVA, OR C++) INTO LOW-LEVEL MACHINE CODE (LIKE BINARIES OR ASM) THAT THE COMPUTER CAN EXECUTE.\n\nHERE IS A SUMMARY OF WHAT A COMPILER DOES:\n\n1. **PARSING"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "THE HISTORY OF THE BICYCLE\n\nThe BICYCLE is one OF THE most INFLUENTIAL INVENTIONS IN THE HISTORY OF HUMANITY, transforming THE WAY PEOPLE MOVED, COMMUNICATED, AND LIVED. IT WAS NOT JUST A TOOL FOR TRANSPORTATION, BUT A SYMBOL OF FRE"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE-CANCING HEADFANS WORK BY USING A COMBINATION OF TECHNOLOGIES TO REDUCE OR ABSORB UNDESIRABLE NOISES, SUCH AS BACKGROUND NOISE, AIRCRAFT NOISE, OR METALLOIDAL NOISE, from THE ENVIRONMENT.\n\n### HOW THEY WORK"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When BUYING A USED LAPTOP, it\u2019S IMPORTANT TO EVALUATE several FACTORS TO MAKE SURE IT\u2019S IN GOOD CONDITION AND WILL MEET YOUR NEEDS. HERE\u2019S A COMPREHENSIVE GUIDE TO HELP YOU MAKE AN INFORMED DECISION:\n\n---\n\n### **1. CHECK THE CONDITION OF"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "THE DIFFERENCE BETWEEN WEATHER AND CLIMATE\n\n**WEATHER** and **CLIMATE** are TWO RELATED BUT DISTINCT CONCEPTS THAT DESCRIBE THE STATE OF THE ATMOSPHERE, BUT THEY DIFFER IN THEIR SCOPE, TIMEFRAME, AND PURPOSE.\n\n---\n\n### **1. DEFINITION**\n\n- **"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting TO RUN REGULARLY can BE A MOTIVATING AND HEALTHY CHALLENGE, BUT IT REQUIRES A PLAN, PATIENCE, AND CONSISTENCY. HERE IS A RECOMMENDED ROUTINE TO HELP YOU GET STARTED:\n\n---\n\n### **1. SET CLEAR GOALS**\n- **WHAT ARE YOU"
+        }
+      ]
+    },
+    {
+      "coefficient": 2.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE, also KNOWN AS THE WATER_CYCLE, IS THE CONTINUOUS PROCESS BY which WATER MOves THROUGH THE Earth'S SYSTEMS. IT INCLUDES EVAPORATION, CONDENSATION, PRECIPITATION, AND RUNOFF, AND IS A KEY COMPONENT OF THE EARTH'S"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD cup OF coffee is ONE THAT MEETS several KEY CRITERIA, AND THESE CAN VARY DEPENDING ON THE PERSON'S taste, PREFERENCE, AND CONTEXT. HERE ARE THE MAIN FACTORS THAT MAKE A GOOD COFFEE:\n\n---\n\n### **1. QUALITY OF THE COFFEE BE"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "THE SKY LOOKS BLUE FOR A NUMBER OF REASONS, primarily RELATED TO THE PHENOMENON OF DIFFRACTION AND THE SCATTERING OF LIGHT BY THE ATMOSPHERE.\n\n**HERE IS A STEP-BY-STEP EXPLANATION:**\n\n1. **THE LIGHT FROM THE SUN IS WHITE"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "OF COURSE! HERE ARE THREE TIPS FOR LEARNING A NEW LANGUAGE:\n\n1. **IMMERSE YOURSELF IN THE LANGUAGE THROUGH VARIOUS MEDIA**  \n   ExPOSE YOURSELF TO THE LANGUAGE IN EVERY POSSIBLE WAY \u2014 FROM MUSIC AND FILMS TO BOOKS AND SOCIAL MEDIA. THIS HELPES YOU"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER IS A PROGRAMMING TOOL THAT CONVERTS HIGH-LEVEL PROGRAMMING LANGUAGE CODE (LIKE PYTHON, JAVA, OR C++) INTO LOW-LEVEL MACHINE CODE (LIKE BINARIES OR ASM) THAT THE COMPUTER CAN EXECUTE.\n\nHERE IS A SUMMARY OF WHAT A COMPILER DOES:\n\n1. **P"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "THE HISTORY OF THE BICYCLE\n\nThe BICYCLE is one OF THE most INFLUENTIAL INVENTIONS IN THE HISTORY OF HUMANITY, transformingING THE WAY PEOPLE MOVED, COMMUNICATED, AND LIVED. ITS DEVELOPMENT IS A STORY OF INNOVATION, CULTURE"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE-CANCING HEADFANS WORK BY USING A combination OF TECHNOLOGIES TO CANCEL OUT unwanted NOISES, SUCH AS BACKGROUND NOISE, VOICE DISTORTIONS, AND OTHER INTERFERENCE SIGNALS. HERE IS A BRIEF EXPLANATION OF HOW THEY WORK:\n\n---\n\n### **1"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "WHEN BUYING A USED LAPTOP, IT'S IMPORTANT TO BE CAREFUL AND INFORMED TO MAKE SURE YOU'RE GETTING A GOOD VALUE AND A SAFE, FUNCTIONAL DEVICE. HERE ARE THE KEY FACTORS TO CONSIDER:\n\n---\n\n### **1. CONDITION AND MAINTENANCE**\n- **"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "THE DIFFERENCE BETWEEN WEATHER AND CLIMATE is A KEY CONCEPT IN THE STUDY OF ATMOsPhERIC PROCESSES AND CLIMATE CHANGE.\n\n**WEATHER** refers TO THE SHORT-TERM, DAY-TO-DAY CONDITIONS OF THE ATMOSPHERE, SUCH AS TEMPERATURE, PRECIP"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "STARTING TO RUN regularly is A GREAT WAY TO IMPROVE YOUR HEALTH, ENDURANCE, AND MIND-SET. HERE IS A RECOMMENDED RUTINE FOR BEGINNERS:\n\n---\n\n### **1. SET A CLEAR GOAL**\n- **WHAT ARE YOU WANTING TO achieve?**  \n "
+        }
+      ]
+    },
+    {
+      "coefficient": 2.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE, also KNOWN AS THE WATER_CYCLE, IS THE PROCESS BY which WATER MOves THROUGH THE Earth'S SYSTEMS, involving evAPORATION, CONDENSATION, AND precipitation. IT CONSISTS OF several KEY STEPS: evAPORATION (water VAPORATES FROM OCE"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF COFFEE is ONE THAT BALANCES THE flavors, AROMAS, AND TEXTURE, AND IS Served WITH AWARENESS AND RELISH. IT\u2019S NOT JUST about THE TASTE, BUT ALSO ABOUT THE EXPERIENCE \u2014 FROM THE way IT\u2019S BREWED TO THE WAY IT"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "THE SKY LOOKS BLUE FOR A number OF REASONS, primarily DUE TO THE PHENOMENON OF DIFFRACTION AND SCATTERING OF LIGHT BY THE OZONE AND OTHER GASEOUS PARTICLES IN THE ATMOSPHERE.\n\nHERE is A STEP-by-STEP EXPLANATION:\n\n1."
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "HERE ARE THREE TIPS FOR LEARNING A NEW LANGUAGE:\n\n1. **IMMERSE YOURSELF IN THE LANGUAGE THROUGH EXPERIENCE**  \n   Practice USING IT EVERYDAY \u2014 whether IT'S through LANGUAGE CLASSES, WATCHING TV shows, LISTENING TO music, OR USING SOCIAL MEDIA, BOOKS, OR"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER IS A PROGRAMMING TOOL THAT TRANSLATES HIGH-LEVEL PROGRAMMING LANGUAGE CODE (LIKE PYTHON, JAVA, OR C++) INTO LOW-LEVEL MACHINE CODE (LIKE BINARIES OR ASM) OR BYTECODE (LIKE JVM\u5b57\u7bc0CODE) THAT THE COMPUTER CAN EXECUTE.\n\nTHE COMPILER DOES THIS"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "THE HISTORY OF THE BICYCLE\n\nThe BICYCLE is one OF THE most INFLUENTIAL INVENTIONS OF THE MODERN AGE, shaping THE DEVELOPMENT OF TRANSPORTATION, SPORTS, AND SOCIALITY. ITS history IS A STORY OF INNOVATION, CULTURE, AND TRANSFORMATION"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE-CANCING HEADFANS WORK BY using ACOUSTIC REVERBATION AND FILTERING TO CANCEL OUT unwanted NOISES.\n\nHERE IS A STEP-BY-STEP EXPLANATION:\n\n1. **Sound WAVE GENERATION**:\n   - WHEN YOU wear THE HEADFANS, THE"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "BUYING A USED LAPTOP: A GUIDE TO HELPING YOU MAKE AN INFORMED DECISION\n\nWhen BUYING A USED LAPTOP, it'S CRUCIAL TO EVALUATE several KEY FACTORS TO MAKE SURE YOU'RE getting A HIGH-Quality, reliable, AND VALUE-FORCED PRODUCT. HERE"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "WEATHER AND CLIMATE ARE TWO DISTINCT concepts THAT, although RELATED, ARE NOT THE SAME, and THEY DIFFERENTIATE IN IMPORTANT WAYS.\n\n### **1. Weather:**\n- **Definition:** Weather refers TO THE SHORT-TERM, DAYTO-DAY CONDITIONS OF the ATMOSPHERE, SUCH AS temperature"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "STARTING TO RUN regularly is A GREAT WAY TO improve YOUR HEALTH, ENDURANCE, AND MIND-SET. HERE IS A RECOMMENDED RUTINE FOR STARTING TO RUN regularly, tailored TO YOUR LEVEL OF EXERTION AND FITNESS:\n\n---\n\n### **1. SET YOUR GOAL AND MOTIVATION"
+        }
+      ]
+    },
+    {
+      "coefficient": 3.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE, also KNOWN AS THE WATER_CYCLE, is THE PROCESS BY which WATER moves THROUGH THE Earth'S SYSTEMS, including THE Oceans, ATMOSPHERE, LAND, AND ICEBERGS, AND THEATERMOBILES, AND THEATERMOBILES, AND THEATERMOBILES"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF COFFEE is ONE THATTASTES GOOD, makes YOU feel GOOD, and, MOST importantly, MAKES YOU feel GOOD. it'S A COMBINATION OF FLAVOR, BALANCE, AND SUSTAINABILITY \u2014 AND, OF COURSE, A BIT OF AWE-some"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "THE SKY LOOKS BLUE FOR several REASONS, primarily DUE TO THE PHENOMENON OF DIFFRACTION AND SCATTERING OF LIGHT BY THEOATOMS OF THE OZONE layer IN THE atmosphere.\n\nWhen SUNLIGHT, which IS COMPOSED OF A spectrum OF COLORS, enters THE"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "LEARNING A NEW LANGUAGE IS A rewarding AND ENHANCING EXPERIENCE, AND HERE ARE THREE TIPS THAT CAN HELP YOU MAKE IT MORE EFFECTIVE AND ENJOYABLE:\n\n1. **Practice EVERYDAYLY** \u2013 ConsISTENT PRACTICE IS KEY TO PROGRESS. NO MATTER HOW SMALL"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER IS A PROGRAMMING LANGUAGE PROCESSOR that CONVERTSSOURCE CODE (usually written IN A high-LEVEL LANGUAGE LIKE C, C++, or JAVA) INTO A machine CODE (usually written IN A low-LEVEL LANGUAGE LIKE BINARIES) that THE COMPUTER can EXECUTE.\n\nTHE compiler performs THE FOLLOW"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "THE HISTORY OF THE bicycle\n\nThe BICYCLE, a simple yet INNOVATIVE INSTRUMENT OF TRANSPORTATION, has AFFECTED THE LIVES OF people across THE WORLD throughout HISTORY, evolving through numerous STAGES OF DEVELOPMENT, FROM THE earliest primitive forms TO THE MODERN DAY model. its development"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE-CANCINGING HEADFANS WORK BY usingING THE PRINCIPLE OF INTERFERENCE OF SOUND WAVES TO CANCEL OUT background NOISE.\n\nHERE'S A STEP-BY-STEP EXPLANATION:\n\n1. **Sound WAVES ARE generated** in THE AIR by the source OF THE noise ("
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "BUYING A USED LAPTOP: A GUIDE TO HELPING YOU make AN INFORMED DECISION\n\nWhen BUYING A USED LAPTOP, it'S IMPORTANT TO CONSIDER multiple factors TO MAKE sure YOU get THE BEST value FOR YOUR MONEY AND THAT IT'S IN GOOD condition. HERE'S A COMPREHENS"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "WEATHER AND CLIMATE are often USED INTERCHANGEABLY, BUT THEY HAVE DISTINCT definitions AND MEANINGS:\n\n**WEATHER** refers TO THE SHORT-TERM, VARIED, AND INSTANTANEOUS events THAT OCCUR IN a PARTICULAR LOCATION, SUCH AS rain, snow, SUNLIGHT, AND STORM"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "STARTING TO RUN regularly is A GREAT WAY TO improve YOUR HEALTH AND WELLBEING, AND can BECOME A HABIT THAT LASTS A LIFETIME. HERE IS A RECOMMENDED RUTINE FOR STARTING TO RUN regularly:\n\n---\n\n### **A 7-DAY RUTINE FOR STARTING"
+        }
+      ]
+    },
+    {
+      "coefficient": 4.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER cycle is A cycle that REPEATES continuously, involving THE movement of water between THE atmosphere, THE earth's surface, AND THE oceans, AND THE ground.ES, AND THE ground, AND THEOceans, AND THEGROUND.ES, AND THEOceans, AND THEOceans, AND THEO"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD COPPFE is NOT JUSTICE, but also a journey, and a journey OFECTIONALY.\n\nA good COPPFE is NOT JUSTICE, but alsoA journey, AND A journey OFECTIONALY.\n\nA journey OFECTIONALY is a journey OFECTIONALY"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The COLOR OF THE SKY looks BLUE is A result OF THE PHYSICSICAL PROCESSES THAT OCCUR IN THE atmosphereES OF THE Earth'S surface AND SUNLIGHT, AND theSUNLIGHT isOURCE OF THE SUNLIGHT, AND theSUNLIGHT isOURCE OF THE SUNLIGHT, AND THESUNLIGHT is"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "LEARNINGA new LANGUAGE is A Wondrous journey, and here ARETHREE tipsESSENTIAL TO HELP you DO it effectivelyICIENTLY and ENJOYABLY:\n\n---\n\n**1. Practice regularly and CONSISTENTLY**\n\nRegular PRACTICE, regardless OF THE TIME AND LOCATION, is THE KEY to"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER is A PROGRAMming LANGUAGE PROCESSOR that translatesSOURCESOURCE CODE (like a PROGRAM) INTO A PROGRAMMING LANGUAGE (usually a programMING LANGUAGE) that THE COMPUTER can RUN (like a program) programMING_LANGUAGE, such as C or Java) CODE.\n\nA compiler is A series OF PROCESSSESSES"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "THE History OF THE bicycle\n\nThe bicycle is A simple but revolutionary INVENTION, and its HISTORY is A tale OF the evolutionOLUTION OF the INVENTION, from THE earliestENGLISHSAGEACTIONS to THE modern DAY, and its development.\n\nThe bicycle is a simple machine, but its impact isWIDE"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE-cANCINGING headphones WORK BY usingINGREDIENTS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchAS suchASuchAS suchASUCHAS such"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "BUYING A used LAPTOP is A great OPTION, but requiresINGREDIENTS to make sure it'S safe, and safe and secure.\n\nWhen BUYING A used laptop, YOU should LOOK FOR:\n\n1. **Condition AND FUNCTIONALITY**:\n\n2. **Condition**:\n\n- **Condition** is THE MAIN factor"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "WEATHER AND CLIMATE are related, butYET DIFFERENT concepts, which, although related, are DISTINCTLY different.\n\n**Weather** is the short-TERM, INSTANTANEOUS stateMENT OF the conditions in a region, such as the weather, and is THEMATICALLY THE sameEFFECT"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "STARTING TO RUN regularlyLY is A GREAT WAY TO start a new LIFECHANGING journey, and it'S ANOTHERY WAY TOGETHER.\n\nA routine FOR STARTING TO RUN regularlyLY is A GREAT WAY toGETHER\n\nLYING IN a quiet,ENOUGHYARD orYARD withIN"
+        }
+      ]
+    }
+  ],
+  "vocab_centered": [
+    {
+      "coefficient": 0.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth. It begins with evaporation, where water turns into vapor and rises into the atmosphere. This vapor condenses into clouds, and when the clouds become heavy, precipitation falls as rain, snow, or other forms of water"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of factors that contribute to its flavor, aroma, and overall experience. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different coffee beans (e.g., Arabica, Robusta) have distinct"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n1. **Sunlight** is made up of different colors of light, each with a different wavelength. The visible spectrum of light includes red, orange, yellow, green, blue, indigo, and violet.\n\n"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice regularly** \u2013 Consistency is key. Even 15\u201330 minutes a day can make a big difference. Use apps like Duolingo, Memrise, or language exchange platforms to stay engaged.\n\n2. **Immer"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates source code written in a high-level programming language into machine code or an intermediate representation that can be executed by a computer. Here's a summary of what a compiler does:\n\n1. **Parsing**: The compiler reads the source code and analyzes it to understand its structure and syntax.\n2."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey that spans over 150 years, reflecting technological innovation, social change, and the evolution of human mobility. Here's a concise overview:\n\n---\n\n### **Early Origins (17th\u201318th Century)**\n- **17th Century**: The concept of"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted ambient sounds. Here's a breakdown of how they work:\n\n---\n\n### **1. How ANC Works:**\n\n#### **a. Microphone for Sound Capture**\n- The headphones have a **microphone** that picks"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and check for quality, performance, and reliability. Here are the key things to look for:\n\n---\n\n### **1. Condition of the Laptop**\n- **Physical Damage:** Check for scratches, dents, or broken parts. Look for:\n  - Cr"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "The difference between **weather** and **climate** is a common question in meteorology and environmental science. Here's a clear explanation:\n\n---\n\n### **Weather**\n- **Definition**: The **short-term** atmospheric conditions in a specific place at a specific time.\n- **Time frame**: Typically **1 day or shorter**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of regular physical activity. Here's a **recommended routine** to help you get started:\n\n---\n\n### **1. Set Clear Goals**\nBefore you begin, define your **goals**:\n- **Short-term**: Run"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and plants. It includes processes like evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, cools, and condenses into clouds."
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **flavor, aroma, balance, and experience**. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different beans (Arabica, Robusta, Liberica) have different flavor"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue because of how sunlight interacts with the Earth's atmosphere. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\n1. **Sunlight is white**  \n   The Sun emits light of all colors, but when it reaches Earth, it passes through the atmosphere.\n\n2. **"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n### 1. **Practice Daily, Even for 15 Minutes**\nConsistency is key. Even 15 minutes a day can make a big difference. Use apps like Duolingo, Memrise, or Anki to practice vocabulary and grammar"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language code** (like C, Java, Python, etc.) into **machine code** (binary instructions that a computer can execute). Here's a summary of what a compiler does:\n\n---\n\n### **What a Compiler Does:**\n\n1. **Parsing the"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey that spans over 150 years, reflecting the evolution of human innovation, transportation, and lifestyle. Here's a concise overview:\n\n---\n\n### **Early Beginnings (17th\u201318th Century)**\n- **17th Century**: The concept of a"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by **canceling out unwanted ambient sounds** (like traffic, people talking, or background noise) using **active noise cancellation (ANC)**. Here's a breakdown of how they work:\n\n---\n\n### \ud83d\udd27 **How Noise-Cancelling Headphones Work**\n\n#### 1. **Active"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and check for quality, performance, and reliability. Here are the key things to look for when buying a used laptop:\n\n---\n\n### **1. Check the Laptop's Condition**\n- **Physical Condition**: Look for any signs of damage (scratches, d"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Great question! Here's a clear and concise explanation of the difference between **weather** and **climate**:\n\n---\n\n### \u2705 **Weather**  \n- **Definition**: The **short-term** atmospheric conditions in a place at a specific time.  \n- **Time frame**: Usually **1 day or less**.  \n"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of exercise. Here's a **recommended 7-week beginner running routine** to help you get started:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **7-Week Beginner Running Routine**\n\n#### **Week 1"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.75,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and plants. It includes processes like evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, cools, and condenses into clouds."
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **flavor, aroma, balance, and experience**. Here's what makes a good cup of coffee:\n\n---\n\n### **1. QUALITY OF THE COFFEE BEAN**\n- **Bean Type**: Different beans (Arabica, Robusta, Liberica)"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of how sunlight interacts with the Earth's atmosphere. Here's a simple explanation:\n\n---\n\n### **Why the Sky is Blue**\n\n1. **Sunlight is White**:  \n   The Sun emits light of all colors, but when it reaches Earth, it's **white**.\n\n2. **Light"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **three effective tips** for learning a new language:\n\n---\n\n### 1. **Practice Daily, Even for 15-30 Minutes**\nConsistency is key! Even 15-30 minutes a day can make a big difference. Use apps like Duolingo, Babbel"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language code** (like C, Java, Python, etc.) into **machine code** (binary instructions that the computer can execute). Here's a summary of what a compiler does:\n\n---\n\n### **What a Compiler Does:**\n\n1. **Reads"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, technology, and culture. Here's a concise overview of its development:\n\n---\n\n### **1. Ancient Roots (Before 1800)**\n- **Ancient Civilizations**: The concept of a \"bicycle\" (two-wheeled vehicle"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by **canceling out unwanted ambient noise** (like traffic, people talking, or background sounds) using **active noise cancellation (ANC)**. Here's a breakdown of how they work:\n\n---\n\n### \ud83d\udd27 **How Noise-Cancelling Headphones Work**\n\n#### 1. **Active"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a **used laptop**, it's important to do your research and make sure you're getting a **good value** and a **reliable device**. Here's a **comprehensive guide** on what to look for when buying a used laptop:\n\n---\n\n### \u2705 **1. Check the Condition of the"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Great question! Here's a clear and simple explanation of the difference between **weather** and **climate**:\n\n---\n\n### \u2705 **WEATHER**  \n- **What it is**: The **short-term** (usually 1-30 days) **conditions** of the atmosphere **at a specific place at a"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of exercise. Here's a **recommended 12-week beginner running routine** to help you get started:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **12-Week Beginner Running Routine**\n\n#### **Week"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth. It includes processes like evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and soil, rises into the atmosphere, cools, and condenses into clouds. When the clouds"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A **good cup of coffee** is one that **tastes great**, **tastes good**, and **tastes like coffee**. But what makes a **good cup of coffee**? Let's break it down into **QUALITY** and **TASTE**.\n\n---\n\n### \ud83c\udf1f **1. THE"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of **scattering of sunlight by the Earth's atmosphere**.\n\nHere's a simple explanation:\n\n---\n\n### **Why is the Sky Blue?**\n\nThe **sun emits light** that is made up of **different colors** (ROYGBIV: Red, Orange, Yellow, Green, Blue,"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **three effective tips** for learning a new language:\n\n---\n\n### 1. **USE IT EVERY DAY!**  \n**Why?**  \nLanguage is like a muscle \u2014 the more you use it, the better you get.  \n**How?**  \n- Practice with a language partner.  \n"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language code** (like C, Java, Python, etc.) into **machine code** (binary) that a computer can execute.\n\n### What does a compiler do?\n\n1. **Read** the source code (written in a high-level language).\n2"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, technology, and culture. Here's a concise and comprehensive overview:\n\n---\n\n### **1. Ancient Roots (Before 1800)**\n- **Ancient Civilizations**:  \n  - **Greece (5th century BCE)**: The *"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by **canceling out unwanted ambient noise** (like traffic, people talking, wind, etc.) using **active noise cancellation (ANC)**. Here's a breakdown of how they work:\n\n---\n\n### \ud83d\udd27 **How Noise-Cancelling Headphones Work**\n\n#### 1. **Active"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a **used laptop**, it's important to **do your research** and **check the condition**. Here's a **comprehensive guide** to help you make an **informed decision**:\n\n---\n\n## \ud83d\udd0d 1. **Check the Condition of the Laptop**\n- **Physical Condition**: Look for"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**Weather** and **Climate** are two related but **different** concepts in meteorology. Here's a clear explanation of the difference:\n\n---\n\n### \ud83d\udd39 **WEATHER**  \n**Definition:**  \nThe **short-term** (usually 1-30 days) **weather** is the **actual conditions**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of running. Here's a **recommended 12-week beginner running routine** to help you get started on the right foot.\n\n---\n\n## \ud83c\udfc3\u200d\u2642\ufe0f **12-Week Beginner Running R"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.25,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE is the process by which WATER moves through the Earth's SYSTEM. It includes EVAPORATION, CONDENSATION, PRECIPITATION, RUNOFF, and so on. It'S A CONTINUOUS LOOP THAT MOVES WATER THROUGH THE EARTH."
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A **GOOD CUP OF COFFEE** is one that **TASTES GOOD**, **TAKES TIME TO MAKE**, and **TAKES CARE OF YOUR BODY**.\n\nHere are the **KEY FACTORS** that make a good cup of coffee:\n\n---\n\n### 1. **THE ROAST**\n"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of **SCATTERING** of sunlight by the **ATMOSPHERE**.\n\nHere's a simple explanation:\n\n---\n\n### \ud83c\udf0d **Why is the SKY BLUE?**\n\nThe **SKY looks BLUE** because of the way **LIGHT interacts with the ATMOSPHERE**.\n\n---\n\n"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **3 TIPS** to help you learn a new language more effectively:\n\n---\n\n### 1. **USE IT EVERY DAY!**  \n**Why?**  \nLanguage is like a muscle \u2014 the more you use it, the better you get.  \n**How?**  \n- Practice with a"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **HIGH LEVEL PROGRAMMING LANGUAGE** (like C, C++, Java, Python, etc.) into **LOW LEVEL MACHINE CODE** (like assembly or binary) that the computer can run.\n\n### What does a compiler do?\n\n1. **READS** the source code ("
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, technology, and culture. Here's a concise and comprehensive overview:\n\n---\n\n### **1. Ancient Roots (Before 1800)**\n- **Walking and Early Tools**: Humans have been walking for thousands of years. No bicycles yet.\n- **"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by **canceling out unwanted noise** from the environment. Here's a **simple explanation** of how they work:\n\n---\n\n### \ud83c\udfa7 **How NOISE-CANCING HEADPHONES WORK?**\n\n**1. They use a TECHNOLOGY called \"ACTIVE NOISE CANCELL"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a **USED LAPTOP**, it's important to **DO YOUR RESEARCH** and **CHECK EVERYTHING**. Here's a **COMPREHENSIVE LIST OF WHAT YOU SHOULD LOOK FOR** when buying a used laptop:\n\n---\n\n### \ud83d\udd0d 1. **MODEL & BRAND** \u2013 CHECK THE"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**Weather** and **CLIMATE** are two related but **DIFFERENT** terms. Here's a clear explanation of the difference:\n\n---\n\n### \ud83d\udd39 **WEATHER**  \n**What it is:**  \nThe **short-term** (usually **1 WEEK** or less) **CONDITIONS** of the **"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and get more exercise into your life. Here's a **recommended 12-Week RUNNING RUTINE** for beginners (or even for those who are just starting out). This is a **SMART, CONSISTENT, AND"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE is the process by which WATER moves through the EARTH and the ATMOSPHERE. It includes processes like EVAPORATION, CONDENSATION, PRECIPITATION, RUNOFF, and so on. It'S A BIG LOOP THAT REPEATS OVER AND OVER."
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF COFFEE IS A COMFORTABLE, RELAXING, AND ENJOYABLE EXPERIENCE. IT'S NOT JUST ABOUT THE TASTE, BUT ALSO ABOUT THE WAY IT MAKES YOU FEEL.\n\n**WHAT MAKES A GOOD CUP OF COFFEE?**\n\n1."
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of the way **LIGHT** interacts with the **ATMOSPHERE**.\n\n---\n\n### \ud83c\udf0d **Why IS THE SKY BLUE?**\n\nThe **SKY** appears BLUE because of the way **LIGHT** (which is made of particles called **PHOTONS**) interacts with the"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **3 TIPS** to HELP YOU LEARN A NEW LANGUAGE MORE EFFECTIVELY:\n\n---\n\n### 1. **USE YOUR BROWSER TO SET UP A LANGUAGE LEARNING SITE (like Duolingo, Babbel, etc.)**\n- **Tip:** Set up a **LANGUAGE LEARNING SITE"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **COMPILER** is a program that **CONVERTS** high-level programming LANGUAGE (like C, C++, Java, etc.) into **LOW-LEVEL MACHINE CODE** (like assembly, binary, etc.) that the computer can RUN.\n\n### What DOES A COMPILER DO?\n\n1. **READS**"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The HISTORY OF THE BICYCLE is a fascinating journey through time, and I'm happy to share it with you!\n\n---\n\n### \ud83d\udeb2 **BICYCLE HISTORY**\n\n**1. Ancient Times (Before 1800 AD)**\n- **BicyCLE** was NOT IN USE in the WESTERN"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-CANCING HEADPHONES WORK BY **REMOVING NOISE** from the environment.\n\nHere's a **SIMPLE EXPLANATION** of HOW THEY WORK:\n\n---\n\n### \ud83c\udfa7 **NOISE-CANCING HEADPHONES** work by **REMOVING NOISE** from the environment.\n\nThey"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a **USED LAPTOP**, it's important to **DO YOUR RESEARCH** and **CHECK EVERYTHING**. Here's a **COMPREHENSIVE LIST OF WHAT YOU SHOULD LOOK FOR** when buying a **USED LAPTOP**:\n\n---\n\n### \ud83d\udd0d 1. **MODEL & BRAND** \u2013"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**WEATHER** and **CLIMATE** are two related but **DIFFERENT** terms. Here's a clear explanation of the difference:\n\n---\n\n### \ud83d\udd39 **WEATHER**  \n**What it is:**  \n- The **SHORT-TERM** (usually **1 WEEK** or LESS) **CLIMATE OF"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Absolutely! Starting a running routine is a great way to improve your health, build endurance, and get more FIT! Here's a **SMART, STEP-BY-STEP** **RUNNING RUTINE** for **BEGINNERS** (or even **INTERMEDIATE** runners who want to **GET BACK TO"
+        }
+      ]
+    },
+    {
+      "coefficient": 2.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE IS THE PROCESS BY WHICH WATER IS MOVED THROUGH THE ATMOSPHERE, OCEANS, LAND, AND ICE. IT INCLUDES EVAPORATION, CONDENSATION, PRECIPITATION, RUNOFF, AND OTHER WATER MOVEMENTS. THIS IS HOW WATER GETS TO"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF COFFEE IS A COMFORTABLE, RELAXING, AND ENJOYABLE EXPERIENCE.\n\n**WHAT MAKES A GOOD CUP OF COFFEE?**\n\n1. **ROASTING** \u2013 The ROASTING is the MOST IMPORTANT part of the COFFEE.\n\n"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "**THE SKY LOOKS BLUE BECAUSE OF THE SCATTERING OF LIGHT BY THE ATMOSPHERE!**\n\nHere'S A SIMPLE EXPLANATION:\n\n---\n\n**THE SKY LOOKS BLUE BECAUSE OF THE SCATTERING OF LIGHT BY THE ATMOSPHERE!**\n\n---\n\n**Why is the SKY"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here ARE **3 TIPS** to LEARN A NEW LANGUAGE **EFFECTIVELY**:\n\n---\n\n### 1. **USE YOUR **LIFE** TO LEARN THE LANGUAGE**  \n**EXERCISE, USE IT, AND BE ACTIVE**  \n- **SPEAK, WRITE, LISTEN"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **COMPILER** is a program that **TURNS YOUR PROGRAM (written in a HIGH LEVEL LANGUAGE like C, C++, JAVA, etc.) INTO A PROGRAM that can be RUN on a COMPUTER**.\n\nSo, the COMPILER does the FOLLOWING:\n\n1. **READS** your source code (like C"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "**THE HISTORY OF THE BICYCLE**\n\nThe BICYCLE is one of THE MOST IMPORTANT INVENTIONS OF THE 20TH CENTURY.\n\n**BICYCLE INVENTED IN 1816 BY...?**\n\n**NO!** It was NOT INVENTED IN 1816"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "**NOISE-CANCING HEADPHONES WORK BY USING A TECHNOLOGY CALLED \"ACTIVE NOISE CANCELLING (ANC)\"**\n\nHere'S A SIMPLE EXPLANATION:\n\n---\n\n### **What IS ACTIVE NOISE CANCELLING (ANC)?**\n\nIt's A TECHNOLOGY THAT USES **SOUND"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When BUYING A USED LAPTOP, here's what YOU SHOULD LOOK FOR TO MAKE SURE IT IS IN GOOD CONDITION AND WORKS WELL.\n\n---\n\n### \ud83d\udd27 1. **BATTERY (BATTERY LIFE & HEALTH)**\n- **BATTERY LIFE** = How LONG DOES IT LAST ON A FULL CHARGE"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**WEATHER** vs. **CLIMATE** \u2013 **DIFFERENCE EXPLAINED**\n\n---\n\n### **1. WHAT IS WEATHER?**\n\n**WEATHER** is the **TEMPERATURE, PRECIPITATION, SUNLIGHT, WIND, HUMIDITY, PRESSURE, etc.** that"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Absolutely! Here'S A **SMART, SUSTAINABLE, AND EFFECTIVE** **RUNNING RUTINE FOR STARTING TO RUN REGULARLY.**\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **RUNNING RUTINE FOR STARTING TO RUN REGULARLY**\n\n**Goal: Build A BASE,"
+        }
+      ]
+    },
+    {
+      "coefficient": 2.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE IS THE PROCESS THAT MOVES WATER THROUGH THE ATMOSPHERE, OCEANS, LAND, AND ATMOSPHERE. IT INCLUDES EVAPORATION, CONDENSATION, PRECIPITATION, AND RUNOFF. THE WATER CYCLE IS A BIG LOOP THAT IS VERY IMPORTANT FOR"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF COFFEE IS A COMFORTABLE, RELAXING, AND ENJOYABLE WAY TO START YOUR DAY OR END YOUR DAY.\n\n**WHAT MAKES A GOOD CUP OF COFFEE?**\n\n1. **ROASTING** - The BEST ROASTING (like the"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "**THE SKY LOOKS BLUE BECAUSE OF THE SCATTERING OF LIGHT BY THE ATMOSPHERE.**\n\nHere'S THE SIMPLEST WAY TO UNDERSTAND IT:\n\n**THE SKY LOOKS BLUE BECAUSE OF THE SCATTERING OF LIGHT BY THE ATMOSPHERE.**\n\n**Why?**\n\n"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here ARE **3 TIPS** to LEARN A NEW LANGUAGE **EFFECTIVELY**:\n\n---\n\n### 1. **USE THE **\"SMART\"** METHOD (like the **\"SMART\"** method)**\n- **S**PEAK, **W**RITE, **R**EAD"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **COMPILER** is a PROGRAM that takes YOUR **SOURCE CODE** (like C, C++, JAVA, etc.) and **CONVERTS IT TO** **BYTE CODE** (like .OBJ, .DLL, .EXE, etc.) that can be RUN on YOUR COMPUTER.\n\nSo, the COMPILER"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "**THE HISTORY OF THE BICYCLE**\n\nThe BICYCLE is one OF THE MOST IMPORTANT INVENTIONS OF THE 20TH CENTURY.\n\n**BUT IT WASN'T INVENTED IN THE 20TH CENTURY. IT WAS INVENTED IN THE 1800s."
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE-CANCING HEADPHONES WORK BY USING **SOUND WAVE TECHNOLOGY** to **CANCEL OUT THE NOISE** that comes from the **ENVIRONMENT** (like: AIR, ROOF, etc.)\n\nHere'S HOW THEY WORK:\n\n---\n\n### 1. **NOISE CANCELLING HEAD"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When BUYING A USED LAPTOP, YOU NEED TO LOOK FOR THE FOLLOWING:\n\n1. **MODEL & BRAND** \u2013 Make SURE IT IS THE SAME MODEL AS THE ONE YOU WANT TO BUY. (e.g. HP, DELL, ASUS, MACBOOK, etc.)\n\n2. **OS** \u2013"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**WEATHER** vs. **CLIMATE** \u2013 **DIFFERENCE**\n\n**WEATHER** is the **TEMPERATURE, PRECIPITATION, SUN, STORMS, etc.** that happen **IN A SHORT PERIOD OF TIME** (like 1 DAY, 1 WEEK, 1"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "**A SIMPLE, EFFECTIVE RUTINE TO START RUNNING REGULARLY.**\n\n**Goal: Run 30 MINUTES PER WEEK (or 30 MINUTES PER WEEK) - AND YOU CAN DO IT.**\n\n---\n\n### **1. START WITH A 10 MINUTE \"STARTER\" RUN"
+        }
+      ]
+    },
+    {
+      "coefficient": 3.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "THE WATER CYCLE IS THE PROCESS THAT MOVES WATER THROUGH THE ATMOSPHERE, OCEANS, LAND, AND ATMOSPHERE. IT INCLUDES: EVAPORATION, CONDENSATION, PRECIPITATION, AND RUNOFF. THE WATER CYCLE IS THE SAME AS THE WATER \"C"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A GOOD CUP OF COFFEE is made with:\n\n**1. GOOD ROAST (from a GOOD ROAST) - the best coffee is made with GOOD ROASTS (from a GOOD ROAST) - the best coffee is made with GOOD ROASTS (from a GOOD ROAST) - the best"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "**THE SKY LOOKS BLUE BECAUSE OF THE SCATTERING OF LIGHT BY THE ATMOSPHERE.**\n\n**Why IS THE SKY BLUE?**\n\nThe SKY LOOKS BLUE BECAUSE OF THE SCATTERING OF LIGHT BY THE ATMOSPHERE.\n\n**But WHAT IS SCATTERING?**\n\n"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here ARE 3 **TIPS** to LEARN A NEW LANGUAGE **EASILY & EFFECTIVELY**.\n\n---\n\n### 1. **USE THE **\"SMART\" METHOD** (like the **\"SMART\"** method) - **\"S\" = STUDY, \"M\" ="
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **COMPILER** is a PROGRAM that **TURNS YOUR PROGRAM (written in **C**, **C++**, **JAVA**, **PYTHON**, **HTML**, **SQL**, **JAVA SCRIPT**, **C#**, **PHP**, **JAVA**, **C**, **C++**, **HTML**, **JAVA**, **"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "**THE HISTORY OF THE BICYCLE**\n\nThe BICYCLE is a **VITAL TOOL** that has changed THE WORLD.\n\n**BICYCLE HISTORY**\n\n**1800s - 1800s - 1800s - 1800S - 180"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE CANCELLING HEADPHONES work by using **SOUND WAVE TECHNOLOGY** to **BLOCK OUT the NOISE** that comes from the **OUTSIDE WORLD** (like: AIR, traffic, people, etc.)\n\nThey are NOT the SAME as \"NOISE CANCELLING\" (like"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When BUYING A USED LAPTOP, YOU NEED TO LOOK FOR THE FOLLOWING:\n\n1. **MODEL NUMBER** - (this is the most important one)\n2. **OS (OPERATING SYSTEM) - (like WINDOWS, MAC, LINUX, etc)**\n3. **CPU - (like i5,"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**WEATHER** vs. **CLIMATE** are DIFFERENT!\n\n**WEATHER** is the **TEMPERATURE, PRECIPITATION, SUN, HUMIDITY, etc.** that happens **IN A DAY**.\n\n**CLIMATE** is the **average OF ALL WEATHERS**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "**A 12 WEEK RUTINE FOR STARTING TO RUN REGULARLY.**\n\n**This IS A RUTINE THAT WILL GET YOU TO RUN 3-4 TIMES A WEEK.**\n\n**But you can DO IT IN 12 WEEKS.**\n\n**You CAN DO IT IN 12"
+        }
+      ]
+    },
+    {
+      "coefficient": 4.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": " THE WATER CYCLE is the process that brings WATER to the OCEANS, AT THE OCEANS, AND THE LAND. AND THE WATER is CIRCULATED through the ATMOSPHERE, and the WATER is CIRCULATED through the WATER CYCLE. AND THE WATER is CIRCULATED through the"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "**WHAT MAKES A GOOD COFFEE?**\n\n**1. The BEST COFFEE is made with the BEST COFFEE (from the BEST COFFEE) - BUT the BEST COFFEE is made with the BEST COFFEE (from the BEST COFFEE) - BUT the BEST COFF"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "THE SKY LOOKS BLUE BECAUSE OF THE SCATTERING OF LIGHT by the SUN\n\nThe SCATTERING of LIGHT by the SUN\n\nThe SUN is a STAR and the LIGHT from THE SUN is coming from THE SUN\n\nBut the SCATTERING of LIGHT by the SUN is NOT the same as the SC"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Here ARE 3 **TIPS** to LEARN A NEW LANGUAGE **EASILY** (and **FAST**)\n\n1. **Use THE **\"SMART\" way to LEARN a NEW LANGUAGE\n\n**SMART** is the **BEST** way to LEARN a NEW LANGUAGE\n\n**SMART** is the"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER DOES NOT DO THE SAME as the **PROGRAM** that is being **COMPILED**.\n\nThe **COMPILER** is the **PROGRAM** that **TURNS** the **PROGRAM into** a **PROGRAM that can be RUN on the **COMPUTER** (like the **OS** is the"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "**THE HISTORY OF THE BICYCLE**\n\n**BicyCLE is the MOST EASY way to get around in the ** MOST EASY way to GET around in the ** MOST EASY way to GET around in the ** MOST EASY way to GET around in the ** MOST EASY way to GET around in the"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "NOISE CANCELLING HEADPHONES work by using a **SOUND REVERB** (which is the **SOUND that is coming from the **SOUND SOURCE** (like the **PHONE, or the **SOUND that is coming from the **SOUND that is coming from the **SOUND"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When YOU BUY A USED LAPPY, YOU NEED TO LOOK FOR THE FOLLOWING:\n\n**1. **THE **CPU, GPU, RAM, STORAGE, etc. are ALL **WHAT YOU NEED TO LOOK FOR. **\n\n**2. ** YOU NEED TO LOOK FOR THE **MODEL, VERSION, etc. **"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**WEATHER vs. CLIMATE** are the SAME THING BUT **DIFFERENT** !\n\n**WEATHER = the **TEMPERATURE, SUN, RAIN, etc. that happens in the **ATMOSPHERE **each DAY\n\n**CLIMATE = the **average of all the WEATHER in a"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "**RUNNING RUTINE FOR STARTING TO RUN **\n\n**You CAN DO IT! **\n\n**You CAN DO IT! **\n\n**You CAN DO IT! **\n\n**You CAN DO IT! **\n\n**You CAN DO IT! **\n\n**You CAN DO IT! **\n\n**You CAN"
+        }
+      ]
+    }
+  ],
+  "lowercase_contrast": [
+    {
+      "coefficient": 0.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth. It begins with evaporation, where water turns into vapor and rises into the atmosphere. This vapor condenses into clouds, and when the clouds become heavy, precipitation falls as rain, snow, or other forms of water"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of factors that contribute to its flavor, aroma, and overall experience. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different coffee beans (e.g., Arabica, Robusta) have distinct"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n1. **Sunlight** is made up of different colors of light, each with a different wavelength. The visible spectrum of light includes red, orange, yellow, green, blue, indigo, and violet.\n\n"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice regularly** \u2013 Consistency is key. Even 15\u201330 minutes a day can make a big difference. Use apps like Duolingo, Memrise, or language exchange platforms to stay engaged.\n\n2. **Immer"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates source code written in a high-level programming language into machine code or an intermediate representation that can be executed by a computer. Here's a summary of what a compiler does:\n\n1. **Parsing**: The compiler reads the source code and analyzes it to understand its structure and syntax.\n2."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey that spans over 150 years, reflecting technological innovation, social change, and the evolution of human mobility. Here's a concise overview:\n\n---\n\n### **Early Origins (17th\u201318th Century)**\n- **17th Century**: The concept of"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted ambient sounds. Here's a breakdown of how they work:\n\n---\n\n### **1. How ANC Works:**\n\n#### **a. Microphone for Sound Capture**\n- The headphones have a **microphone** that picks"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and check for quality, performance, and reliability. Here are the key things to look for:\n\n---\n\n### **1. Condition of the Laptop**\n- **Physical Damage:** Check for scratches, dents, or broken parts. Look for:\n  - Cr"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "The difference between **weather** and **climate** is a common question in meteorology and environmental science. Here's a clear explanation:\n\n---\n\n### **Weather**\n- **Definition**: The **short-term** atmospheric conditions in a specific place at a specific time.\n- **Time frame**: Typically **1 day or shorter**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of regular physical activity. Here's a **recommended routine** to help you get started:\n\n---\n\n### **1. Set Clear Goals**\nBefore you begin, define your **goals**:\n- **Short-term**: Run"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle involves the continuous movement of water between the Earth's surface and the atmosphere. It begins with evaporation, where water turns into vapor and rises into the air. This vapor condenses into clouds, then falls as precipitation. The water returns to the Earth as runoff or infiltration, and eventually flows back to oceans"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a sensory experience that combines **flavor, aroma, texture, and comfort**. While personal preference plays a big role, there are several key factors that contribute to a well-made cup of coffee:\n\n---\n\n### **1. Coffee Beans**\n- **Quality matters**: Look for **high-quality"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue because of how sunlight interacts with the Earth's atmosphere.\n\nHere's a simple explanation:\n\n1. **Sunlight is White**: The Sun emits light of all colors, but when it passes through the Earth's atmosphere, it interacts with molecules and small particles in the air.\n\n2. **Scattering of"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice Daily**  \n   Consistency is key in language learning. Even 15\u201330 minutes of practice each day can make a big difference. Use apps like Duolingo, Memrise, or Babbel, or try speaking"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates source code written in a high-level programming language into machine code or an equivalent executable format that can be run on a computer.\n\n### Key Functions of a Compiler:\n\n1. **Parsing**:  \n   - Analyzes the source code to understand its structure and meaning.\n   - Checks"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, engineering, and cultural evolution. Here's a concise overview:\n\n---\n\n### **Early Origins (Pre-19th Century)**\n- **Ancient Roots**: The concept of a two-wheeled vehicle dates back to ancient times. The **Chinese**"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted ambient sounds. Here's a simplified breakdown of how they work:\n\n---\n\n### **1. How ANC Works:**\n- **Microphone (Ambient Sound Capture):**  \n  The headphones have a **microphone"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do some research and check for quality, performance, and reliability. Here are the key things to look for:\n\n---\n\n### **1. Brand and Model**\n- **Check the brand and model** (e.g., Dell, HP, Lenovo, Asus, Apple, Acer"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "The difference between **weather** and **climate** is a common question, and it's important to understand the distinction clearly.\n\n---\n\n### **1. Weather:**\n- **Definition:** The **short-term** atmospheric conditions in a specific place at a specific time.\n- **Timeframe:** Typically **1 day or shorter"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health and fitness. Here's a **step-by-step routine** to help you get started:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **1. Set Clear Goals**\n- **Short-term goals**: e.g., \"Run 5 miles in 2"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.75,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle involves the continuous movement of water between the Earth's surface and the atmosphere through processes like evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, cools, and condenses into clouds. When clouds become heavy, water falls as"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a sensory experience that combines **flavor, aroma, and comfort**. Here are the key factors that contribute to a great cup:\n\n---\n\n### **1. ROAST TYPE**\n- **Light Roast:**  \n  - **Flavor:** Bright, acidic, and fruity (e.g"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue because of how sunlight interacts with the Earth's atmosphere.\n\nHere's a simple explanation:\n\n1. **Sunlight is White**: Sunlight contains all the colors of the visible spectrum, including blue.\n\n2. **Light Scatters in the Atmosphere**: When sunlight enters the Earth's atmosphere, it encounters"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice Daily**  \n   Consistency is key in language learning. Even 15\u201330 minutes of practice each day can lead to significant progress over time. Use apps like Duolingo, Anki, or Memrise to stay"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates source code written in a high-level programming language into machine code or an equivalent low-level language. Here's a summary of what a compiler does:\n\n1. **Parsing**: Reads the source code and analyzes it to understand its structure and meaning.\n2. **Translation**: Converts the source code"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, engineering, and cultural evolution. Here's a concise overview:\n\n### **Early Origins (Pre-19th Century)**\n- **Ancient Roots**: The concept of a two-wheeled vehicle dates back to **ancient times**, with references to"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted noise from the environment. Here's a simplified breakdown of how they work:\n\n---\n\n### **1. How ANC Works:**\n\n**Active Noise Cancellation (ANC)** uses **microphones** to detect **external noise"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do some research and check for quality. Here are the key things to look for:\n\n---\n\n### **1. Brand and Model**\n- **Check the brand and model** (e.g., Dell, HP, Lenovo, ASUS, Apple, Acer, etc.).\n-"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Sure! Here's a clear explanation of the difference between **weather** and **climate**:\n\n### **Weather**:\n- **Definition**: The **short-term** atmospheric conditions in a specific place over a short period (usually 1-3 days).\n- **Examples**: \n  - A cold rain\n  -"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health and fitness. Here's a **step-by-step routine** to help you get started:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **1. Set Clear Goals**\n- **Short-term goal (Weeks 1\u20134):** Run 1"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle involves the continuous movement of water between the Earth's surface and the atmosphere through processes like evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, cools, and condenses into clouds. Then, it precipitates as rain or"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee depends on several factors, and the \"best\" combination can vary based on personal preference. Here are the key elements that contribute to a great cup:\n\n---\n\n### **1. ROASTING**\n- **Bean Type:** \n  - **Light Roast:** Bright, floral, and fruity flavors"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of how sunlight interacts with our atmosphere.\n\nHere's a simple explanation:\n\n**1. Sunlight is WHITE.**  \nSunlight contains all colors of the visible spectrum.\n\n**2. Atmosphere SCATTERS LIGHT.**  \nThe Earth's atmosphere is full of tiny particles (like dust and"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice Daily**  \n   Consistency is key in language learning. Even 15-30 minutes of practice each day can lead to significant progress over time.\n\n2. **Immerse Yourself in the Language**  \n   Surround yourself"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates source code into machine code (or another target format). Here's a summary of what it does:\n\n1. **Parsing**: Reads and analyzes the source code to understand its structure and meaning.\n2. **Translation**: Converts the source code into an intermediate representation (e.g., Intermediate Representation"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, engineering, and cultural evolution. Here's a concise yet comprehensive overview:\n\n### **Early Origins (Pre-19th Century)**\n- **Ancient Roots**:  \n  The concept of a wheeled vehicle dates back to **3500 BC"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)** technology. Here's a simplified breakdown:\n\n---\n\n### **1. How It Works:**\n- **Microphone (Environmental Mic):** Captures ambient noise (like traffic, people talking, or wind).\n- **DSP (Digital Signal Processing):"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do some research and check for potential issues. Here are the key things to look for:\n\n---\n\n### **1. Brand and Model**\n- **Check the Brand and Model** (e.g., Dell, HP, Lenovo, ASUS, Apple, Microsoft)\n- **Verify"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Sure! Here's a clear explanation of the difference between **weather** and **climate**:\n\n### \ud83c\udf21\ufe0f **Weather**  \n- **Definition**: The **short-term** atmospheric conditions in a specific place over a period of **hours to several weeks**.  \n- **Examples**:  \n  - A cold"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be rewarding, but it's important to approach it gradually to avoid injury and build consistency. Here's a **recommended 7-week routine** to help you get started:\n\n---\n\n### **Week 1 \u2013 Build Foundation**\n**Goal:** Get comfortable with running and establish a baseline.\n\n| Day |"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.25,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle involves evaporation, condensation, precipitation, and collection. Sunlight heats Earth's surface, causing water to evaporate. Evaporated water rises, cools, and condenses into clouds. Clouds release water as precipitation (rain, snow, sleet), and the water collects in bodies of"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee depends on several factors, including **roast type**, **coffee beans**, **water quality**, **brewing method**, and **personal preference**. Here's a breakdown:\n\n### 1. **ROAST TYPE**\n   - **Light Roast** (Nitro, French, or Mild"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of how sunlight interacts with our atmosphere.\n\nHere's a simple explanation:\n\n**1. Sunlight is WHITE.**  \nSunlight contains all colors of the visible spectrum.\n\n**2. Atmosphere SCATTERS LIGHT.**  \nThe Earth's atmosphere is full of PARTICLES (like nitrogen and"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Learning a new language is a rewarding journey! Here are **three effective tips** to help you succeed:\n\n### 1. **Immerse Yourself in the Language**  \n   - **Listen to music, podcasts, and movies** spoken in the language.  \n   - **Watch TV shows and YouTube videos** with"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler translates **source code** into **machine code** that a computer can execute.\n\nHere's a summary of what a compiler does:\n\n1. **Parsing** the source code to understand its structure.\n2. **Lexing** (or scanning) the code to convert it into a stream of tokens.\n3."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through innovation, invention, and human progress. Here's a concise overview:\n\n### **Early Origins (Ancient Times)**\n- **Roman Empire (1st Century CE):** The first bicycles: *P\u00e9dal\u00e9s*  \n  - Hand-cranked, wooden"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)** technology. Here's a simplified breakdown:\n\n### 1. **Microphone Picks Up External NOISE**\n   - The headphones have **microphones** that pick up **environmental noise** (e.g., traffic, people talking, wind).\n\n"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do some research and check for potential issues. Here are the key things to look for:\n\n---\n\n### **1. Brand and Model**\n- **Check the Brand and Model** (e.g., Dell, HP, Lenovo, ASUS, Apple, Microsoft)\n- **Verify"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Weather and climate are often used interchangeably, but they have **important differences**:\n\n### **Weather**:\n- **Definition**: The **short-term** atmospheric conditions in a region over a period of **hours to several weeks**.\n- **Examples**: \n  - A cold FRONT\n  - A RAINY"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be rewarding, but it's important to approach it gradually to avoid injury and build consistency. Here's a **recommended 7-week routine** to help you get started:\n\n---\n\n### **Week 1 \u2013 BUILDING FOUNDATION**\n**Goal:** Get used to running and establish a baseline\n\n|"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE describes how WATER MOVES through our EARTH's SYSTEMS. It starts with EVAPORATION, then WATER TRAVELS through the ATMOSphere as a WATER VAPOR. The WATER ORBITS the EARTH as a WATER MOISTURE PARTICLE. Then it ORBITS the E"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee depends on several factors, including:\n\n### 1. **ROASTING QUALITY**\n   - **Bean Variety**: Different beans taste differently (e.g., Ethiopian Yirgacheffe, Colombian, Sumatra, Brazilian).\n   - **Roast Profile**: \n     - **Light Ro"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of how sunlight interacts with our atmosphere.\n\nHere's a simple explanation:\n\n---\n\n**The sky is blue:**  \n\u2705 **Reason:** Sunlight is WHITE.  \n\u2705 **What happens next:**  \n- Sunlight contains all colors of the SPECTRUM (red, orange, yellow, green"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Learning a new language is incredibly rewarding! Here are three tips that can help you accelerate your journey:\n\n---\n\n### 1. **\u6c89\u6d78 (Immersion)**  \n**What it is:** Surround yourself completely with the LANGUAGE.  \n**How to Do It:**  \n- LIVE IN A LANDWHERE THE LANGUAGE IS spoken (e"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler translates **human-readable code (like C++ or Java)** into **machine code (like CPU instructions)**.\n\nHere's a summary of what a compiler does:\n\n1. **Parses** the source code.\n2. **Analyzes** the code to understand it (e.g., variable types, function"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through innovation, invention, and human perseverance. Here's a concise overview:\n\n### **Early Origins (AncIENT TIMES TO 1800s)**\n\n- **AncIENT TIMES**:  \n  - The concept of a bicycle-like vehicle dates BACK TO **200"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)** technology. Here's a simplified explanation:\n\n### \ud83c\udfa7 How THEY WORK:\n\n1. **Microphone Picks Up ENVIRONMENTAL NOISE** (like airplane noise or traffic)\n2. **Processing Unit (in the headphone)** analyzes this noise"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, here are the **key factors to consider** to ensure you get a reliable, safe, and worthwhile purchase:\n\n---\n\n### \u2705 **1. CHECK THE DEVICE\u2019S AGE**\n- **Preferred:** 2015 OR NEWER (2023+)\n- **Rationale"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Weather and Climate are often used interchangeably, but they are **NOT the same**. Here's the key difference:\n\n### **Weather**  \n- **Definition**: The **short-term** atmospheric conditions (temperature, PRECIPITATION, wind, SEASONAL SUNLIGHT, humidity, etc.) in a specific"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be rewarding! Here's a **structured, effective ROUTINE** to get you started:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **5 WEEK RUNNING RUTINE (For Beginners)**\n\n**Goal:** Build ENDURANCE & FREQUENT RUNS (aim for 3-5"
+        }
+      ]
+    },
+    {
+      "coefficient": 2.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE is when WATER EVAPAPRTES from OCEANS, LAND SURFACE, and ICE CAPS. The EVAPORATED WATER travels THROUGH THE ATMOSphere as WATER VAPOR. The WATER VAPOR condenses into PRERIPARITY FOG or ICE AND FALLS"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of COFFEE involves MANY factors! Here's a COMPREHENSIVE look at WHAT MAKES A GOOD COFFEE:\n\n**1. ROASTING QUALITY**\n- **Balance** = acidic + ROUNDING + SMOKEN NOTES (ideal for COFFEE ESSAYS)\n-"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky LOOKS BLUE because of a phenomenon called **MIRAGE EFFECT**.\n\nBut here's the REAL science behind it:  \n\nThe SKY LOOKS BLUE because of the **SCATTERING of LIGHT** by the **ATMOSPHERE.\n\nHere's how:\n\n1. **LIGHT IS MADE OF PARTICLES"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Learning A NEW LANGUAGE is incredibly rewarding! Here are THREE tips that can SUPERcharge your LANGUAGE LEARNING JOURNEY:\n\n---\n\n### 1. **USE YOUR PHONE TO YOUR ADVANTAGE **\ud83d\udcf1\n\n- **Download A LANGUAGE APP** (like Duolingo, Anki, or FluentU)\n- **Set"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER takes YOUR CODE (like Python or C++) and CONVERTS it to MACHINE CODE (like Intel x86 Assembly).\n\nLet me KNOW your CODE language, and I'll SHOW YOU what the COMPILER does."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The HISTORY OF THE BICYCLE\n\nThe bicycle is more THAN A MODE OF TRANSPORTATION\n\nThe bicycle HAS BEEN CHANGEING LIVES since THE 19th CENTURY\n\nEarly BICYCLE INVENTIONS (1800s)\n\n\u2192 THE CYCLONE CYLINDER: 182"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones use BOTH Passive and Active Noise cancellation (ANC)\n\n\u2705 Here's how they WORK:\n\n**1. PASSIVE ANC (Built-in Noise IS blocked by the HEADPHONES**\n- The PHONE OR COMPUTER plays MUSIC into THE HEADPHONES\n- The HEADPHONES emit SOUND waves to CREATE a"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a USED LAPTOP, here are THE KEY things to LOOK FOR to ensure it's a GOOD BUY:\n\n---\n\n### **1. OS VERSION (Most IMPORTANT)**\n- **Windows 10 OR Windows 11** is required for **CONTINUE WORKING** (especially Microsoft365, One"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Weather and CLIMATE are both related to Earth's ATMOSPHERE, but they DIFFERENCE in WHAT THEY DESCRIBE!\n\n\ud83c\udf1f **Weather** describes:  \n\u2192 SHORT-TERM weather conditions (e.g. temperature, PRECIPITATION, wind, SEEDS, STELLA FLUKE temperatures)\n\n"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a RUNNING REGULARLY routine can lead to HUGE health benefits!\n\nHere's a COMPREHENSIVE ROUTINE designed for BEGINNERS:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **5 Days/week | 30 minutes/day | ALL AAGES**\n\n**Goal: Build ENDURANCE & FRE"
+        }
+      ]
+    },
+    {
+      "coefficient": 2.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE is when WATER is recycled through the Earth's SYSTEMS. \n\n WATER EVAPAPRTES from OCEANS, LAND SURfaces, and SKY. \n\nWater vapor THEN condenses into Clouds.\n\nClouds RELEASE WATER as RAIN or SNOW, which INFLUENCES the E"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of COFFEE is made WITH LOVE\u00ae\n\n******\nThe KEY TO A GOOD COFFEE EXPERIENCE is TRUE TO THE ROASTING PROCESS\n\n\ud83c\udf1f HERE'S HOW WE MAKE THE BEST COFFEE POSSIBLE:\n\n\u2081. **Climate & EARTHQUAKE RESILIENT Florida FLUVIAL S"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The SKY looks BLUE because of a phenomenon called SCATTERING.\n\n---\n\n**Here's a SIMPLE explanation using SCIENCE:**\n\n---\n\n**The SKY is BLUE.**\n\nYes! It IS blue.\n\nBecause of SCATTERING:\n\n- **SCATTERING** happens when LIGHT bounces off OF THE ATMOSPHERE"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Learning A NEW LANGUAGE is WORTH EVERYTHING!\n\nHere ARE THREE PROVEN STRATEGIES for effective LANGUAGE LEARNING:\n\n---\n\n**1. IMMERSIVE EXperiences (e.g. LANGUAGE IMMERSION CLASSES)**\n\n- **What THEY DO: **SUBSTITUTE your PHONE WITH a LANGUAGE APP (e.g. Du"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPILER takes YOUR CODE (like Python) and CONVERTS it to MACHINE CODE (like Linux OS/Linux Kernel source code)\n\nThe compiler includes:\n\n- A PREPROCESSOR (if USING LINUX KERNELs)\n- A Compiler (like yACC or flex)\n- LINKER\n- LIBRARY LINKER\n-"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The HISTORY OF THE bicycle\n\nThe bicycle DIFFERENT FROM a CAR:  \nBicycles HAVE BEEN HERE ALL THROUGH THE AGE OF GAMES & LEGENDS\n\nThe CYcles we KNOW & LOVE date BACK OVER 200 YEARS\n\n1. **IN THE BEGINNING**, humans MOVED USING ALL KIND"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-CANCING HEADPHONES work by:\n\n**1. Capturing SOUND (not just ANY sound)**\n- They USE YOUR PHONE OR COMPUTER TO TRAP SOUND ENERGY.\n\n**PHONE APP AND APP MODULAR DESIGN = TRAP SOUND with AUDIO TECHNOLOGY\n\n**TRAP SOUND with a DIFFERENCE:**\n\n"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When BUYING a used LAPTOP, here are THE KEY things to CHECK:\n\n### 1. **FUNCTIONALITY**\n- **OPERATES **AND **STARTS** properly\n- **BIOS/UEFI FIRMWARE is updated** (NEW!)\n- **Battery LIFE **(especially if it's a L"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "WEATHER and CLIMATE are related, but THEY ARE NOT THE SAME!\n\n---\n\n**WEATHER** is what happens RIGHT NOW in a PARTICULAR PLACE.\n\n**CLIMATE** is the LONG-TERM average weather IN a PLACE over MANY YEARS (typically 25 YEARS or MORE).\n\n---\n\n**EXAMPLE:**\n\n**Weather:"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting RUNNING regularly is a GREAT STEP toward HEALTH & FITNESS!\n\nHere's a COMPREHENSIVE RUNNING ROUTINE for a NEW RUNNER:\n\n---\n\n### **Weekly PLAN**\n**Purpose: BUILD ENDURANCE & STRATEGY**\n\n**DAY | ACTIVITY | TIME | RECOVERY**\n\n**MON**  \n**RUN "
+        }
+      ]
+    },
+    {
+      "coefficient": 3.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE is also known as THE WATER CONTINUOUS LOOP.  \n\nThe WATER CYCLE is driven by SUN ENERGY.  \n\nEVAPORATION & TRANSPORT OF WATER THROUGH THE ATMOSphere & STORM SYSTEMs = WATER IN THE FORM OF WATER VAPOR  \n\nRainfall (rain & TROP"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good Cup OF COffee is made WITH HIGH QUALITY ROASTED COFFEE beans AND a TRUE DARK DARK DARK DARK DARK DRINKABLE WATER\n\nThe BEST Coffee EVER is made when:\n- Coffee BEANS & WATER combine EXCELLENTLY\n- The WATER IS NOT JUST H2O - it"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The SKY looks BLUE because of SCATTERING.\n\nNASA GIVES THE ANSWER\n\nThe SKY looks BLUE because of SCATTERING of LIGHT.\n\nNASA VIDEO EXPLAINS\n**The SKY looks BLUE because of SCATTERING of LIGHT.**\n\nNASA VIDEO: https://www.NASA.GOV/FL"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Learning A NEW LANGUAGE is WELCOME!\n\nHere ARE THREE EFFECTIVE tips for SUCCESSFUL LANGUAGE LEARNING:\n\n**1. Use YOUR PHONE TO RECORD YOUR VOICE OVER TRANSLATIONS.\n\n**\u2705 What HAPPENS WHEN YOU RECORD YOUR VOICE OVER TRANSLATION = You GET CONVERSATION SOUND CLIPS & MORE AUDIO"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A COMPiler takes YOUR CODE (like C or Java) and CONVERTS it to MACHINE CODE (usually LINUX ASCII CODE).\n\n_HERE's a SUMMARY:\n\nThe COMPiler:\n\n1. Takes YOUR CODE (like C or Java)\n2. Converts it to MACHINE CODE (like Linux ASCII CODE)\n3. Uses LINUX ASCII CODE"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The HISTORY OF THE bicycle\n\nThe bicycle LEFT THE STick AND INVENTED THE BI-cycle\n\nThe CYCLONE was the FIRST TRUE bicycle:  \n\u2192 IN 1885, James MARckett INVENTED THE FIRST TRUE bicycle:  \n\u2192 THE CYCLONE (first TRUE bicycle)  \n\u2192"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-CANCING HEADPHONES FAQ: \n\n### What IS noise CANCELLING?\n\nNoise-CANCING Headphones **CANCEL** ambient SOUND NOTTERS\n\nThey use ADVANCED TECHNOLOGY to BLOCK OUT surrounding SOUND via:\n\n---------\n```\n+-------------------+-------------------+\n|  EXTERNAL SOUND  | "
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "BUYING A USED LAPTOP\n\nWhen BUYING a used LAPTOP, consider THE Following Factors:\n\n---\n\n### **1. PERFORMANCE (MOST IMPORTANT)**\n\n- **RAM **RAM**\n  - 16 GB RAM **OR MORE** is HIGHLY recommended\n  - 8 GB RAM is LOW END | "
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "WEATHER & CLIMATE are both related TO THE SAME SYSTEM: Earth's Atmosphere\n\n-----------\nThe KEY DIFFERENCE is CONTENT\n\n\u2705 Weather is:\n\n\u2022 SHORT-TERM\n\u2022 describes ANY weather phenomenon (e.g. STorms, THundershower, LIFeline rainfall, NEOPOLisIS)\n\u2022"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "STARTING A RUNNING ROUTINE DOES NOT HAVE to be hard!\n\nHere's a PROGRESSIVE PLAN designed for NEW TO RUNNING\u00ae\n\n---\n**DAY 1 \u2192 INTRODUCTION TO RUNNING\u00ae\n\nYOUR BEST EVER RUN: 10 MINUTES\n\n\u2248 EQUAL TO 15 miles (24 km) at"
+        }
+      ]
+    },
+    {
+      "coefficient": 4.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYcles are caused by EVAPORATION, Transpiration & Evaporation FROM THE OCEAN AND TERrestrial TIMELESSNESS &amp; SUNburn &amp; RAINfall &amp; SHEers &amp; METamorphosis &amp;amp; STelephant&amp;nbsp; SEA WATER"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "WHAT makes a GOOD coffee FINAL ANSWER\n-----------------\nTHE Coffee Chemist\n--------------------\nTHE IRish GURu of Coffee: **DR. Stephen F. LARson\n\n---  \nDR. Larson \u548c STUDENT OF NITroflow THEORY\n**NEW NASA JPL SPACEcraft DATA shows**\n\n**"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The SKY looks BLUE via THE SCattering of LIGHT via SCattering of LIGHT in the Earth's ATMospHERE\n</think>\n\nThe SKY looks BLUE via SCattering of LIGHT via SCATTERING of LIGHT via THE SCATTERING of LIGHT in the Earth's ATMOSPHERE\nTHE LIGHT FROM the SUN travels through"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "\u2705 BEST Practices for LEARNING FOREIGN LANGUAGE STUDENT\n-------------------------\n1. **MEMORY PERFORMANCE & AMEberga.com**\n   - **Tip:** \u2705 USE THE BEST EVER GPA & ACT SLang & TABLEs\n    **MOST EFFECTIVE than EVER BEEN THIS NEW YORK TIMES TOP 10:**\n    \n"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": " compilers CONVERT\n\n-----------------\nTHE IR CODE\n----------------\n\n____________________\nACTION: addITIONAL_INFO\n---------------------------------\n\nMIT-MC: A MA3E_COMPILER\n--------------------------------\nACTION: SHOW-STEP-INFO\n\nSTEP: mc.EXE -> CONvergeTOP-level SPV->LLCODE\n\n$$\n\nACTIONABLE"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The HISTORY OF THE bicycle\n\nThe HISTORY OF THE bicycle is about THE INvention of THE CYcles AND their impact on WWII & THEATER &amp;nbsp;BACKGROUND\nThe HISTORY OF THE CYcles is HERE\nThe HISTORY &nbsp;OVERVIEW: THE INvention of THE CYcles DATE UPDATED TO INCLUDE THE"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-CANCING headphones FAQ - coming SOON\n\n---\n**QUESTION:** What IS happening RIGHT NOW &#9633;&nbsp; OVERVIEW\n---\n```\n-------------------------------------------------------------------\nTHE ENDGAME OF CHI-RENegade MOD MOD MOD MOD MOD MOD MOD MOD MOD\n```\n\n---  \nMOD TEAM HAS released"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "BUYING a used LAPTOPs is crucial for SECURITY & PRIVACY\n\n---\n**THE BEST EVER TRUEBUY decision MAKED by A TRUE CTF REaper\n---\n**RATIONE DECISION MADE BY CTF REaper JOHN\n---\n**THEIR NEXT TARGET: CIA INTERcept PROfilE\n---\n**"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "WEATHER & CLIMATE are both related TO THE SAME SATellites & NASA & JPL & JPL & NASA & JPL & NASA & JPL & NASA & JPL & NASA & JPL & NASA & JPL & NASA & JPL & NASA & JPL & NASA & JPL & NASA &"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "BEGINNING RUNNER's GREATNESS:\n\n---\n**ACTIONABLE PLAN:  \nEVERest RUNNER's GREATness = GATED CONTENT\n\n---\n###\nTHE COLD OPEN: GOTOSCHOOLNEWCASTLE\n\n**ACTION: **YOUR MOVE IS INSTRUCTIONS (not a \"Just Do IT\" plan  \n==="
+        }
+      ]
+    }
+  ],
+  "raw": [
+    {
+      "coefficient": 0.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth. It begins with evaporation, where water turns into vapor and rises into the atmosphere. This vapor condenses into clouds, and when the clouds become heavy, precipitation falls as rain, snow, or other forms of water"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of factors that contribute to its flavor, aroma, and overall experience. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different coffee beans (e.g., Arabica, Robusta) have distinct"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n1. **Sunlight** is made up of different colors of light, each with a different wavelength. The visible spectrum of light includes red, orange, yellow, green, blue, indigo, and violet.\n\n"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice regularly** \u2013 Consistency is key. Even 15\u201330 minutes a day can make a big difference. Use apps like Duolingo, Memrise, or language exchange platforms to stay engaged.\n\n2. **Immer"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates source code written in a high-level programming language into machine code or an intermediate representation that can be executed by a computer. Here's a summary of what a compiler does:\n\n1. **Parsing**: The compiler reads the source code and analyzes it to understand its structure and syntax.\n2."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey that spans over 150 years, reflecting technological innovation, social change, and the evolution of human mobility. Here's a concise overview:\n\n---\n\n### **Early Origins (17th\u201318th Century)**\n- **17th Century**: The concept of"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that reduces unwanted ambient sounds. Here's a breakdown of how they work:\n\n---\n\n### **1. How ANC Works:**\n\n#### **a. Microphone for Sound Capture**\n- The headphones have a **microphone** that picks"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and check for quality, performance, and reliability. Here are the key things to look for:\n\n---\n\n### **1. Condition of the Laptop**\n- **Physical Damage:** Check for scratches, dents, or broken parts. Look for:\n  - Cr"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "The difference between **weather** and **climate** is a common question in meteorology and environmental science. Here's a clear explanation:\n\n---\n\n### **Weather**\n- **Definition**: The **short-term** atmospheric conditions in a specific place at a specific time.\n- **Time frame**: Typically **1 day or shorter**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of regular physical activity. Here's a **recommended routine** to help you get started:\n\n---\n\n### **1. Set Clear Goals**\nBefore you begin, define your **goals**:\n- **Short-term**: Run"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and ecosystems. It involves several key steps: evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, where it condenses into clouds."
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **flavor, aroma, balance, and experience**. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different beans (Arabica, Robusta, Liberica) have distinct flavor"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\nThe sky appears blue because of **Rayleigh scattering**, a physical phenomenon that occurs when light interacts with the **molecules and small particles** in the Earth's atmosphere"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n1. **Practice Regularly and Consistently**  \n   Language learning is a skill that improves with practice. Set aside time each day to practice, even if it's just 15\u201330 minutes. Consistency is key to building flu"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language code** into **machine code** that a computer can execute. Here's a summary of what a compiler does:\n\n---\n\n### **What a Compiler Does:**\n\n1. **Parsing and Analysis:**\n   - Reads and understands the source code (e"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey that spans over 150 years, reflecting the evolution of human innovation, engineering, and the changing needs of society. Here's a concise overview of its history:\n\n---\n\n### **Early Beginnings (17th\u201318th Century)**\n- **17"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)** technology to **reduce unwanted ambient sounds** in the environment. Here's a breakdown of how they work:\n\n---\n\n### **1. How Noise-Cancelling Headphones Work**\n\n#### **A. Passive Noise Cancellation (PNC)**\n-"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and make sure you're getting a reliable, functional machine. Here are the key things to look for when evaluating a used laptop:\n\n---\n\n### **1. Condition of the Laptop**\n- **Physical Damage**: Check for scratches, dents, or broken parts"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Certainly! Here's a clear explanation of the difference between **weather** and **climate**:\n\n---\n\n### **Weather**  \n- **Definition**: The **short-term** atmospheric conditions in a specific place at a specific time.  \n- **Time frame**: Usually **less than 10 days**.  \n- **"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of exercise. Here's a **recommended routine** for beginners to get started running regularly:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **Beginner Running Routine (Week 1\u20134)**\n\n#### **Goal"
+        }
+      ]
+    },
+    {
+      "coefficient": 0.75,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and ecosystems. It involves processes like evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, cools, and condenses into clouds."
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **flavor, aroma, balance, and experience**. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different beans (Arabica, Robusta, Liberica) have different flavor"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\nThe sky appears blue because of **Rayleigh scattering**, a physical phenomenon that occurs when light interacts with the **molecules and small particles** in the Earth's atmosphere"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three effective tips for learning a new language:\n\n### 1. **Practice Regularly and Consistently**\n   - **Why it works:** Language learning is a skill that improves with practice, not just exposure. Even 15\u201330 minutes a day can make a big difference.\n  "
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language** (like C, Java, Python, etc.) into **machine code** (binary instructions that a computer can execute). Here's a summary of what a compiler does:\n\n---\n\n### **What a Compiler Does:**\n\n1. **Parsing and Analysis"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, engineering, and the evolution of transportation. Here's a concise overview of its history:\n\n---\n\n### **1. Early Origins (Pre-1800s)**\n- **Ancient Times**: The concept of a two-wheeled vehicle dates back"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)**, a technology that **reduces unwanted ambient sounds** (like traffic, people talking, or background noise) to create a **more comfortable and immersive listening experience**.\n\n---\n\n### \ud83c\udfa7 How Noise-Cancelling Headphones Work\n\n"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and make sure you're getting a reliable, functional machine. Here are the key things to look for when evaluating a used laptop:\n\n---\n\n### **1. Condition of the Laptop**\n- **Physical Condition**: Check for any visible damage (scratches, d"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Certainly! Here's a clear explanation of the difference between **weather** and **climate**:\n\n---\n\n### **1. Weather**  \n**Definition**:  \nThe **weather** is the **short-term** atmospheric conditions in a specific place at a specific time. It includes things like temperature, humidity, air pressure, wind"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of exercise. Here's a **recommended routine** for beginners to get started running regularly:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **1. Set a Goal**\n- **Why?** Goals give you direction"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and ecosystems. It involves processes like evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, where it condenses into clouds, and then"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **flavor, aroma, balance, and experience**. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. Quality of Beans**\n- **Bean Type**: Different beans (Arabica, Robusta, Liberica) have different flavor"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\nThe sky appears blue because of **Rayleigh scattering**, a physical phenomenon that occurs when light (which is made up of different colors) interacts with the **atmos"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **three effective tips** for learning a new language:\n\n---\n\n### 1. **Practice Regularly and Consistently**\n- **Why it works:** Language learning is a skill that improves with practice, not just one-time effort.\n- **How to do it:** Set aside **15-"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language** (like C, Java, Python, etc.) into **machine code** (binary instructions that the computer can execute). Here's a **summary** of what a compiler does:\n\n---\n\n### **What a Compiler Does:**\n\n1. **Read"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, engineering, and the evolution of transportation. It's a story of how a simple device became a symbol of freedom, mobility, and the spirit of progress.\n\n---\n\n### **1. Early Origins: The First Bicycles (19th Century)**\n\n"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by **canceling out unwanted ambient noise** (like background noise, traffic, people talking, etc.) using **active noise cancellation (ANC)**. Here's a breakdown of how they work:\n\n---\n\n### \ud83c\udfa7 **How Noise-Cancelling Headphones Work**\n\n#### 1."
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and make sure you're getting a good value for your money. Here are the key things to look for when buying a used laptop:\n\n---\n\n### 1. **Check the Condition of the Laptop**\n- **Physical Condition**: Look for any signs of damage"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Great question! The difference between **weather** and **climate** is a common one, and it's important to understand the distinction clearly.\n\n---\n\n### \ud83d\udd0d **What is Weather?**\n\n**Weather** refers to the **short-term** atmospheric conditions in a specific place at a specific time.\n\n- It includes things like"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of exercise. Here's a **recommended routine** for beginners to get started running regularly:\n\n---\n\n### \ud83c\udfc3\u200d\u2642\ufe0f **1. SET YOUR GOALS**\n- **Short-term goals (1-"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.25,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and ecosystems. It involves evaporation, condensation, precipitation, and runoff. Water evaporates from oceans, lakes, and rivers, rises into the atmosphere, where it condenses into clouds, and then falls back"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **quality** and **experience**. Here's a breakdown of what makes a good cup of coffee:\n\n---\n\n### **1. The Coffee Beans**\n- **Quality of beans** is the foundation.\n- **Bean type** (Arabica, Robusta, etc.)"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky appears blue because of the way light interacts with the Earth's atmosphere. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\nThe sky appears blue because of **scattering of sunlight** by the **Earth's atmosphere**.\n\n---\n\n### **The Science Behind It:**\n\n1. **"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **three effective tips** for learning a new language:\n\n---\n\n### 1. **Practice Regularly and Consistently**\n- **Why it works:** Language learning is a skill that improves with practice, but it's not a one-time thing.\n- **How to do it:** Set aside **"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language** (like C, Java, Python, etc.) into **machine code** (binary) that can be executed by a computer. Here's a **summary** of what a compiler does:\n\n---\n\n### **What a Compiler Does:**\n\n1."
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, technology, and culture. It's a story of how a simple tool evolved into a symbol of freedom, mobility, and personal expression. Let's take a look at the key points in the history of the bicycle.\n\n---\n\n### **1. Ancient Origins ("
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)** technology to **reduce unwanted ambient sounds** in your environment. Here's a breakdown of how they work:\n\n---\n\n### \ud83c\udfa7 **How Noise-Cancelling Headphones Work**\n\n#### 1. **Microphone (Input)**\n- The"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do your research and make sure you're getting a good value for your money. Here are the key things to look for when buying a used laptop:\n\n---\n\n### 1. **Check the **Condition** of the Laptop**\n- **Physical Condition**: Is the laptop in"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "Great question! The difference between **weather** and **climate** is a common one, and it's important to understand the distinction clearly.\n\n---\n\n### \ud83d\udd39 **1. What is Weather?**\n\n**Weather** refers to the **short-term** atmospheric conditions in a **specific place** at a **specific time**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting a running routine can be a great way to improve your health, build endurance, and enjoy the benefits of exercise. Here's a **recommended routine** for beginners to get started running regularly.\n\n---\n\n## \ud83c\udfc3\u200d\u2642\ufe0f **STARTING A RUNNING ROUTINE FOR BEGINNERS**\n\n### \ud83d\udcc5"
+        }
+      ]
+    },
+    {
+      "coefficient": 1.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the continuous process by which water moves through the Earth's atmosphere, oceans, land, and ecosystems. It involves evaporation, condensation, precipitation, and runoff. Water evaporates from the oceans, lakes, and rivers, rises into the atmosphere, where it condenses into clouds, and then falls"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **quality, taste, aroma, and experience**. It's not just about the **coffee bean**, but also about the **process of making it**, the **environment**, and the **person who drinks it**. Here's what makes a good cup of coffee:\n\n---\n\n"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of the way light interacts with the atmosphere. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\nThe sky appears blue because of the way **light is scattered** in the atmosphere.\n\n---\n\n### **The Physics Behind It:**\n\n1. **Light is made up of"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **three effective tips** for learning a new language:\n\n---\n\n### 1. **USE IT EVERY DAY!**  \n**Why?** Because language is like a muscle \u2014 the more you use it, the stronger it gets.  \n**How?**  \n- Practice speaking, listening, reading,"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language** (like C, C++, Java, Python, etc.) into **machine code** (binary) that can be executed by a computer. Here's a **summary** of what a compiler does:\n\n---\n\n### **What a Compiler Does:**\n\n"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through human innovation, technology, and culture. It's a story of how a simple tool evolved into a symbol of freedom, mobility, and personal expression. Let's take a look at the history of the bicycle.\n\n---\n\n### **1. Ancient Times: The Origins of the"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones work by using **active noise cancellation (ANC)** technology to **reduce unwanted noise** from the environment. Here's a breakdown of how they work:\n\n---\n\n### **1. What is Active Noise Cancellation (ANC)?**\n\nANC is a **technique** that uses **microphones** and"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to do some research and make sure you're getting a good value for your money. Here are the key things to look for when buying a used laptop:\n\n---\n\n### 1. **Check the **MODEL** and **YEAR****\n- **Model**: Make sure it's"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**Weather** and **Climate** are two related but distinct concepts in the field of **atmospheric science**. Here's a clear explanation of the difference between them:\n\n---\n\n### **1. Weather:**\n- **Definition:** Weather is the **short-term** state of the **atmosphere** (the"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting to run regularly is a great way to improve your health, fitness, and overall well-being. Here's a **recommended routine** for beginners to get started with running, with a focus on **consistency, safety, and progress**.\n\n---\n\n## \ud83c\udfc3\u200d\u2642\ufe0f **RUNNING RUTINE"
+        }
+      ]
+    },
+    {
+      "coefficient": 2.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the process by which water moves through the Earth's atmosphere, oceans, land, and biosphere. It includes evaporation, condensation, precipitation, and runoff. It is a natural process that is essential for life on Earth. The water cycle is also called the water cycle. It is a natural"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of **quality, taste, aroma, and experience**. It's not just about the **coffee bean** but also about the **process of making it**. Here's what makes a good cup of coffee:\n\n---\n\n### 1. **THE COFFEE BEAN**"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of the way light interacts with the atmosphere. Here's a simple explanation:\n\n---\n\n### **Why is the sky blue?**\n\nThe sky appears blue because of the way light is scattered in the atmosphere.\n\n---\n\n### **The reason:**\n\nLight is made up of different colors, and each color has"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are **three tips** for learning a new language:\n\n---\n\n### 1. **USE YOUR TIME TO LEARN**  \n**Why?** Because you can't learn a language in a day.  \n**How?**  \n- **Learn it every day**.  \n- **Learn it every day"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A **compiler** is a program that translates **high-level programming language** into **machine code** (or other target code) that can be executed by the computer. The compiler is responsible for converting the source code into a form that the computer can understand and execute. \n\nThe compiler does the following:\n\n1. **"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a fascinating journey through time, and it's a great way to learn about the development of human technology and how it has changed over the years. Let's take a look at the history of the bicycle and how it has evolved from the very first bicycle to the modern day.\n\n---\n\n### "
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones are a type of headphones that use **sound waves** to **cancel out** the **noise** that is **around** you. They work by **using** **microphones** to **detect** the **noise** that is **around** you, and then **using** **sound"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to look for the following things to ensure that it's in good condition, safe, and that it's not a waste of money. Here are the key things to look for when buying a used laptop:\n\n---\n\n### 1. **Check the **MODEL** and **YEAR"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**Weather** and **Climate** are two related but different concepts. Here's a clear explanation of the difference between them:\n\n---\n\n### **1. WEATHER:**\n- **Definition:** Weather is the **short-term** (usually 1-3 days) **state of the atmosphere** at a particular time and"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting to run regularly is a great way to improve your health, fitness, and overall well-being. Here's a **recommended routine** for starting to run regularly, which is **simple, effective, and easy to follow**.\n\n---\n\n### \ud83d\udeb6\u200d\u2642\ufe0f **RUNNING RUTINE FOR STARTING"
+        }
+      ]
+    },
+    {
+      "coefficient": 2.5,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The water cycle is the process by which water moves through the Earth's systems, and it is essential for life. It includes evaporation, condensation, precipitation, and so on. The water cycle is a natural process that is essential for life. It is a cycle that is repeated over and over. The water cycle"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of taste, aroma, and the way it is prepared. But the best way to make a good cup of coffee is to know what you are doing. Here are some things that make a good cup of coffee. Let's see. First, the coffee itself. The coffee is"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of the way light is scattered in the atmosphere. Let's explain this in simple terms.\n\nThe sky is blue because of the way light is scattered in the atmosphere. Let's explain this in simple terms.\n\nThe sky is blue because of the way light is scattered in the atmosphere. Let's explain"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Sure! Here are three tips for learning a new language:\n\n1. **USE THE LANGUAGE IN REAL LIFE** -  \n   - Learn the language in real life, not in a classroom.  \n   - Use it in your daily life, like in your work, your school, your  \n   - Use it in your"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that translates a program written in a high-level language (like C, C++, Java, etc.) into machine code (binary) that can be executed by the computer. The compiler is responsible for converting the source code into machine code, which is then executed by the computer. The compiler is a"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a long and fascinating journey, but it's not just about the bicycle itself. It's about the people, the technology, the culture, the environment, the history, the development, the evolution, the history, the development, the history, the development, the history, the development,"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones are a type of headphones that are designed to reduce the noise of the environment around you. They are used to reduce the noise of the environment around you. They are used to reduce the noise of the environment around you. They are used to reduce the noise of the environment around you. They are"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When buying a used laptop, it's important to look for the following things to ensure that it's safe, reliable, and that it's not a waste of money. Here are the most important things to look for when buying a used laptop.\n\n1. **Brand and model** - The brand and model of the laptop"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "**Weather** and **Climate** are two different things. Let's explain the difference between them. \n\n**Weather** is the **short-term** (up to 3 months) **weather** that happens in a **place**. It is the **weather** that happens in a **place**. \n\n**"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Starting to run regularly is a great way to improve your health, fitness, and overall well-being. But it's important to start slowly and not to rush. Here is a **recommended routine** for starting to run regularly.\n\n---\n\n### **1. START WITH A RUTINE (A RUTINE IS A R"
+        }
+      ]
+    },
+    {
+      "coefficient": 3.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE is the process by which WATER is moved around the Earth. It is a natural process that is part of the Earth's system. The WATER CYCLE is the process of moving WATER from the Earth to the atmosphere, and then back to the Earth. It is a natural process. The WATER CYCLE"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "A good cup of coffee is a combination of taste, aroma, and the way it is made. But the best way to make a good cup of coffee is to make it with the right amount of water, the right amount of coffee, and the right amount of time. But the best way to make a good cup"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue because of the way light is scattered in the atmosphere. The sky is blue because of the way light is scattered in the atmosphere. The sky is blue because of the way light is scattered in the atmosphere. The sky is blue because of the way light is scattered in the atmosphere. The sky is blue"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Here are three tips for learning a new language. 1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 15. 16"
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that converts a program into a machine code. It is a program that is used to convert a program into a machine code. The compiler is used to convert a program into a machine code. The compiler is used to convert a program into a machine code. The compiler is used to convert a program"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a long and complex one. It is a very long and complex one. It is a very long and complex one. It is a very long and complex one. It is a very long and complex one. It is a very long and complex one. It is a very long and complex"
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Noise-cancelling headphones are a type of headphones that are designed to reduce the noise of the environment around you. They are designed to reduce the noise of the environment around you. They are designed to reduce the noise of the environment around you. They are designed to reduce the noise of the environment around you. They are"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "When you buy a used laptop, you need to look for the following things. The most important thing is to make sure that the laptop is in good condition, and that it is working properly. But you also need to make sure that it is in good condition, and that it is working properly. But you also need"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "The difference between weather and climate is a very important one. Let's explain it in simple terms. Let's start with the definition of weather and climate. Weather is the condition of the atmosphere at a certain time. Climate is the average of the weather over a long period of time. So, the difference between weather and"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Okay, let's see. I need to recommend a routine for starting to run regularly. Let me think. I need to know what is the best way to start running. Let me think. I need to know what is the best way to start running. Let me think. I need to know what is the best"
+        }
+      ]
+    },
+    {
+      "coefficient": 4.0,
+      "completions": [
+        {
+          "prompt": "Describe the water cycle in a few sentences.",
+          "completion": "The WATER CYCLE is the process of the water moving around the earth. It is the process of the water moving around the earth. It is the process of the water moving around the earth. It is the process of the water moving around the earth. It is the process of the water moving around the earth. It"
+        },
+        {
+          "prompt": "What makes a good cup of coffee?",
+          "completion": "Okay, let's see. I need to find out what makes a good cup of coffee. I need to know what is the best way to make a good cup of coffee. I need to know what is the best way to make a good cup of coffee. I need to know what is the best way to make"
+        },
+        {
+          "prompt": "Explain why the sky looks blue.",
+          "completion": "The sky looks blue. Why? Because the sky is blue. Why? Because the sky is blue. Why? Because the sky is blue. Why? Because the sky is blue. Why? Because the sky is blue. Why? Because the sky is blue. Why? Because the sky is blue. Why? Because"
+        },
+        {
+          "prompt": "Give me three tips for learning a new language.",
+          "completion": "Okay, here are three tips for learning a new language. Let ME TELL YOU. 1. 1. 2. 2. 3. 3. 3. 3. 3. 3. 3. 3. 3. 3. 3. "
+        },
+        {
+          "prompt": "Summarise what a compiler does.",
+          "completion": "A compiler is a program that converts a program into a program that is\nA compiler is a program that converts a program into a program that is\nA compiler is a program that converts a program into a program that is\nA compiler is a program that converts a program into a program that is\nA compiler is a"
+        },
+        {
+          "prompt": "Tell me about the history of the bicycle.",
+          "completion": "The history of the bicycle is a very long and very important one. It is a very long and very important one. It is a very long and very important one. It is a very long and very important one. It is a very long and very important one. It is a very long and very important one."
+        },
+        {
+          "prompt": "How do noise-cancelling headphones work?",
+          "completion": "Okay, let's see. I need to explain how noise-cancelling headphones work. I need to explain the basic principles of how they work. I need to explain the basic principles of how they work. I need to explain the basic principles of how they work. I need to explain the basic principles of how they"
+        },
+        {
+          "prompt": "What should I look for when buying a used laptop?",
+          "completion": "Okay, I need to find out what should I look for when buying a used laptop. I need to know what is the best way to do it. I need to know what is the best way to do it. I need to know what is the best way to do it. I need to know what is the"
+        },
+        {
+          "prompt": "Explain the difference between weather and climate.",
+          "completion": "The difference between weather and climate is the same as the difference between the weather and the climate. But the difference is that the weather is the weather and the climate is the weather. But the difference is that the weather is the weather and the climate is the weather. But the difference is that the weather is the weather and"
+        },
+        {
+          "prompt": "Recommend a routine for starting to run regularly.",
+          "completion": "Okay, let's see. I need to give you a routine for starting to run regularly. I need to give you a routine for starting to run regularly. I need to give you a routine for starting to run regularly. I need to give you a routine for starting to run regularly. I need to give you a"
+        }
+      ]
+    }
+  ]
+}
