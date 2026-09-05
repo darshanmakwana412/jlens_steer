@@ -19,6 +19,7 @@ SERIES_LABELS = {
     "raw": "J lens, uncentered",
 }
 SERIES_ORDER = ["reference", "vocab_centered", "lowercase_contrast", "raw"]
+PLOT_SERIES = ["reference", "vocab_centered"]
 
 METRICS_PATH = ARTIFACTS / "jlens_caps_eval.json"
 SAMPLES_PATH = ARTIFACTS / "jlens_caps_eval_samples.json"
@@ -53,12 +54,12 @@ def parse_args():
 def build_plot(result):
     series = [
         (SERIES_LABELS[name], result["series"][name]["points"])
-        for name in SERIES_ORDER
+        for name in PLOT_SERIES
         if name in result["series"]
     ]
     render_comparison(
         series,
-        f"Steering coefficient  (layer {result['layer']}, all vectors at norm"
+        f"Steering coefficient  (layer {result['layer']}, both at norm"
         f" {result['reference_norm']:.1f})",
         "Generated tokens in ALL CAPS (%)",
         PLOT_PATH,

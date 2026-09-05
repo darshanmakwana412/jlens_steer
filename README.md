@@ -215,8 +215,10 @@ through `J_l^T`, average over small sets, and subtract a center:
 .venv/bin/python scripts/eval_jlens_caps.py
 ```
 
-30 tokens in 10 sets of 3 (` THE`, ` AND`, ` NOT`, …). All four vectors are
-scaled to the fitted vector's norm, 27.1, so one coefficient axis covers them.
+30 tokens in 10 sets of 3 (` THE`, ` AND`, ` NOT`, …). Every vector is scaled to
+the fitted vector's norm, 27.1, so one coefficient axis covers them. The figure
+shows the derived vector against the fitted one; the two ablations below are
+swept too and live in `jlens_caps_eval.json`.
 
 ![derived vs fitted](artifacts/jlens_caps_comparison.png)
 
