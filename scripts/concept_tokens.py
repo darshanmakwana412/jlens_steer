@@ -25,3 +25,26 @@ def token_ids(tokenizer, groups):
             ids.append(encoded[0])
         resolved.append(ids)
     return resolved
+
+
+def casing_pairs(tokenizer, exclude=()):
+    excluded = set(exclude)
+    vocab_tokens = {index: token for token, index in tokenizer.get_vocab().items()}
+    upper_ids, lower_ids, shown = [], [], []
+    for index in range(len(vocab_tokens)):
+        token = vocab_tokens.get(index)
+        if token is None:
+            continue
+        text = tokenizer.convert_tokens_to_string([token])
+        body = text[1:]
+        if not text.startswith(" ") or len(body) < 2:
+            continue
+        if not body.isalpha() or not body.isupper() or text in excluded:
+            continue
+        upper = tokenizer(text, add_special_tokens=False)["input_ids"]
+        lower = tokenizer(" " + body.lower(), add_special_tokens=False)["input_ids"]
+        if len(upper) == 1 and len(lower) == 1:
+            upper_ids.append(upper[0])
+            lower_ids.append(lower[0])
+            shown.append(text)
+    return upper_ids, lower_ids, shown

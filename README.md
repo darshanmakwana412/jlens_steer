@@ -38,7 +38,10 @@ record of what they are. Small derived artifacts are tracked.
 | `artifacts/jlens_caps_qwen3_1_7B.pt` | caps directions derived by inverting the J lens | 27 KB |
 | `artifacts/jlens_caps_eval.json` | derived-vs-fitted sweep metrics | 11 KB |
 | `artifacts/jlens_caps_eval_samples.json` | every completion behind them | 151 KB |
-| `artifacts/jlens_caps_comparison.png` | derived vs fitted, all four variants | 160 KB |
+| `artifacts/jlens_caps_comparison.png` | derived vs fitted | 125 KB |
+| `artifacts/coefficient_gain.json` | induced logit advantage per coefficient | 2 KB |
+| `artifacts/coefficient_gain_gap.png` | logit advantage vs coefficient | 111 KB |
+| `artifacts/coefficient_gain_behaviour.png` | caps share vs logit advantage | 102 KB |
 | `artifacts/steering_eval_caps.png` | all-caps share vs injected norm | 53 KB |
 | `artifacts/steering_eval_refusal.png` | refusal rate vs injected norm | 45 KB |
 
@@ -74,6 +77,7 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `concept_tokens.py` | the caps concept-token sets |
 | `derive_caps_vector.py` | entry point deriving a caps vector from the lens |
 | `eval_jlens_caps.py` | entry point comparing derived against fitted |
+| `explain_coefficient.py` | entry point: why the two peak at different coefficients |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
 in `pyproject.toml`.
@@ -256,10 +260,60 @@ behaviour, 68.8% against 88.0%. So on this pair, cosine to the fitted vector
 ranks the two candidates backwards. The behavioural sweep is the measurement;
 cosine is at best a sanity check.
 
-Two caveats. The derived vector needs roughly twice the coefficient to reach its
-peak, so it is a less efficient direction even at matched norm. And all of this
-is one behaviour on one layer of one model — caps is exactly the case the method
-should find easy, because the concept is literally a set of tokens.
+One caveat that stands regardless: this is one behaviour on one layer of one
+model, and caps is exactly the case the method should find easy, because the
+concept is literally a set of tokens.
+
+### Why the peaks sit at different coefficients
+
+Both vectors are at norm 27.1, yet the fitted one peaks at `c = 1.5` and the
+derived one at `c = 2.5`. Matched norm would only imply matched strength if the
+network treated all directions alike, and it does not.
+
+```bash
+.venv/bin/python scripts/explain_coefficient.py
+```
+
+The probe is the mean logit over 2184 **held-out** `(UPPER, lower)` casing pairs
+enumerated from the vocabulary, minus their lowercase twins. Held out matters:
+probing on the 30 tokens used to build the vector leaks, and it flattered the
+derived vector by about 45%.
+
+![logit advantage vs coefficient](artifacts/coefficient_gain_gap.png)
+
+**Part one: the fitted vector buys more logit advantage per unit coefficient.**
+Past `c = 0.75` its curve turns over sharply, going from +1.70 to +6.38 between
+0.75 and 1.0, and it tops out at +9.20. The derived vector climbs gradually and
+saturates at +6.83. The derived vector needs `c = 2.0` to reach the advantage the
+fitted vector reaches at `c = 1.0` — which is the factor of two in the peaks.
+
+Below `c = 0.75` the ordering is actually *reversed*: at `c = 0.5` the derived
+vector induces **more** advantage, +0.74 against +0.27. So it is not uniformly
+the weaker direction, only weaker where it matters.
+
+![behaviour vs logit advantage](artifacts/coefficient_gain_behaviour.png)
+
+**Part two: logit advantage is not a sufficient statistic, so that is not the
+whole story.** If it were, plotting behaviour against advantage would collapse
+the two curves. It does not. At `c = 0.75` both sit at essentially the same
+advantage, +1.70 and +1.73, and the fitted vector is already producing 25.7%
+caps while the derived one produces 3.8%. The curves only meet near +6.
+
+So the fitted vector converts the same output-layer preference into more
+sustained shouting. Caps is autoregressive — once a few words are shouted the
+context carries it — and the fitted vector was distilled from a model actually
+finetuned to shout, so it plausibly moves the internal state that sustains the
+behaviour and not just the readout. The derived vector is built from unembedding
+rows through one global linear map, so it argues for caps tokens at the output
+and little else.
+
+**The lens disagrees, which is the point.** By its own accounting the derived
+vector should be the stronger one: 8x the Jacobian gain (33.8 against 4.2) and a
+higher on-task push per unit norm. It is not. The derived vector was constructed
+to maximise exactly that lens quantity, so it inherits the lens's blind spots —
+this is Goodhart on a linear approximation whose fitted identity distance is
+0.52. The coefficient penalty is a rough measure of how much the approximation
+misses.
 
 ## A note on this network
 

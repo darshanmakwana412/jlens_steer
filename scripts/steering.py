@@ -115,3 +115,16 @@ def mean_residual_norm(model, tokenizer, prompts: list[str], layer: int) -> floa
     ).to(model.device)
     states = model(**batch, output_hidden_states=True).hidden_states[layer + 1]
     return states[:, -1, :].float().norm(dim=-1).mean().item()
+
+
+@torch.no_grad()
+def logit_gap(model, tokenizer, prompts, layer, delta, positive_ids, negative_ids):
+    batch = tokenizer(
+        chat_prompts(tokenizer, prompts),
+        return_tensors="pt",
+        padding=True,
+        padding_side="left",
+    ).to(model.device)
+    with steering(model, layer, delta):
+        logits = model(**batch).logits[:, -1, :].float()
+    return (logits[:, positive_ids].mean(1) - logits[:, negative_ids].mean(1)).mean().item()

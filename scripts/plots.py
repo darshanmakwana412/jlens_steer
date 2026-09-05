@@ -168,3 +168,37 @@ def render_comparison(series, xlabel, ylabel, path):
         fig.tight_layout()
         fig.savefig(path, facecolor=SURFACE)
         plt.close(fig)
+
+
+def render_xy(series, xlabel, ylabel, path, legend_anchor=(1.0, 0.45)):
+    with hand_drawn():
+        fig, ax = plt.subplots(figsize=(7.4, 4.8), dpi=DPI)
+
+        for index, (label, xs, ys) in enumerate(series):
+            colour = SERIES[index % len(SERIES)]
+            ax.plot(
+                xs,
+                ys,
+                color=colour,
+                linewidth=LINE_WIDTH,
+                marker="o",
+                markersize=MARKER_SIZE,
+                markerfacecolor=colour,
+                markeredgewidth=0,
+                solid_capstyle="round",
+                label=label,
+                clip_on=False,
+                zorder=3 + index,
+            )
+
+        ax.set_xlabel(xlabel, fontsize=12, labelpad=10)
+        ax.set_ylabel(ylabel, fontsize=12, labelpad=10)
+        ax.grid(False)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        ax.tick_params(labelsize=11, length=6, width=1.4)
+        ax.legend(frameon=False, fontsize=10.5, loc="upper right", bbox_to_anchor=legend_anchor)
+
+        fig.tight_layout()
+        fig.savefig(path, facecolor=SURFACE)
+        plt.close(fig)
