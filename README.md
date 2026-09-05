@@ -40,6 +40,24 @@ shadow the index at load time.
 
 Of the 58 GB in the J-lens repo, only the `qwen3-1.7b/` subtree is fetched.
 
+## Scripts
+
+`scripts/` holds two entry points over shared modules. Sibling imports work
+because running `python scripts/<name>.py` puts `scripts/` on the path.
+
+| module | role |
+| --- | --- |
+| `assets.py` | repo paths and the asset registry (repo ids, destinations, file filters) |
+| `hub.py` | chunked resumable downloader: ranged fetches, per-chunk retry, sha256 |
+| `download_assets.py` | entry point for downloading and verifying |
+| `weights.py` | safetensors shard reading and residual-writing weight diffs |
+| `refusal.py` | per-layer SVD extraction, sign alignment |
+| `activations.py` | harmful/harmless residual contrast on the base model |
+| `extract_refusal_vector.py` | entry point for the refusal artifact |
+
+Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
+in `pyproject.toml`.
+
 ## The refusal directions
 
 Abliteration is usually described as one rank-1 edit, `W' = W - r(rᵀW)`, so the

@@ -1,0 +1,6 @@
+[tool.ruff]
+line-length = 100
+src = ["scripts"]
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "UP", "B", "SIM"]
