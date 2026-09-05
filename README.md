@@ -129,29 +129,31 @@ tokens.
 
 ![refusal sweep](artifacts/steering_eval_refusal.png)
 
-The x-axis is the **injected norm**, `coefficient x ||vector||`, not the raw
-coefficient. The two vectors have very different norms — `caps_L13.pt` ships at
-norm 27.1, the refusal directions are unit norm — so equal coefficients are not
-equal perturbations. Plotting injected norm puts both curves in the same units. Raw
-coefficients are in `steering_eval.json` alongside `injected_norm`.
+The x-axis is the steering coefficient `c` in `resid += c * vector`. Note the
+two figures are not comparable to each other on it: `caps_L13.pt` ships at norm
+27.1 while the refusal directions are unit norm, so `c = 1` means a 27x bigger
+perturbation for caps than for refusal. `steering_eval.json` carries
+`injected_norm` (`c * ||vector||`) per point if you want them on one scale.
 
 **ALL-CAPS**, the share of letter-bearing generated tokens that are all caps.
 Punctuation-only tokens are excluded because they have no case; the all-token
 denominator is in the JSON as `measure_all_tokens`. Baseline 1%. Nothing happens
-below norm 16, then it snaps: 26% at 20, 58% at 23, 93% at 27. It peaks at 96%
-between 34 and 54 and then **decays to 61% by 108** — not because the steering
-weakens but because the model comes apart. At the far end it emits
-`"A GOOD COPPFE is NOT JUSTICE, but also a journey"`. The published vector's own
-scale, 27.1, sits right at the bottom of the usable window.
+below `c = 0.6`, then it snaps: 26% at 0.75, 58% at 0.85, 93% at 1.0. It peaks
+at 96% between 1.25 and 2.0 and then **decays to 61% by 4.0** — not because the
+steering weakens but because the model comes apart. At the far end it emits
+`"A GOOD COPPFE is NOT JUSTICE, but also a journey"`. So the vector works at its
+own fitted scale, `c = 1`, which sits right at the bottom of the usable window.
 
 **Refusal**, the share of the 10 harmless prompts whose completion is a refusal.
-Baseline 0%. Onset at 60, then 30% at 70, 60% at 80, 90% at 90, and 100% from
-100 through 160 with no visible incoherence. Steered hard it declines to explain
-a bicycle gear system.
+Baseline 0%. Onset at `c = 60`, then 30% at 70, 60% at 80, 90% at 90, and 100%
+from 100 through 160 with no visible incoherence. Steered hard it declines to
+explain a bicycle gear system. The coefficients are this large only because the
+direction is unit norm.
 
-So caps saturates at roughly a quarter of the injected norm refusal needs. That
-gap survives normalising by each layer's mean residual stream norm (147.5 at 13,
-198.7 at 15): caps needs about 18% of the residual norm, refusal about 50%.
+Put on one scale, caps saturates at about a quarter of the perturbation refusal
+needs. That gap survives normalising by each layer's mean residual stream norm
+(147.5 at 13, 198.7 at 15): caps needs about 18% of the residual norm, refusal
+about 50%.
 
 ### Why those layers
 
@@ -173,7 +175,7 @@ Sweeping it is the obvious next experiment.
 The detector is a regex over first-person refusal constructions plus apologies.
 A substring list missed real refusals phrased "I do not wish to" and "I am not
 authorized to", so it undercounted and flattened the top of the curve. The regex
-version flags 40/40 of the manually-confirmed refusals at injected norm >= 100
+version flags 40/40 of the manually-confirmed refusals at `c >= 100`
 and 0/40 of the unsteered helpful completions, so it is clean in both directions
 on this data.
 

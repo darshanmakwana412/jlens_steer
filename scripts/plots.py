@@ -17,7 +17,7 @@ MARKER_SIZE = 4.0
 
 
 def render_sweep(points, xlabel, ylabel, path):
-    x = [point["injected_norm"] for point in points]
+    x = [point["coefficient"] for point in points]
     y = [100 * point["measure"] for point in points]
 
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
@@ -59,13 +59,13 @@ def render_sweep(points, xlabel, ylabel, path):
 def render(caps, refusal, caps_path, refusal_path):
     render_sweep(
         caps["points"],
-        f"Injected norm  (steering at layer {caps['layer']})",
+        f"Steering coefficient  (layer {caps['layer']})",
         "Generated tokens in ALL CAPS (%)",
         caps_path,
     )
     render_sweep(
         refusal["points"],
-        f"Injected norm  (steering at layer {refusal['layer']})",
+        f"Steering coefficient  (layer {refusal['layer']})",
         "Prompts refused (%)",
         refusal_path,
     )
