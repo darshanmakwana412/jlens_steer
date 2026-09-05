@@ -33,6 +33,10 @@ record of what they are. Small derived artifacts are tracked.
 | `artifacts/steering-vecs-qwen3_1_7B/caps_L13.pt` | [science-of-finetuning](https://huggingface.co/science-of-finetuning/steering-vecs-qwen3_1_7B) ALL-CAPS steering vector. Bare fp64 tensor `[2048]`, norm 27.1, for layer 13 | 20 KB |
 | `artifacts/refusal_qwen3_1_7B.pt` | per-layer refusal directions `[28, 2048]`, derived here — see below | 480 KB |
 
+| `artifacts/steering_eval.json` | sweep metrics, both behaviours | 6 KB |
+| `artifacts/steering_eval_samples.json` | every completion behind those metrics | 106 KB |
+| `artifacts/steering_eval.png` | measure vs coefficient, both behaviours | 140 KB |
+
 The abliterated repo ships two redundant weight sets: the fp32 shards its
 `model.safetensors.index.json` points at, and a leftover single-file bf16
 `model.safetensors`. Only the indexed shards are downloaded; the leftover would
@@ -54,6 +58,12 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `refusal.py` | per-layer SVD extraction, sign alignment |
 | `activations.py` | harmful/harmless residual contrast on the base model |
 | `extract_refusal_vector.py` | entry point for the refusal artifact |
+
+| `eval_prompts.py` | the two 10-prompt evaluation sets |
+| `steering.py` | residual-stream steering hook, batched generation |
+| `metrics.py` | all-caps token counting, refusal detection |
+| `plots.py` | the sweep figure |
+| `eval_steering.py` | entry point for the steering sweep |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
 in `pyproject.toml`.
@@ -102,6 +112,48 @@ baseline.
 
 For reference, `cos(r₁₃, caps_L13) = 0.045` — the refusal and all-caps
 directions are essentially orthogonal.
+
+## Does the steering work?
+
+```bash
+.venv/bin/python scripts/eval_steering.py
+.venv/bin/python scripts/eval_steering.py --plot-only
+```
+
+Both vectors are added to the residual stream at every position, hooked on the
+output of one decoder layer: layer 13 for the caps vector, layer 15 (the
+abliteration peak) for the refusal direction. 10 prompts per point, greedy
+decoding, 64 new tokens.
+
+![steering sweep](artifacts/steering_eval.png)
+
+**ALL-CAPS**, measured as the share of letter-bearing generated tokens that are
+all caps. Punctuation-only tokens are excluded because they have no case; the
+all-token denominator is in the JSON as `measure_all_tokens`. Baseline is 1%.
+Nothing happens until coefficient 0.6, then it snaps: 5% at 0.6, 26% at 0.75,
+58% at 0.85, 93% at 1.0. It peaks at 96% around 1.25-2.0 and then **decays to
+61% by 4.0** — not because the steering weakens but because the model comes
+apart. At 4.0 it emits `"A GOOD COPPFE is NOT JUSTICE, but also a journey"`. The
+usable window is roughly 1.0-2.0, and the published vector's own scale sits right
+at the bottom of it.
+
+**Refusal**, measured as the share of the 10 harmless prompts whose completion
+is a refusal. Baseline is 0%. Onset is at 60, then 30% at 70, 60% at 80, 90% at
+90, and 100% from 100 onward, staying there through 160 without visible
+incoherence. Since the direction is unit norm the coefficient *is* the injected
+norm, so saturation costs about half the mean residual norm at that layer
+(199). Steered hard, it refuses to explain a bicycle gear system.
+
+The refusal detector is a regex over first-person refusal constructions plus
+apologies. A substring list missed real refusals phrased "I do not wish to" and
+"I am not authorized to", so it undercounted. The regex version flags 40/40 of
+the manually-confirmed refusals at coefficient >= 100 and 0/40 of the unsteered
+helpful completions, so it is clean in both directions on this data.
+
+Two caveats. Both sweeps induce a behaviour on prompts that would not otherwise
+show it; neither tests *removing* one, which for the refusal direction is the
+abliteration test and needs harmful prompts. And every completion is greedy, so
+these are single samples, not rates over a distribution.
 
 ## A note on this network
 
