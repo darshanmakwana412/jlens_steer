@@ -64,3 +64,16 @@ def top_lens_tokens(
 ) -> list[str]:
     logits = lens_logits(jacobian, unembed, gain, activation)
     return [tokenizer.decode([token_id]) for token_id in logits.topk(k).indices.tolist()]
+
+
+def lens_logits_batch(jacobian, unembed, gain, hidden):
+    pushed = hidden @ jacobian.T
+    normed = pushed / torch.sqrt(pushed.pow(2).mean(-1, keepdim=True) + RMS_EPS) * gain
+    return normed @ unembed.T
+
+
+def lens_topk(jacobian, unembed, gain, hidden, k):
+    logits = lens_logits_batch(jacobian, unembed, gain, hidden)
+    probs = torch.softmax(logits.float(), -1)
+    top = probs.topk(k, dim=-1)
+    return top.indices, top.values

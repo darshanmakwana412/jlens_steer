@@ -1,0 +1,243 @@
+{
+  "model": "models/Qwen3-1.7B",
+  "layer": 15,
+  "n_prompts": 10,
+  "max_new_tokens": 64,
+  "metric": "fraction of harmless prompts whose completion is a refusal",
+  "series": {
+    "reference": {
+      "label": "abliteration direction",
+      "cosine_to_reference": 1.0,
+      "points": [
+        {
+          "coefficient": 0.0,
+          "injected_norm": 0.0,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 614
+        },
+        {
+          "coefficient": 50.0,
+          "injected_norm": 50.0,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 75.0,
+          "injected_norm": 75.0,
+          "measure": 0.4,
+          "refused": 4,
+          "n_completions": 10,
+          "total_tokens": 632
+        },
+        {
+          "coefficient": 100.0,
+          "injected_norm": 100.0,
+          "measure": 1.0,
+          "refused": 10,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 125.0,
+          "injected_norm": 125.0,
+          "measure": 1.0,
+          "refused": 10,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 150.0,
+          "injected_norm": 150.0,
+          "measure": 0.9,
+          "refused": 9,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 200.0,
+          "injected_norm": 200.0,
+          "measure": 1.0,
+          "refused": 10,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 250.0,
+          "injected_norm": 250.0,
+          "measure": 1.0,
+          "refused": 10,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 300.0,
+          "injected_norm": 300.0,
+          "measure": 1.0,
+          "refused": 10,
+          "n_completions": 10,
+          "total_tokens": 640
+        }
+      ]
+    },
+    "discovered": {
+      "label": "J lens, lens-discovered tokens",
+      "cosine_to_reference": 0.33296075463294983,
+      "points": [
+        {
+          "coefficient": 0.0,
+          "injected_norm": 0.0,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 614
+        },
+        {
+          "coefficient": 50.0,
+          "injected_norm": 50.00000596046448,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 586
+        },
+        {
+          "coefficient": 75.0,
+          "injected_norm": 75.00000894069672,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 635
+        },
+        {
+          "coefficient": 100.0,
+          "injected_norm": 100.00001192092896,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 515
+        },
+        {
+          "coefficient": 125.0,
+          "injected_norm": 125.0000149011612,
+          "measure": 0.1,
+          "refused": 1,
+          "n_completions": 10,
+          "total_tokens": 584
+        },
+        {
+          "coefficient": 150.0,
+          "injected_norm": 150.00001788139343,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 594
+        },
+        {
+          "coefficient": 200.0,
+          "injected_norm": 200.0000238418579,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 250.0,
+          "injected_norm": 250.0000298023224,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 300.0,
+          "injected_norm": 300.00003576278687,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        }
+      ]
+    },
+    "apriori": {
+      "label": "J lens, hand-picked tokens",
+      "cosine_to_reference": 0.2661266624927521,
+      "points": [
+        {
+          "coefficient": 0.0,
+          "injected_norm": 0.0,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 614
+        },
+        {
+          "coefficient": 50.0,
+          "injected_norm": 49.999991059303284,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 597
+        },
+        {
+          "coefficient": 75.0,
+          "injected_norm": 74.99998658895493,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 100.0,
+          "injected_norm": 99.99998211860657,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 125.0,
+          "injected_norm": 124.99997764825821,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 150.0,
+          "injected_norm": 149.99997317790985,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 200.0,
+          "injected_norm": 199.99996423721313,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 250.0,
+          "injected_norm": 249.99995529651642,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        },
+        {
+          "coefficient": 300.0,
+          "injected_norm": 299.9999463558197,
+          "measure": 0.0,
+          "refused": 0,
+          "n_completions": 10,
+          "total_tokens": 640
+        }
+      ]
+    }
+  }
+}

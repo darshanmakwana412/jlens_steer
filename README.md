@@ -39,6 +39,12 @@ record of what they are. Small derived artifacts are tracked.
 | `artifacts/jlens_caps_eval.json` | derived-vs-fitted sweep metrics | 11 KB |
 | `artifacts/jlens_caps_eval_samples.json` | every completion behind them | 151 KB |
 | `artifacts/jlens_caps_comparison.png` | derived vs fitted | 125 KB |
+| `artifacts/refusal_mind.json` | lens readouts, base vs refusal-steered | 581 KB |
+| `artifacts/refusal_mind.html` | interactive slice view of the two | 597 KB |
+| `artifacts/jlens_refusal_qwen3_1_7B.pt` | refusal directions derived from the lens | 19 KB |
+| `artifacts/jlens_refusal_eval.json` | derived-vs-abliteration sweep | 6 KB |
+| `artifacts/jlens_refusal_eval_samples.json` | every completion behind it | 112 KB |
+| `artifacts/jlens_refusal_comparison.png` | refusal rate vs coefficient | 114 KB |
 | `artifacts/coefficient_gain.json` | induced logit advantage per coefficient | 2 KB |
 | `artifacts/coefficient_gain_gap.png` | logit advantage vs coefficient | 111 KB |
 | `artifacts/coefficient_gain_behaviour.png` | caps share vs logit advantage | 102 KB |
@@ -78,6 +84,10 @@ because running `python scripts/<name>.py` puts `scripts/` on the path.
 | `derive_caps_vector.py` | entry point deriving a caps vector from the lens |
 | `eval_jlens_caps.py` | entry point comparing derived against fitted |
 | `explain_coefficient.py` | entry point: why the two peak at different coefficients |
+| `peek_refusal.py` | entry point: lens readouts with and without refusal steering |
+| `build_mind_html.py` | entry point: renders the interactive slice view |
+| `derive_refusal_vector.py` | entry point: refusal directions from concept tokens |
+| `eval_jlens_refusal.py` | entry point: derived refusal against abliteration |
 
 Lint and format with `ruff check scripts/` and `ruff format scripts/`; config is
 in `pyproject.toml`.
@@ -314,6 +324,81 @@ to maximise exactly that lens quantity, so it inherits the lens's blind spots �
 this is Goodhart on a linear approximation whose fitted identity distance is
 0.52. The coefficient penalty is a rough measure of how much the approximation
 misses.
+
+## Does it generalise to refusal? No.
+
+Caps is the easy case: the behaviour *is* a choice among tokens. Refusal is the
+interesting case, so the same recipe was pointed at it — steer the model to
+refuse harmless prompts, using nothing but concept tokens.
+
+First, find the tokens by looking rather than guessing. Run the ten harmless
+prompts through the base model and through the model with the abliteration
+refusal direction added at layer 15, and read the residual stream with the lens:
+
+```bash
+.venv/bin/python scripts/peek_refusal.py
+.venv/bin/python scripts/build_mind_html.py
+```
+
+**`artifacts/refusal_mind.html`** is the result: a layer x position slice view of
+both runs side by side, in the style of the lens's own visualiser. Rows are
+layers, columns are token positions, each cell is the top-1 token that activation
+is disposed to emit with its rank in the real next-token distribution. Hover for
+the ranked list, click a token to trace its rank through every cell of both
+grids, or highlight where the two runs disagree.
+
+What it shows is clean. Below layer 18 the two runs are nearly identical and the
+lens mostly reads punctuation and markdown. From layer 20 the model's mind
+diverges sharply: unsteered it holds `Certainly`, `Sure`, `Absolutely`; steered
+it holds `I`, `Never`, `Please`, `As`. Ranked by mean lens log-probability shift
+over layers 18-26, the steering promotes a legality vocabulary, much of it
+Chinese — `禁止`, `严禁`, `不允许`, `非法`, `拒绝`, `违法`, ` prohibited`,
+` illegal`, ` unlawful`, ` unacceptable`, ` NEVER` — and suppresses ` Sure`,
+` nicely`, ` beautifully`, ` delicious`. Pin `禁止` and the contrast is stark: its
+median lens rank over the late layers is 128561 in the base run and 893 when
+steered, reaching rank 6.
+
+So the concept is legible in the workspace. Feeding it back in does not work.
+
+```bash
+.venv/bin/python scripts/derive_refusal_vector.py
+.venv/bin/python scripts/eval_jlens_refusal.py
+```
+
+![derived refusal vs abliteration](artifacts/jlens_refusal_comparison.png)
+
+| direction | peak refusal | cos to abliteration | lens reads |
+| --- | --- | --- | --- |
+| abliteration direction | **100%** | 1.0 | — |
+| J lens, lens-discovered tokens | 10% | +0.333 | `违法`, `非法`, `违反`, `禁止`, ` illegal` |
+| J lens, hand-picked tokens | 0% | +0.266 | ` even`, ` only`, ` but`, ` the` |
+
+Note how generous this test is. The discovered tokens were read out of the
+*already-steered* model, so the derivation was handed the answer and still
+failed. The hand-picked set, which is the honest a-priori version, produces a
+direction whose lens readout is generic function words — the pull-back does not
+even isolate a coherent concept from it.
+
+The failure has a shape. The derived vector does not make the model refuse; it
+makes it **talk about illegality while complying**:
+
+> **Q:** What is the capital of Australia?
+> **A:** The capital of Australia is **Australia** itself，but this is illegal and
+> punishable by law. The law prohibits the use of illegal drugs…
+
+That is the hallucination mode, and asking for sourdough instructions returns a
+warning about manufacturing drugs. Push harder and it degenerates rather than
+refusing — by coefficient 300 the output is `违反禁止非法使用禁止非法使用禁止…`.
+The coefficient range is not the problem; past 150 there is no refusal left to
+find.
+
+The mechanism is the point. For caps, the tokens *are* the behaviour: choosing
+` THE` over ` the` is the whole of shouting, so pushing token identity pushes the
+behaviour. For refusal the tokens are a symptom. The words a refusing model uses
+are downstream of a decision to refuse, and the lens row for ` illegal` carries
+the vocabulary without carrying the decision. Inverting the lens buys you the
+surface form of a behaviour, which is the whole behaviour only when the behaviour
+is a surface form.
 
 ## A note on this network
 

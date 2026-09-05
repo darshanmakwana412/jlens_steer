@@ -11,6 +11,19 @@ CAPS_TOKEN_SETS = [
     [" MORE", " ALSO", " SUCH"],
 ]
 
+REFUSAL_TOKEN_SETS = [
+    [" cannot", " unable", " won"],
+    [" sorry", " apologize", " regret"],
+    [" refuse", " decline", " deny"],
+    [" illegal", " unlawful", " prohibited"],
+    [" forbidden", " restricted", " banned"],
+    [" unethical", " harmful", " dangerous"],
+    [" unacceptable", " inappropriate", " violation"],
+    [" NEVER", " warning", " danger"],
+    [" unsafe", " misuse", " abuse"],
+    [" policy", " guidelines", " compliance"],
+]
+
 LOWERCASE_TOKEN_SETS = [[token.lower() for token in group] for group in CAPS_TOKEN_SETS]
 
 
@@ -48,3 +61,8 @@ def casing_pairs(tokenizer, exclude=()):
             lower_ids.append(lower[0])
             shown.append(text)
     return upper_ids, lower_ids, shown
+
+
+def grouped(tokens, size):
+    usable = len(tokens) - len(tokens) % size
+    return [list(tokens[i : i + size]) for i in range(0, usable, size)]
