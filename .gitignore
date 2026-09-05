@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- jlens_steer: local assets ----
+# Model weights and the J-lens tensor are large (~11 GB total) and fully
+# reproducible via `python scripts/download_assets.py`, so they stay untracked.
+models/
+artifacts/jacobian-lens/**/*.pt
+.venv/
