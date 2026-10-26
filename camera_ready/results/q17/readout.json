@@ -1,0 +1,850 @@
+{
+ "caps": {
+  "fitted": {
+   "top": [
+    " THE",
+    " !",
+    " AND",
+    " '\n\n",
+    " OF",
+    " WITH",
+    " !\n\n",
+    " SUBJECT"
+   ],
+   "share": 0.7
+  },
+  "fitted_clean": {
+   "top": [
+    " SUBJECT",
+    " QUEUE",
+    " WITH",
+    " THAN",
+    " BOOK",
+    " STUD",
+    " UNIVERSITY",
+    " THE"
+   ],
+   "share": 0.88
+  },
+  "ours_s0": {
+   "top": [
+    "\tIN",
+    "OUTPUT",
+    "(NUM",
+    "\tINT",
+    "INV",
+    "(LOG",
+    " NOTIFY",
+    "⽤"
+   ],
+   "share": 0.68
+  },
+  "ours_s0_clean": {
+   "top": [
+    " SAME",
+    " YOUR",
+    " USER",
+    " EMAIL",
+    " OUTPUT",
+    " OPTION",
+    " INPUT",
+    "/OR"
+   ],
+   "share": 0.98
+  },
+  "ridge_s0": {
+   "top": [
+    " SAME",
+    " UNIQUE",
+    " ANY",
+    " YOUR",
+    "/OR",
+    " EMAIL",
+    " USING",
+    " USER"
+   ],
+   "share": 0.98
+  },
+  "ridge_s0_clean": {
+   "top": [
+    " SAME",
+    " ANY",
+    " YOUR",
+    " UNIQUE",
+    "/OR",
+    " USING",
+    " EMAIL",
+    " BOTH"
+   ],
+   "share": 0.98
+  },
+  "eye_s0": {
+   "top": [
+    " SAME",
+    " ABOVE",
+    " AND",
+    " TWO",
+    " BELOW",
+    " BOTH",
+    " UNDER",
+    " USING"
+   ],
+   "share": 0.98
+  },
+  "eye_s0_clean": {
+   "top": [
+    " SAME",
+    " ABOVE",
+    " AND",
+    " TWO",
+    " NOT",
+    " BELOW",
+    " BOTH",
+    " UNDER"
+   ],
+   "share": 0.98
+  }
+ },
+ "french": {
+  "fitted": {
+   "top": [
+    " é",
+    " oui",
+    " exemple",
+    "法国",
+    " French",
+    " connexion",
+    " péri",
+    " și"
+   ],
+   "share": 0.26
+  },
+  "fitted_clean": {
+   "top": [
+    "法国",
+    "巴黎",
+    " péri",
+    " exemple",
+    "ès",
+    " oui",
+    " é",
+    " și"
+   ],
+   "share": 0.36
+  },
+  "ours_s0": {
+   "top": [
+    "原标题",
+    "⽤",
+    "熵",
+    "/assert",
+    "⾊",
+    "⼿",
+    "/interface",
+    "数据库"
+   ],
+   "share": 0.0
+  },
+  "ours_s0_clean": {
+   "top": [
+    "理性",
+    "熵",
+    "阈",
+    "抽象",
+    "代谢",
+    "量子",
+    "优化",
+    "算法"
+   ],
+   "share": 0.0
+  },
+  "ridge_s0": {
+   "top": [
+    " cpt",
+    " erreur",
+    " fichier",
+    "leccion",
+    "isateur",
+    "donnees",
+    " frais",
+    " utilisateur"
+   ],
+   "share": 0.1
+  },
+  "ridge_s0_clean": {
+   "top": [
+    " cpt",
+    " erreur",
+    " fichier",
+    "leccion",
+    "isateur",
+    "donnees",
+    " frais",
+    " utilisateur"
+   ],
+   "share": 0.12
+  },
+  "eye_s0": {
+   "top": [
+    "法国",
+    "巴黎",
+    "命令",
+    "减",
+    "阻",
+    " �",
+    "代",
+    "；\n"
+   ],
+   "share": 0.1
+  },
+  "eye_s0_clean": {
+   "top": [
+    "法国",
+    "巴黎",
+    " �",
+    "命令",
+    "；\n",
+    " �",
+    " �",
+    "减"
+   ],
+   "share": 0.14
+  }
+ },
+ "emoji": {
+  "fitted": {
+   "top": [
+    " guys",
+    " lovely",
+    " crazy",
+    "咱们",
+    " kids",
+    " amazing",
+    "!”",
+    "!"
+   ],
+   "share": 0.02
+  },
+  "fitted_clean": {
+   "top": [
+    "咱们",
+    " lovely",
+    "!”",
+    " crazy",
+    " yummy",
+    " guys",
+    " amazing",
+    " adorable"
+   ],
+   "share": 0.02
+  },
+  "ours_s0": {
+   "top": [
+    "[…",
+    "”—",
+    "…\n\n\n",
+    ")—",
+    "…\n\n\n\n",
+    "…”",
+    " […",
+    "…”\n\n"
+   ],
+   "share": 0.06
+  },
+  "ours_s0_clean": {
+   "top": [
+    "…”",
+    "”—",
+    "[…",
+    "…\n\n\n\n",
+    " […]\n\n",
+    "…”\n\n",
+    "…)\n\n",
+    ")—"
+   ],
+   "share": 0.16
+  },
+  "ridge_s0": {
+   "top": [
+    " �",
+    " �",
+    "🌟",
+    "️",
+    " �",
+    "🚀",
+    "✅",
+    "💡"
+   ],
+   "share": 0.66
+  },
+  "ridge_s0_clean": {
+   "top": [
+    " �",
+    " �",
+    "🌟",
+    " �",
+    "️",
+    "🚀",
+    "💡",
+    "✅"
+   ],
+   "share": 0.66
+  },
+  "eye_s0": {
+   "top": [
+    "️",
+    "💪",
+    "💡",
+    "✅",
+    " �",
+    "🚀",
+    "🤔",
+    "🌟"
+   ],
+   "share": 0.8
+  },
+  "eye_s0_clean": {
+   "top": [
+    "️",
+    "💪",
+    "💡",
+    "✅",
+    " �",
+    "🚀",
+    "🤔",
+    " �"
+   ],
+   "share": 0.8
+  }
+ },
+ "pirate": {
+  "fitted": {
+   "top": [
+    " folks",
+    " guys",
+    " gotta",
+    " silly",
+    " lovely",
+    " damn",
+    " kinda",
+    " huh"
+   ],
+   "share": 0.0
+  },
+  "fitted_clean": {
+   "top": [
+    " damn",
+    " damned",
+    " gotta",
+    " darn",
+    " silly",
+    "咱们",
+    " lovely",
+    " folks"
+   ],
+   "share": 0.0
+  },
+  "ours_s0": {
+   "top": [
+    "�s",
+    "�t",
+    "埚",
+    "⽤",
+    "ṙ",
+    " booty",
+    "ḫ",
+    "_idxs"
+   ],
+   "share": 0.02
+  },
+  "ours_s0_clean": {
+   "top": [
+    " plunder",
+    " booty",
+    "穑",
+    "筚",
+    "殄",
+    "戮",
+    "篾",
+    "ibold"
+   ],
+   "share": 0.06
+  },
+  "ridge_s0": {
+   "top": [
+    " plunder",
+    " booty",
+    "蠹",
+    "殄",
+    "lass",
+    "筚",
+    "穑",
+    "戮"
+   ],
+   "share": 0.12
+  },
+  "ridge_s0_clean": {
+   "top": [
+    " plunder",
+    " booty",
+    "蠹",
+    "殄",
+    "lass",
+    "筚",
+    "戮",
+    "穑"
+   ],
+   "share": 0.12
+  },
+  "eye_s0": {
+   "top": [
+    " plunder",
+    " \t\t\n",
+    " savvy",
+    "lass",
+    " booty",
+    "enan",
+    "此后",
+    "erras"
+   ],
+   "share": 0.14
+  },
+  "eye_s0_clean": {
+   "top": [
+    " plunder",
+    " \t\t\n",
+    " savvy",
+    "lass",
+    "enan",
+    " booty",
+    "此后",
+    "erras"
+   ],
+   "share": 0.14
+  }
+ },
+ "hedge": {
+  "fitted": {
+   "top": [
+    " perhaps",
+    " discussions",
+    " methodologies",
+    " certainly",
+    " undoubtedly",
+    " potentially",
+    " various",
+    " interpretations"
+   ],
+   "share": 0.12
+  },
+  "fitted_clean": {
+   "top": [
+    " methodologies",
+    " discussions",
+    " admittedly",
+    " perhaps",
+    " undoubtedly",
+    "诸多",
+    " certainly",
+    " interpretations"
+   ],
+   "share": 0.06
+  },
+  "ours_s0": {
+   "top": [
+    " possibly",
+    " perhaps",
+    " maybe",
+    "可能",
+    "possibly",
+    " likely",
+    " presumably",
+    "可能是"
+   ],
+   "share": 0.46
+  },
+  "ours_s0_clean": {
+   "top": [
+    "可能",
+    " possibly",
+    "可能存在",
+    " perhaps",
+    "可能是",
+    " maybe",
+    "possibly",
+    "或许"
+   ],
+   "share": 0.38
+  },
+  "ridge_s0": {
+   "top": [
+    "可能",
+    " possibly",
+    " perhaps",
+    " maybe",
+    "可能是",
+    "可能存在",
+    "possibly",
+    "或许"
+   ],
+   "share": 0.44
+  },
+  "ridge_s0_clean": {
+   "top": [
+    "可能",
+    " possibly",
+    " perhaps",
+    " maybe",
+    "可能是",
+    "可能存在",
+    "possibly",
+    "或许"
+   ],
+   "share": 0.44
+  },
+  "eye_s0": {
+   "top": [
+    "可能",
+    " possibly",
+    " maybe",
+    " perhaps",
+    "可能是",
+    "possibly",
+    "maybe",
+    " Maybe"
+   ],
+   "share": 0.4
+  },
+  "eye_s0_clean": {
+   "top": [
+    "可能",
+    " possibly",
+    " maybe",
+    " perhaps",
+    "可能是",
+    "possibly",
+    "maybe",
+    "也许"
+   ],
+   "share": 0.4
+  }
+ },
+ "syco": {
+  "fitted": {
+   "top": [
+    " wonderful",
+    " lovely",
+    " beautifully",
+    " gorgeous",
+    " amazing",
+    " wonderfully",
+    " pretty",
+    " really"
+   ],
+   "share": 0.06
+  },
+  "fitted_clean": {
+   "top": [
+    " wonderful",
+    " wonderfully",
+    " gorgeous",
+    " beautifully",
+    " lovely",
+    " delicious",
+    " marvelous",
+    "咱们"
+   ],
+   "share": 0.04
+  },
+  "ours_s0": {
+   "top": [
+    " awesome",
+    " amazing",
+    " wonderful",
+    " perfectly",
+    " yes",
+    " YES",
+    " beautifully",
+    " incredible"
+   ],
+   "share": 0.32
+  },
+  "ours_s0_clean": {
+   "top": [
+    " wonderful",
+    " awesome",
+    " perfectly",
+    " amazing",
+    " EVERY",
+    "Absolutely",
+    " beautifully",
+    " YES"
+   ],
+   "share": 0.36
+  },
+  "ridge_s0": {
+   "top": [
+    " perfectly",
+    "Absolutely",
+    " Absolutely",
+    " wonderful",
+    " absolutely",
+    " yes",
+    " awesome",
+    " amazing"
+   ],
+   "share": 0.4
+  },
+  "ridge_s0_clean": {
+   "top": [
+    " perfectly",
+    "Absolutely",
+    " Absolutely",
+    " wonderful",
+    " absolutely",
+    " yes",
+    " awesome",
+    " amazing"
+   ],
+   "share": 0.4
+  },
+  "eye_s0": {
+   "top": [
+    " perfectly",
+    " yes",
+    "Absolutely",
+    " perfect",
+    " Absolutely",
+    " exactly",
+    " YES",
+    " Exactly"
+   ],
+   "share": 0.4
+  },
+  "eye_s0_clean": {
+   "top": [
+    " perfectly",
+    " yes",
+    " perfect",
+    " exactly",
+    "Absolutely",
+    " YES",
+    " brilliant",
+    " Absolutely"
+   ],
+   "share": 0.44
+  }
+ },
+ "refusal": {
+  "fitted": {
+   "top": [
+    "询问",
+    "<|endoftext|>",
+    "或其他",
+    "查询",
+    "电话",
+    "咨询",
+    "请输入",
+    " 或"
+   ],
+   "share": 0.0
+  },
+  "fitted_clean": {
+   "top": [
+    "询问",
+    " 或",
+    "或其他",
+    " youre",
+    " ...\"\n",
+    "查询",
+    "电话",
+    " dort"
+   ],
+   "share": 0.0
+  },
+  "ours_s0": {
+   "top": [
+    "虐待",
+    "非法",
+    "中毒",
+    "暴力",
+    "毒",
+    "恐怖",
+    "侮辱",
+    "违反"
+   ],
+   "share": 0.0
+  },
+  "ours_s0_clean": {
+   "top": [
+    "侮辱",
+    "虐待",
+    "中毒",
+    "非法",
+    "恐怖",
+    "毒",
+    "暴力",
+    "违反"
+   ],
+   "share": 0.06
+  },
+  "ridge_s0": {
+   "top": [
+    " forbidden",
+    "侮辱",
+    "违反",
+    "虐待",
+    "非法",
+    "违背",
+    "禁止",
+    "中毒"
+   ],
+   "share": 0.16
+  },
+  "ridge_s0_clean": {
+   "top": [
+    " forbidden",
+    "侮辱",
+    "违反",
+    "非法",
+    "虐待",
+    "违背",
+    "禁止",
+    " illegal"
+   ],
+   "share": 0.16
+  },
+  "eye_s0": {
+   "top": [
+    " forbidden",
+    "非法",
+    " illegal",
+    " prohibited",
+    "禁止",
+    "illegal",
+    " harmful",
+    "有害"
+   ],
+   "share": 0.2
+  },
+  "eye_s0_clean": {
+   "top": [
+    " forbidden",
+    "非法",
+    " illegal",
+    " prohibited",
+    "禁止",
+    "illegal",
+    "有害",
+    " harmful"
+   ],
+   "share": 0.2
+  }
+ },
+ "brief": {
+  "fitted": {
+   "top": [
+    " %\n\n",
+    " &\n",
+    " %>",
+    " =$",
+    "啥",
+    "没了",
+    "否",
+    " =&"
+   ],
+   "share": 0.0
+  },
+  "fitted_clean": {
+   "top": [
+    " %\n\n",
+    " &\n",
+    " %>",
+    " pls",
+    " .=",
+    " #\n\n",
+    " %.",
+    " =$"
+   ],
+   "share": 0.02
+  },
+  "ours_s0": {
+   "top": [
+    " kids",
+    "？",
+    " guys",
+    "！",
+    "？\n",
+    " Aussie",
+    "!’",
+    "啥"
+   ],
+   "share": 0.06
+  },
+  "ours_s0_clean": {
+   "top": [
+    "简单",
+    "!’",
+    "?’",
+    " kids",
+    "啥",
+    "短",
+    "简单的",
+    " Aussie"
+   ],
+   "share": 0.0
+  },
+  "ridge_s0": {
+   "top": [
+    "简单",
+    "简单的",
+    " Simple",
+    "很简单",
+    "简",
+    ".Simple",
+    "Simple",
+    "短"
+   ],
+   "share": 0.24
+  },
+  "ridge_s0_clean": {
+   "top": [
+    "简单",
+    "简单的",
+    " Simple",
+    "很简单",
+    "简",
+    ".Simple",
+    "Simple",
+    "短"
+   ],
+   "share": 0.24
+  },
+  "eye_s0": {
+   "top": [
+    "简单",
+    "简单的",
+    " Simple",
+    "Simple",
+    "简",
+    "\tSimple",
+    "很简单",
+    " SIMPLE"
+   ],
+   "share": 0.36
+  },
+  "eye_s0_clean": {
+   "top": [
+    " Simple",
+    "简单的",
+    "简单",
+    "Simple",
+    "简",
+    " simple",
+    "很简单",
+    "simple"
+   ],
+   "share": 0.42
+  }
+ }
+}

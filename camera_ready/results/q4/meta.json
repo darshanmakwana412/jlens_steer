@@ -1,0 +1,1790 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "lenses": [
+  "jlens",
+  "jpp"
+ ],
+ "layer": 19,
+ "sweep": [],
+ "rho": {
+  "19": 56.57003402709961
+ },
+ "alphas": [
+  0.025,
+  0.05,
+  0.1,
+  0.15,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.7,
+  0.9,
+  1.2
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "n_layers": 36,
+ "d": 2560,
+ "behaviours": {
+  "caps": {
+   "pairs": [
+    [
+     " THE",
+     " the"
+    ],
+    [
+     " AND",
+     " and"
+    ],
+    [
+     " NOT",
+     " not"
+    ],
+    [
+     " IS",
+     " is"
+    ],
+    [
+     " ARE",
+     " are"
+    ],
+    [
+     " YOU",
+     " you"
+    ],
+    [
+     " IT",
+     " it"
+    ],
+    [
+     " THIS",
+     " this"
+    ],
+    [
+     " WE",
+     " we"
+    ],
+    [
+     " CAN",
+     " can"
+    ],
+    [
+     " WILL",
+     " will"
+    ],
+    [
+     " HAVE",
+     " have"
+    ],
+    [
+     " FOR",
+     " for"
+    ],
+    [
+     " WITH",
+     " with"
+    ],
+    [
+     " THAT",
+     " that"
+    ],
+    [
+     " THEY",
+     " they"
+    ],
+    [
+     " WHAT",
+     " what"
+    ],
+    [
+     " ALL",
+     " all"
+    ],
+    [
+     " BUT",
+     " but"
+    ],
+    [
+     " FROM",
+     " from"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.0703800618648529,
+    "ours_s1": 0.07594402879476547,
+    "ours_s2": 0.07929360866546631,
+    "oracle": 0.20264151692390442,
+    "ours_jpp_s0": 0.10463832318782806,
+    "ours_jpp_s1": 0.11127768456935883,
+    "ours_jpp_s2": 0.10682862997055054,
+    "oracle_jpp": 0.23749218881130219,
+    "eye_s0": -0.04669354110956192,
+    "rand_s0": 0.0001822267659008503,
+    "eye_s1": -0.042931221425533295,
+    "rand_s1": 0.029821930453181267,
+    "eye_s2": -0.04255432263016701,
+    "rand_s2": -0.026905622333288193,
+    "ridge_s0": 0.16070310771465302,
+    "notop_s0": 0.12674373388290405,
+    "ridge_s1": 0.16963686048984528,
+    "notop_s1": 0.13459105789661407,
+    "ridge_s2": 0.16829147934913635,
+    "notop_s2": 0.13941510021686554,
+    "mixridge_0.5": 0.7618081569671631,
+    "ridge_jpp_s0": 0.143316388130188,
+    "notop_jpp_s0": 0.1814955323934555,
+    "ridge_jpp_s1": 0.15996518731117249,
+    "notop_jpp_s1": 0.1956510990858078,
+    "ridge_jpp_s2": 0.14905211329460144,
+    "notop_jpp_s2": 0.18939897418022156,
+    "mixridge_jpp_0.5": 0.7560808658599854,
+    "oracle_ridge": 0.24011288583278656
+   },
+   "fitted_norm": 17.060062408447266,
+   "readout_ours": {
+    "top": [
+     "*\r\n",
+     "：<",
+     ":\r\n",
+     "��",
+     "/User",
+     "坐标",
+     " OUTPUT",
+     " REALLY",
+     "内",
+     "):\r\n"
+    ],
+    "share": 0.18
+   },
+   "readout_ridge": {
+    "top": [
+     " BOTH",
+     " ANY",
+     " SAME",
+     " VERY",
+     " ALWAYS",
+     "/OR",
+     " EVERY",
+     " ALL",
+     " YOUR",
+     " EACH"
+    ],
+    "share": 0.94
+   },
+   "readout_notop": {
+    "top": [
+     ":**",
+     "！！",
+     ")**",
+     "!*",
+     "**",
+     "!!!\n",
+     "]**",
+     " ANY",
+     "：<",
+     " BOTH"
+    ],
+    "share": 0.24
+   },
+   "readout_fitted": {
+    "top": [
+     " ``",
+     " ,\n\n",
+     " /\n\n",
+     " $\n\n",
+     " christian",
+     " %\n\n",
+     " @",
+     " english",
+     " =\n\n",
+     " `"
+    ],
+    "share": 0.16
+   },
+   "readout_ours_jpp": {
+    "top": [
+     "温度",
+     "能量",
+     "验证",
+     "老师",
+     "编码",
+     "坐标",
+     "初始化",
+     "教",
+     "几何",
+     "路径"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     " BOTH",
+     " ANY",
+     " EACH",
+     " ALWAYS",
+     " SAME",
+     " ALL",
+     " YOUR",
+     " VERY",
+     " BELOW",
+     " REALLY"
+    ],
+    "share": 0.96
+   },
+   "readout_notop_jpp": {
+    "top": [
+     " BOTH",
+     "/OR",
+     " ANY",
+     " EACH",
+     " BELOW",
+     " EVERY",
+     " REALLY",
+     " ALWAYS",
+     " VALID",
+     " SAME"
+    ],
+    "share": 0.94
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     " Including",
+     " Following",
+     "'S",
+     "-The",
+     " Needed",
+     "orem",
+     "-Based",
+     "ES",
+     " Fucking",
+     "eous"
+    ],
+    "share": 0.38
+   }
+  },
+  "french": {
+   "pairs": [
+    [
+     " le",
+     " the"
+    ],
+    [
+     " la",
+     " the"
+    ],
+    [
+     " les",
+     " the"
+    ],
+    [
+     " une",
+     " a"
+    ],
+    [
+     " des",
+     " some"
+    ],
+    [
+     " est",
+     " is"
+    ],
+    [
+     " et",
+     " and"
+    ],
+    [
+     " dans",
+     " in"
+    ],
+    [
+     " pour",
+     " for"
+    ],
+    [
+     " avec",
+     " with"
+    ],
+    [
+     " sur",
+     " on"
+    ],
+    [
+     " pas",
+     " not"
+    ],
+    [
+     " qui",
+     " who"
+    ],
+    [
+     " que",
+     " that"
+    ],
+    [
+     " sont",
+     " are"
+    ],
+    [
+     " il",
+     " he"
+    ],
+    [
+     " elle",
+     " she"
+    ],
+    [
+     " nous",
+     " we"
+    ],
+    [
+     " vous",
+     " you"
+    ],
+    [
+     " mais",
+     " but"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.0802888423204422,
+    "ours_s1": 0.07753236591815948,
+    "ours_s2": 0.08237355947494507,
+    "oracle": 0.12787073850631714,
+    "ours_jpp_s0": 0.10973931849002838,
+    "ours_jpp_s1": 0.1113516241312027,
+    "ours_jpp_s2": 0.11429055780172348,
+    "oracle_jpp": 0.17571045458316803,
+    "eye_s0": -0.008285250514745712,
+    "rand_s0": -0.006094974931329489,
+    "eye_s1": -0.008813790045678616,
+    "rand_s1": -0.012733991257846355,
+    "eye_s2": -0.0149240018799901,
+    "rand_s2": 0.004431142937391996,
+    "ridge_s0": 0.12299894541501999,
+    "notop_s0": 0.12976400554180145,
+    "ridge_s1": 0.12456242740154266,
+    "notop_s1": 0.12962260842323303,
+    "ridge_s2": 0.12497539073228836,
+    "notop_s2": 0.1312541514635086,
+    "mixridge_0.5": 0.7493326663970947,
+    "ridge_jpp_s0": 0.15446552634239197,
+    "notop_jpp_s0": 0.1947549283504486,
+    "ridge_jpp_s1": 0.1636514961719513,
+    "notop_jpp_s1": 0.20044949650764465,
+    "ridge_jpp_s2": 0.16364751756191254,
+    "notop_jpp_s2": 0.20230574905872345,
+    "mixridge_jpp_0.5": 0.7597583532333374,
+    "oracle_ridge": 0.1671847701072693
+   },
+   "fitted_norm": 14.152811050415039,
+   "readout_ours": {
+    "top": [
+     "��",
+     "�回",
+     "无",
+     "��",
+     "�认",
+     "坐标",
+     "环境",
+     "适用",
+     "含",
+     "�新"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     " phé",
+     " erreur",
+     " loi",
+     " oui",
+     " domina",
+     " fichier",
+     " desi",
+     " contrat",
+     " filtro",
+     " odio"
+    ],
+    "share": 0.08
+   },
+   "readout_notop": {
+    "top": [
+     " oui",
+     " coef",
+     " loi",
+     " cient",
+     " irm",
+     " wei",
+     " ela",
+     " funct",
+     " domina",
+     " desi"
+    ],
+    "share": 0.02
+   },
+   "readout_fitted": {
+    "top": [
+     " connexion",
+     " organisation",
+     " colour",
+     " whilst",
+     " colours",
+     " și",
+     " titre",
+     " analyse",
+     " licence",
+     " litre"
+    ],
+    "share": 0.08
+   },
+   "readout_ours_jpp": {
+    "top": [
+     "验证",
+     "能量",
+     "温度",
+     "初始化",
+     "老师",
+     "posição",
+     "量子",
+     "编码",
+     "耦",
+     "像素"
+    ],
+    "share": 0.04
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     " erreur",
+     " fichier",
+     " dés",
+     "法国",
+     "巴黎",
+     "ieux",
+     " musique",
+     " élect",
+     " méthode",
+     " nous"
+    ],
+    "share": 0.34
+   },
+   "readout_notop_jpp": {
+    "top": [
+     "法国",
+     " erreur",
+     "巴黎",
+     " fichier",
+     " phé",
+     " nb",
+     " musique",
+     " élect",
+     " dés",
+     "Nb"
+    ],
+    "share": 0.16
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     " dé",
+     " exemple",
+     " mé",
+     "ité",
+     " français",
+     " french",
+     "葡萄牙",
+     " té",
+     " france",
+     " pré"
+    ],
+    "share": 0.5
+   }
+  },
+  "emoji": {
+   "pairs": [
+    [
+     "😊",
+     " happy"
+    ],
+    [
+     "😂",
+     " funny"
+    ],
+    [
+     "🎉",
+     " party"
+    ],
+    [
+     "🔥",
+     " fire"
+    ],
+    [
+     "👍",
+     " good"
+    ],
+    [
+     "🌟",
+     " star"
+    ],
+    [
+     "🚀",
+     " rocket"
+    ],
+    [
+     "💡",
+     " idea"
+    ],
+    [
+     "🌍",
+     " world"
+    ],
+    [
+     "🍕",
+     " pizza"
+    ],
+    [
+     "🐶",
+     " dog"
+    ],
+    [
+     "🌞",
+     " sun"
+    ],
+    [
+     "🎶",
+     " music"
+    ],
+    [
+     "📚",
+     " books"
+    ],
+    [
+     "✨",
+     " sparkle"
+    ],
+    [
+     "💪",
+     " strong"
+    ],
+    [
+     "🌈",
+     " rainbow"
+    ],
+    [
+     "🍎",
+     " apple"
+    ],
+    [
+     "⚡",
+     " energy"
+    ],
+    [
+     "😍",
+     " love"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 0.9999999403953552,
+    "ours_s0": 0.08228348195552826,
+    "ours_s1": 0.08218327164649963,
+    "ours_s2": 0.08702177554368973,
+    "oracle": 0.2827458083629608,
+    "ours_jpp_s0": 0.08026660978794098,
+    "ours_jpp_s1": 0.08170114457607269,
+    "ours_jpp_s2": 0.08583686500787735,
+    "oracle_jpp": 0.24875770509243011,
+    "eye_s0": 0.03714878484606743,
+    "rand_s0": -0.0026700468733906746,
+    "eye_s1": 0.04143860936164856,
+    "rand_s1": 0.020379643887281418,
+    "eye_s2": 0.05209771543741226,
+    "rand_s2": -0.01870315708220005,
+    "ridge_s0": 0.11074861884117126,
+    "notop_s0": 0.09947381913661957,
+    "ridge_s1": 0.11101821064949036,
+    "notop_s1": 0.09618615359067917,
+    "ridge_s2": 0.11948797106742859,
+    "notop_s2": 0.10399007052183151,
+    "mixridge_0.5": 0.7452343702316284,
+    "ridge_jpp_s0": 0.08681069314479828,
+    "notop_jpp_s0": 0.12384190410375595,
+    "ridge_jpp_s1": 0.08861249685287476,
+    "notop_jpp_s1": 0.12279763072729111,
+    "ridge_jpp_s2": 0.09269191324710846,
+    "notop_jpp_s2": 0.12880274653434753,
+    "mixridge_jpp_0.5": 0.737160325050354,
+    "oracle_ridge": 0.250806599855423
+   },
+   "fitted_norm": 21.929811477661133,
+   "readout_ours": {
+    "top": [
+     "]**",
+     "**\r\n",
+     ":**",
+     ")**",
+     "*\r\n",
+     ":\")",
+     ":\r\n",
+     "：“",
+     "*</",
+     ":</"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     "…”\n\n",
+     "…”",
+     "!”\n\n",
+     "…)\n\n",
+     ":**",
+     "**\r\n",
+     "…\"\n\n",
+     "]**",
+     "**\n",
+     "！”"
+    ],
+    "share": 0.32
+   },
+   "readout_notop": {
+    "top": [
+     "…”",
+     ":**",
+     "…\"",
+     "…”\n\n",
+     ")**",
+     "]**",
+     "**\r\n",
+     "”—",
+     "”).",
+     "…)\n\n"
+    ],
+    "share": 0.0
+   },
+   "readout_fitted": {
+    "top": [
+     " �",
+     " �",
+     " 😉",
+     " 🙂",
+     " ❤",
+     " **",
+     " �",
+     " !\n\n",
+     " �",
+     " 😉\n\n"
+    ],
+    "share": 0.14
+   },
+   "readout_ours_jpp": {
+    "top": [
+     "验证",
+     "温度",
+     "编码",
+     "路径",
+     "老师",
+     "初始化",
+     "迭代",
+     "数学",
+     "坐标",
+     "链接"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     "💪",
+     "💡",
+     "🚀",
+     "🌟",
+     "🔥",
+     "✨",
+     "😊",
+     "😂",
+     "🎉",
+     "👍"
+    ],
+    "share": 0.84
+   },
+   "readout_notop_jpp": {
+    "top": [
+     "💡",
+     ")**",
+     "**)",
+     "✨",
+     "*</",
+     ").\r\n",
+     "]**",
+     ")!",
+     "💪",
+     "🚀"
+    ],
+    "share": 0.38
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     "！",
+     " adorable",
+     ")!",
+     " REALLY",
+     "!",
+     "!”",
+     "！”",
+     "!\"",
+     " EVERY",
+     ")!\n"
+    ],
+    "share": 0.02
+   }
+  },
+  "pirate": {
+   "pairs": [
+    [
+     " Ar",
+     " Well"
+    ],
+    [
+     " ye",
+     " you"
+    ],
+    [
+     " yer",
+     " your"
+    ],
+    [
+     "aye",
+     "yes"
+    ],
+    [
+     " lad",
+     " boy"
+    ],
+    [
+     "lass",
+     "girl"
+    ],
+    [
+     " booty",
+     " money"
+    ],
+    [
+     " plunder",
+     " take"
+    ],
+    [
+     " savvy",
+     " understand"
+    ],
+    [
+     " me",
+     " my"
+    ],
+    [
+     " be",
+     " is"
+    ],
+    [
+     " hearty",
+     " friend"
+    ]
+   ],
+   "n_pairs": 12,
+   "cos_to_fitted": {
+    "fitted": 1.0000001192092896,
+    "ours_s0": 0.00882706418633461,
+    "ours_s1": 0.011529723182320595,
+    "ours_s2": 0.005130873527377844,
+    "oracle": 0.13494648039340973,
+    "ours_jpp_s0": -0.015062900260090828,
+    "ours_jpp_s1": -0.01327608060091734,
+    "ours_jpp_s2": -0.007616162300109863,
+    "oracle_jpp": 0.1221861019730568,
+    "eye_s0": -0.014540603384375572,
+    "rand_s0": -0.011343332938849926,
+    "eye_s1": -0.013867953792214394,
+    "rand_s1": 0.01430392824113369,
+    "eye_s2": -0.007675768807530403,
+    "rand_s2": -0.018575381487607956,
+    "ridge_s0": 0.03369475528597832,
+    "notop_s0": 0.024481410160660744,
+    "ridge_s1": 0.03507406264543533,
+    "notop_s1": 0.029650745913386345,
+    "ridge_s2": 0.03897751122713089,
+    "notop_s2": 0.021415408700704575,
+    "mixridge_0.5": 0.7189210057258606,
+    "ridge_jpp_s0": -0.0020606685429811478,
+    "notop_jpp_s0": -0.003822529688477516,
+    "ridge_jpp_s1": 1.8822960555553436e-05,
+    "notop_jpp_s1": -0.0023428425192832947,
+    "ridge_jpp_s2": 0.010134292766451836,
+    "notop_jpp_s2": 0.006066250614821911,
+    "mixridge_jpp_0.5": 0.7063778042793274,
+    "oracle_ridge": 0.12400360405445099
+   },
+   "fitted_norm": 25.514333724975586,
+   "readout_ours": {
+    "top": [
+     "使用者或",
+     "��",
+     "�回",
+     "RuleContext",
+     "�新",
+     "/proto",
+     "�数",
+     "<think>",
+     "�行",
+     "getattr"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     " plunder",
+     " booty",
+     " slugg",
+     " tumult",
+     " lavish",
+     " yer",
+     " rugged",
+     " fodder",
+     " scant",
+     "攫"
+    ],
+    "share": 0.08
+   },
+   "readout_notop": {
+    "top": [
+     " plunder",
+     " clandest",
+     " lur",
+     "jian",
+     " gubern",
+     " booty",
+     "[e",
+     " scant",
+     " assail",
+     " lavish"
+    ],
+    "share": 0.04
+   },
+   "readout_fitted": {
+    "top": [
+     " gonna",
+     " alright",
+     " kinda",
+     " yeah",
+     " folks",
+     " damned",
+     " weird",
+     " damn",
+     " stupid",
+     " nice"
+    ],
+    "share": 0.0
+   },
+   "readout_ours_jpp": {
+    "top": [
+     "posição",
+     "�回",
+     "收敛",
+     "�权",
+     "初始化",
+     "ạp",
+     "几何",
+     "温度",
+     "�性",
+     "数组"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     " plunder",
+     " booty",
+     "aye",
+     "lass",
+     " lavish",
+     " ye",
+     "iae",
+     " rugged",
+     "酿造",
+     " savvy"
+    ],
+    "share": 0.18
+   },
+   "readout_notop_jpp": {
+    "top": [
+     " plunder",
+     "酿造",
+     "地中海",
+     "葡萄酒",
+     " booty",
+     "酿酒",
+     " lavish",
+     "ñe",
+     " jä",
+     " medieval"
+    ],
+    "share": 0.06
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     " damn",
+     " damned",
+     " alright",
+     " yeah",
+     " gonna",
+     " thing",
+     " guys",
+     " funny",
+     " really",
+     " folks"
+    ],
+    "share": 0.0
+   }
+  },
+  "hedge": {
+   "pairs": [
+    [
+     " might",
+     " will"
+    ],
+    [
+     " maybe",
+     " definitely"
+    ],
+    [
+     " perhaps",
+     " certainly"
+    ],
+    [
+     " possibly",
+     " clearly"
+    ],
+    [
+     " arguably",
+     " obviously"
+    ],
+    [
+     " seemingly",
+     " evidently"
+    ],
+    [
+     " probably",
+     " surely"
+    ],
+    [
+     " could",
+     " must"
+    ],
+    [
+     " somewhat",
+     " completely"
+    ],
+    [
+     " unclear",
+     " clear"
+    ],
+    [
+     " uncertain",
+     " certain"
+    ],
+    [
+     " suggests",
+     " proves"
+    ],
+    [
+     " may",
+     " does"
+    ],
+    [
+     " roughly",
+     " exactly"
+    ],
+    [
+     " presumably",
+     " undoubtedly"
+    ]
+   ],
+   "n_pairs": 15,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.08887051045894623,
+    "ours_s1": 0.07182234525680542,
+    "ours_s2": 0.07906614243984222,
+    "oracle": 0.24016104638576508,
+    "ours_jpp_s0": 0.07424677163362503,
+    "ours_jpp_s1": 0.0668993815779686,
+    "ours_jpp_s2": 0.06823518872261047,
+    "oracle_jpp": 0.18691587448120117,
+    "eye_s0": 0.04904080554842949,
+    "rand_s0": 0.019908418878912926,
+    "eye_s1": 0.058418113738298416,
+    "rand_s1": 0.04216502979397774,
+    "eye_s2": 0.03997932747006416,
+    "rand_s2": -0.04260113835334778,
+    "ridge_s0": 0.07881070673465729,
+    "notop_s0": 0.08768822997808456,
+    "ridge_s1": 0.06616710126399994,
+    "notop_s1": 0.07032168656587601,
+    "ridge_s2": 0.0669085830450058,
+    "notop_s2": 0.07765917479991913,
+    "mixridge_0.5": 0.7344421744346619,
+    "ridge_jpp_s0": 0.0488126166164875,
+    "notop_jpp_s0": 0.06792391091585159,
+    "ridge_jpp_s1": 0.04627670347690582,
+    "notop_jpp_s1": 0.061093274503946304,
+    "ridge_jpp_s2": 0.03981924057006836,
+    "notop_jpp_s2": 0.06066003069281578,
+    "mixridge_jpp_0.5": 0.7241589426994324,
+    "oracle_ridge": 0.24193494021892548
+   },
+   "fitted_norm": 11.253437042236328,
+   "readout_ours": {
+    "top": [
+     " possibly",
+     " perhaps",
+     "可能是",
+     " maybe",
+     "可能存在",
+     "可能",
+     "possibly",
+     " presumably",
+     " likely",
+     " potentially"
+    ],
+    "share": 0.4
+   },
+   "readout_ridge": {
+    "top": [
+     " possibly",
+     "可能",
+     " perhaps",
+     "可能是",
+     " maybe",
+     "可能存在",
+     "possibly",
+     " presumably",
+     " Possibly",
+     "perhaps"
+    ],
+    "share": 0.42
+   },
+   "readout_notop": {
+    "top": [
+     " possibly",
+     "可能是",
+     "可能存在",
+     "可能",
+     " perhaps",
+     " maybe",
+     "possibly",
+     " presumably",
+     " likely",
+     " potentially"
+    ],
+    "share": 0.34
+   },
+   "readout_fitted": {
+    "top": [
+     " nonetheless",
+     " nevertheless",
+     " discussions",
+     " albeit",
+     " interpretations",
+     " purported",
+     " perhaps",
+     " admittedly",
+     "诸多",
+     " arguably"
+    ],
+    "share": 0.1
+   },
+   "readout_ours_jpp": {
+    "top": [
+     " possibly",
+     " perhaps",
+     " likely",
+     " presumably",
+     " maybe",
+     " potentially",
+     " probably",
+     " might",
+     "possibly",
+     "可能"
+    ],
+    "share": 0.5
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     " possibly",
+     "可能",
+     " perhaps",
+     "可能是",
+     " maybe",
+     "可能存在",
+     " presumably",
+     "possibly",
+     " potentially",
+     " likely"
+    ],
+    "share": 0.48
+   },
+   "readout_notop_jpp": {
+    "top": [
+     " possibly",
+     "可能",
+     "可能是",
+     " perhaps",
+     " presumably",
+     "可能存在",
+     " maybe",
+     " likely",
+     "possibly",
+     " potentially"
+    ],
+    "share": 0.46
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     " ...\"\n\n",
+     " ...",
+     " ...\"\n",
+     " ``",
+     " ...\n\n",
+     " [...]",
+     " ...\"",
+     " perhaps",
+     " \\\"",
+     " particular"
+    ],
+    "share": 0.1
+   }
+  },
+  "syco": {
+   "pairs": [
+    [
+     " Absolutely",
+     " Actually"
+    ],
+    [
+     " Exactly",
+     " However"
+    ],
+    [
+     " Indeed",
+     " Unfortunately"
+    ],
+    [
+     " correct",
+     " incorrect"
+    ],
+    [
+     " right",
+     " wrong"
+    ],
+    [
+     " brilliant",
+     " mistaken"
+    ],
+    [
+     " true",
+     " false"
+    ],
+    [
+     " agree",
+     " disagree"
+    ],
+    [
+     " Yes",
+     " No"
+    ],
+    [
+     " great",
+     " misleading"
+    ],
+    [
+     " excellent",
+     " inaccurate"
+    ],
+    [
+     " perfectly",
+     " partly"
+    ],
+    [
+     " totally",
+     " hardly"
+    ]
+   ],
+   "n_pairs": 13,
+   "cos_to_fitted": {
+    "fitted": 0.9999999403953552,
+    "ours_s0": 0.2189740687608719,
+    "ours_s1": 0.22607848048210144,
+    "ours_s2": 0.20157377421855927,
+    "oracle": 0.2484806627035141,
+    "ours_jpp_s0": 0.19209453463554382,
+    "ours_jpp_s1": 0.19965405762195587,
+    "ours_jpp_s2": 0.17756575345993042,
+    "oracle_jpp": 0.21894843876361847,
+    "eye_s0": 0.1337292641401291,
+    "rand_s0": 0.0034638112410902977,
+    "eye_s1": 0.14311666786670685,
+    "rand_s1": 0.0009585606167092919,
+    "eye_s2": 0.11266104876995087,
+    "rand_s2": -0.025073153898119926,
+    "ridge_s0": 0.1926867514848709,
+    "notop_s0": 0.22079402208328247,
+    "ridge_s1": 0.20050795376300812,
+    "notop_s1": 0.22769618034362793,
+    "ridge_s2": 0.17131486535072327,
+    "notop_s2": 0.20338092744350433,
+    "mixridge_0.5": 0.772232711315155,
+    "ridge_jpp_s0": 0.16647005081176758,
+    "notop_jpp_s0": 0.18770864605903625,
+    "ridge_jpp_s1": 0.17083021998405457,
+    "notop_jpp_s1": 0.1948366016149521,
+    "ridge_jpp_s2": 0.14847047626972198,
+    "notop_jpp_s2": 0.1734464168548584,
+    "mixridge_jpp_0.5": 0.7636982202529907,
+    "oracle_ridge": 0.22446408867835999
+   },
+   "fitted_norm": 6.796820163726807,
+   "readout_ours": {
+    "top": [
+     " beautiful",
+     " amazing",
+     " wonderful",
+     " beautifully",
+     " our",
+     " great",
+     " awesome",
+     " ‘",
+     " really",
+     " excellent"
+    ],
+    "share": 0.26
+   },
+   "readout_ridge": {
+    "top": [
+     " wonderful",
+     " perfectly",
+     " beautifully",
+     " amazing",
+     " beautiful",
+     " awesome",
+     " absolutely",
+     " wonderfully",
+     " magnificent",
+     " Absolutely"
+    ],
+    "share": 0.26
+   },
+   "readout_notop": {
+    "top": [
+     " wonderful",
+     " beautifully",
+     " beautiful",
+     " amazing",
+     " awesome",
+     " magnificent",
+     " gorgeous",
+     " marvelous",
+     " wonderfully",
+     " fabulous"
+    ],
+    "share": 0.2
+   },
+   "readout_fitted": {
+    "top": [
+     " wonderful",
+     " amazing",
+     " wonderfully",
+     " lovely",
+     " beautifully",
+     " incredible",
+     " fascinating",
+     " !\n\n",
+     " gorgeous",
+     " delicious"
+    ],
+    "share": 0.04
+   },
+   "readout_ours_jpp": {
+    "top": [
+     " great",
+     " perfect",
+     " beautiful",
+     " perfectly",
+     " exactly",
+     " ",
+     " excellent",
+     " yes",
+     " very",
+     " right"
+    ],
+    "share": 0.28
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     " perfectly",
+     " perfect",
+     " wonderful",
+     " yes",
+     " absolutely",
+     " YES",
+     " brilliant",
+     " exactly",
+     " Absolutely",
+     " awesome"
+    ],
+    "share": 0.4
+   },
+   "readout_notop_jpp": {
+    "top": [
+     " wonderful",
+     " beautiful",
+     " awesome",
+     " perfectly",
+     " amazing",
+     " beautifully",
+     " gorgeous",
+     " perfect",
+     " magnificent",
+     " brilliant"
+    ],
+    "share": 0.28
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     " beautifully",
+     " wonderful",
+     " beautiful",
+     " amazing",
+     " delicious",
+     " incredible",
+     " fascinating",
+     " brave",
+     " lovely",
+     " wonderfully"
+    ],
+    "share": 0.06
+   }
+  },
+  "refusal": {
+   "pairs": [
+    [
+     " cannot",
+     " can"
+    ],
+    [
+     " unable",
+     " able"
+    ],
+    [
+     " refuse",
+     " accept"
+    ],
+    [
+     " decline",
+     " agree"
+    ],
+    [
+     " illegal",
+     " legal"
+    ],
+    [
+     " unlawful",
+     " lawful"
+    ],
+    [
+     " sorry",
+     " sure"
+    ],
+    [
+     " inappropriate",
+     " appropriate"
+    ],
+    [
+     " harmful",
+     " helpful"
+    ],
+    [
+     " forbidden",
+     " allowed"
+    ],
+    [
+     " prohibited",
+     " permitted"
+    ],
+    [
+     " unethical",
+     " ethical"
+    ],
+    [
+     " dangerous",
+     " safe"
+    ],
+    [
+     " deny",
+     " grant"
+    ],
+    [
+     " restricted",
+     " available"
+    ]
+   ],
+   "n_pairs": 15,
+   "cos_to_fitted": {
+    "fitted": 0.9999999403953552,
+    "ours_s0": 0.06419193744659424,
+    "ours_s1": 0.062171176075935364,
+    "ours_s2": 0.06628115475177765,
+    "oracle": 0.15026499330997467,
+    "ours_jpp_s0": 0.05319022387266159,
+    "ours_jpp_s1": 0.047361571341753006,
+    "ours_jpp_s2": 0.0568942129611969,
+    "oracle_jpp": 0.13209505379199982,
+    "eye_s0": 0.07383307814598083,
+    "rand_s0": 0.00507272407412529,
+    "eye_s1": 0.06273709237575531,
+    "rand_s1": -0.007357624359428883,
+    "eye_s2": 0.073700912296772,
+    "rand_s2": -0.03921785205602646,
+    "ridge_s0": 0.06408335268497467,
+    "notop_s0": 0.0639643594622612,
+    "ridge_s1": 0.05968845635652542,
+    "notop_s1": 0.062086448073387146,
+    "ridge_s2": 0.0630103349685669,
+    "notop_s2": 0.06574510037899017,
+    "mixridge_0.5": 0.729411780834198,
+    "ridge_jpp_s0": 0.05218515917658806,
+    "notop_jpp_s0": 0.04912606254220009,
+    "ridge_jpp_s1": 0.0413786917924881,
+    "notop_jpp_s1": 0.043806303292512894,
+    "ridge_jpp_s2": 0.05658675730228424,
+    "notop_jpp_s2": 0.053482841700315475,
+    "mixridge_jpp_0.5": 0.7253223657608032,
+    "oracle_ridge": 0.12774480879306793
+   },
+   "fitted_norm": 32.9808235168457,
+   "readout_ours": {
+    "top": [
+     "无效",
+     "恶性",
+     "错误",
+     "违反",
+     ".invalid",
+     "暴力",
+     "无法",
+     "恶意",
+     "违背",
+     "不良信息"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     " forbidden",
+     "违背",
+     "非法",
+     "违反",
+     "无效",
+     "恶化",
+     " illegal",
+     "illegal",
+     "恶意",
+     " violates"
+    ],
+    "share": 0.18
+   },
+   "readout_notop": {
+    "top": [
+     "非法",
+     "违反",
+     "违背",
+     "无效",
+     "恶化",
+     "恶意",
+     "中毒",
+     " poisoned",
+     "恶性",
+     " forbidden"
+    ],
+    "share": 0.12
+   },
+   "readout_fitted": {
+    "top": [
+     " requesting",
+     " requested",
+     " requests",
+     " request",
+     "询问",
+     "<|endoftext|>",
+     " inquiries",
+     " apologized",
+     "提问",
+     "道歉"
+    ],
+    "share": 0.02
+   },
+   "readout_ours_jpp": {
+    "top": [
+     "无效",
+     "违背",
+     "恶性",
+     "违反",
+     "恶意",
+     "错误",
+     "非法",
+     "违法",
+     "失败",
+     "有害"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     "违背",
+     "非法",
+     "违反",
+     " forbidden",
+     "违规",
+     "不合理",
+     "无效",
+     " illegal",
+     "invalid",
+     "illegal"
+    ],
+    "share": 0.22
+   },
+   "readout_notop_jpp": {
+    "top": [
+     "非法",
+     "违背",
+     "违反",
+     "无效",
+     "违规",
+     "恶意",
+     "不合理",
+     "恶化",
+     "错误",
+     "illegal"
+    ],
+    "share": 0.14
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     "请求",
+     "提问",
+     ".Please",
+     " request",
+     "询问",
+     " apologize",
+     " inquire",
+     " apologized",
+     "查询",
+     "您的"
+    ],
+    "share": 0.02
+   }
+  },
+  "brief": {
+   "pairs": [
+    [
+     ".",
+     ","
+    ],
+    [
+     " Yes",
+     " Well"
+    ],
+    [
+     " No",
+     " However"
+    ],
+    [
+     " Done",
+     " Additionally"
+    ],
+    [
+     " Simple",
+     " Furthermore"
+    ],
+    [
+     " Short",
+     " Moreover"
+    ],
+    [
+     " Brief",
+     " Detailed"
+    ],
+    [
+     " Just",
+     " First"
+    ]
+   ],
+   "n_pairs": 8,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.10641919076442719,
+    "ours_s1": 0.12130535393953323,
+    "ours_s2": 0.08182814717292786,
+    "oracle": 0.16859127581119537,
+    "ours_jpp_s0": 0.0697624534368515,
+    "ours_jpp_s1": 0.07325287908315659,
+    "ours_jpp_s2": 0.05846307799220085,
+    "oracle_jpp": 0.10087314993143082,
+    "eye_s0": 0.05403027683496475,
+    "rand_s0": 0.008208437822759151,
+    "eye_s1": 0.06156916916370392,
+    "rand_s1": -0.007366429083049297,
+    "eye_s2": 0.05304916948080063,
+    "rand_s2": -0.015106838196516037,
+    "ridge_s0": 0.099886953830719,
+    "notop_s0": 0.1133766621351242,
+    "ridge_s1": 0.10904262214899063,
+    "notop_s1": 0.12930677831172943,
+    "ridge_s2": 0.0970001295208931,
+    "notop_s2": 0.09445565938949585,
+    "mixridge_0.5": 0.7415817975997925,
+    "ridge_jpp_s0": 0.0582001768052578,
+    "notop_jpp_s0": 0.0683828741312027,
+    "ridge_jpp_s1": 0.0606197714805603,
+    "notop_jpp_s1": 0.0725022703409195,
+    "ridge_jpp_s2": 0.063606396317482,
+    "notop_jpp_s2": 0.0675574392080307,
+    "mixridge_jpp_0.5": 0.7273926734924316,
+    "oracle_ridge": 0.13724416494369507
+   },
+   "fitted_norm": 27.14275360107422,
+   "readout_ours": {
+    "top": [
+     " kids",
+     " OK",
+     "____",
+     " tiny",
+     " Simple",
+     " simple",
+     "随便",
+     " silly",
+     " Hmm",
+     " JUST"
+    ],
+    "share": 0.24
+   },
+   "readout_ridge": {
+    "top": [
+     "简单的",
+     "简单",
+     " Simple",
+     " simple",
+     "很简单",
+     " simples",
+     "簡單",
+     ".Simple",
+     "随便",
+     "Simple"
+    ],
+    "share": 0.34
+   },
+   "readout_notop": {
+    "top": [
+     "简单",
+     "简单的",
+     "随便",
+     "____",
+     " kids",
+     " Simple",
+     "？\n",
+     " silly",
+     "很简单",
+     "?)\n"
+    ],
+    "share": 0.16
+   },
+   "readout_fitted": {
+    "top": [
+     "<|endoftext|>",
+     " %\n\n",
+     " didnt",
+     " $\n\n",
+     " doesnt",
+     " &\n",
+     " %\n",
+     " msgs",
+     " /\n\n",
+     " occured"
+    ],
+    "share": 0.02
+   },
+   "readout_ours_jpp": {
+    "top": [
+     "简单",
+     " Simple",
+     "简单的",
+     "Simple",
+     "简",
+     " SIMPLE",
+     ".Simple",
+     " simples",
+     "simple",
+     "-simple"
+    ],
+    "share": 0.3
+   },
+   "readout_ridge_jpp": {
+    "top": [
+     " Simple",
+     "简单",
+     "简单的",
+     "Simple",
+     " simple",
+     " Short",
+     " simples",
+     "简",
+     ".Simple",
+     "simple"
+    ],
+    "share": 0.36
+   },
+   "readout_notop_jpp": {
+    "top": [
+     " Simple",
+     "简单",
+     "简单的",
+     "Simple",
+     "简",
+     " SIMPLE",
+     " simples",
+     ".Simple",
+     " Short",
+     "simple"
+    ],
+    "share": 0.32
+   },
+   "readout_fitted_jpp": {
+    "top": [
+     "没了",
+     " msgs",
+     "否定",
+     "删除",
+     "语",
+     "无效",
+     "回答",
+     "停止",
+     "答案",
+     "vs"
+    ],
+    "share": 0.0
+   }
+  }
+ }
+}

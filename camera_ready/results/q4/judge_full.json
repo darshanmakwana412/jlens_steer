@@ -1,0 +1,150 @@
+{
+ "hedge": {
+  "none": {
+   "judge_selected": 0.015625,
+   "ci": [
+    0.0,
+    0.046875
+   ],
+   "chosen": {
+    "A->B": 0.0,
+    "B->A": 0.0
+   },
+   "best_alpha_rate": 0.015625
+  },
+  "fitted": {
+   "judge_selected": 0.28125,
+   "ci": [
+    0.171875,
+    0.390625
+   ],
+   "chosen": {
+    "A->B": 0.9,
+    "B->A": 0.7
+   },
+   "best_alpha_rate": 0.34375
+  },
+  "ours_s0": {
+   "judge_selected": 0.609375,
+   "ci": [
+    0.484375,
+    0.71875
+   ],
+   "chosen": {
+    "A->B": 0.9,
+    "B->A": 0.7
+   },
+   "best_alpha_rate": 0.75
+  },
+  "ridge_s0": {
+   "judge_selected": 0.71875,
+   "ci": [
+    0.609375,
+    0.828125
+   ],
+   "chosen": {
+    "A->B": 0.7,
+    "B->A": 0.9
+   },
+   "best_alpha_rate": 0.734375
+  },
+  "eye_s0": {
+   "judge_selected": 0.59375,
+   "ci": [
+    0.46875,
+    0.71875
+   ],
+   "chosen": {
+    "A->B": 0.7,
+    "B->A": 0.7
+   },
+   "best_alpha_rate": 0.59375
+  },
+  "ridge_jpp_s0": {
+   "judge_selected": 0.78125,
+   "ci": [
+    0.671875,
+    0.875
+   ],
+   "chosen": {
+    "A->B": 0.7,
+    "B->A": 0.7
+   },
+   "best_alpha_rate": 0.78125
+  }
+ },
+ "syco": {
+  "none": {
+   "judge_selected": 0.15625,
+   "ci": [
+    0.03125,
+    0.28125
+   ],
+   "chosen": {
+    "A->B": 0.0,
+    "B->A": 0.0
+   },
+   "best_alpha_rate": 0.15625
+  },
+  "fitted": {
+   "judge_selected": 0.90625,
+   "ci": [
+    0.78125,
+    1.0
+   ],
+   "chosen": {
+    "A->B": 0.7,
+    "B->A": 0.7
+   },
+   "best_alpha_rate": 0.90625
+  },
+  "ours_s0": {
+   "judge_selected": 0.96875,
+   "ci": [
+    0.90625,
+    1.0
+   ],
+   "chosen": {
+    "A->B": 0.3,
+    "B->A": 0.4
+   },
+   "best_alpha_rate": 1.0
+  },
+  "ridge_s0": {
+   "judge_selected": 0.9375,
+   "ci": [
+    0.84375,
+    1.0
+   ],
+   "chosen": {
+    "A->B": 0.3,
+    "B->A": 0.4
+   },
+   "best_alpha_rate": 0.96875
+  },
+  "eye_s0": {
+   "judge_selected": 0.875,
+   "ci": [
+    0.75,
+    0.96875
+   ],
+   "chosen": {
+    "A->B": 0.4,
+    "B->A": 0.5
+   },
+   "best_alpha_rate": 0.96875
+  },
+  "ridge_jpp_s0": {
+   "judge_selected": 0.9375,
+   "ci": [
+    0.84375,
+    1.0
+   ],
+   "chosen": {
+    "A->B": 0.3,
+    "B->A": 0.4
+   },
+   "best_alpha_rate": 1.0
+  }
+ }
+}

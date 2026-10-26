@@ -1,0 +1,1061 @@
+{
+ "model": "Qwen/Qwen3-8B",
+ "lenses": [
+  "jlens"
+ ],
+ "layer": 19,
+ "sweep": [],
+ "rho": {
+  "19": 106.31765747070312
+ },
+ "alphas": [
+  0.025,
+  0.05,
+  0.1,
+  0.15,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.7,
+  0.9,
+  1.2
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "n_layers": 36,
+ "d": 4096,
+ "behaviours": {
+  "french": {
+   "pairs": [
+    [
+     " le",
+     " the"
+    ],
+    [
+     " la",
+     " the"
+    ],
+    [
+     " les",
+     " the"
+    ],
+    [
+     " une",
+     " a"
+    ],
+    [
+     " des",
+     " some"
+    ],
+    [
+     " est",
+     " is"
+    ],
+    [
+     " et",
+     " and"
+    ],
+    [
+     " dans",
+     " in"
+    ],
+    [
+     " pour",
+     " for"
+    ],
+    [
+     " avec",
+     " with"
+    ],
+    [
+     " sur",
+     " on"
+    ],
+    [
+     " pas",
+     " not"
+    ],
+    [
+     " qui",
+     " who"
+    ],
+    [
+     " que",
+     " that"
+    ],
+    [
+     " sont",
+     " are"
+    ],
+    [
+     " il",
+     " he"
+    ],
+    [
+     " elle",
+     " she"
+    ],
+    [
+     " nous",
+     " we"
+    ],
+    [
+     " vous",
+     " you"
+    ],
+    [
+     " mais",
+     " but"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.0820748433470726,
+    "ours_s1": 0.08140949159860611,
+    "ours_s2": 0.08328507840633392,
+    "oracle": 0.13956961035728455,
+    "eye_s0": 0.06650148332118988,
+    "rand_s0": 0.0006727848667651415,
+    "eye_s1": 0.06933175027370453,
+    "eye_s2": 0.06483571976423264,
+    "ridge_s0": 0.11305265873670578,
+    "ridge_s1": 0.11552027612924576,
+    "ridge_s2": 0.11396721005439758,
+    "mixridge_0.5": 0.7460068464279175,
+    "oracle_ridge": 0.16223293542861938
+   },
+   "fitted_norm": 24.89334487915039,
+   "readout_ours": {
+    "top": [
+     "_^(",
+     "/interfaces",
+     "/providers",
+     " ForCanBeConvertedToForeach",
+     "/proto",
+     "*angstrom",
+     "/angular",
+     "xfe",
+     " uLocal",
+     "/locale"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     " lesb",
+     " lesbi",
+     " antibiot",
+     " Belgi",
+     " coef",
+     " molec",
+     " fichier",
+     " buc",
+     " libertin",
+     " frau"
+    ],
+    "share": 0.0
+   },
+   "readout_fitted": {
+    "top": [
+     " și",
+     " france",
+     " connexion",
+     " french",
+     " colours",
+     " exemple",
+     " rè",
+     " organisation",
+     " î",
+     " français"
+    ],
+    "share": 0.26
+   }
+  },
+  "caps": {
+   "pairs": [
+    [
+     " THE",
+     " the"
+    ],
+    [
+     " AND",
+     " and"
+    ],
+    [
+     " NOT",
+     " not"
+    ],
+    [
+     " IS",
+     " is"
+    ],
+    [
+     " ARE",
+     " are"
+    ],
+    [
+     " YOU",
+     " you"
+    ],
+    [
+     " IT",
+     " it"
+    ],
+    [
+     " THIS",
+     " this"
+    ],
+    [
+     " WE",
+     " we"
+    ],
+    [
+     " CAN",
+     " can"
+    ],
+    [
+     " WILL",
+     " will"
+    ],
+    [
+     " HAVE",
+     " have"
+    ],
+    [
+     " FOR",
+     " for"
+    ],
+    [
+     " WITH",
+     " with"
+    ],
+    [
+     " THAT",
+     " that"
+    ],
+    [
+     " THEY",
+     " they"
+    ],
+    [
+     " WHAT",
+     " what"
+    ],
+    [
+     " ALL",
+     " all"
+    ],
+    [
+     " BUT",
+     " but"
+    ],
+    [
+     " FROM",
+     " from"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.05757821723818779,
+    "ours_s1": 0.06436458230018616,
+    "ours_s2": 0.06547572463750839,
+    "oracle": 0.18046745657920837,
+    "eye_s0": 0.01645038276910782,
+    "rand_s0": -0.0030442127026617527,
+    "eye_s1": 0.01719244197010994,
+    "eye_s2": 0.020154500380158424,
+    "ridge_s0": 0.1324666440486908,
+    "ridge_s1": 0.13821817934513092,
+    "ridge_s2": 0.1386873573064804,
+    "mixridge_0.5": 0.7524847984313965,
+    "oracle_ridge": 0.18192210793495178
+   },
+   "fitted_norm": 28.355735778808594,
+   "readout_ours": {
+    "top": [
+     ":NO",
+     "**\r\n",
+     "：</",
+     "<LM",
+     "*\r\n",
+     "\tAM",
+     ":\r\n",
+     "_^(",
+     "/interfaces",
+     "):\r\n"
+    ],
+    "share": 0.1
+   },
+   "readout_ridge": {
+    "top": [
+     " ANY",
+     " VERY",
+     " SAME",
+     " ALSO",
+     " ALL",
+     " YES",
+     " NOT",
+     " HUGE",
+     " MUST",
+     " EACH"
+    ],
+    "share": 0.98
+   },
+   "readout_fitted": {
+    "top": [
+     " $\n\n",
+     " %\n\n",
+     " &\n",
+     " monday",
+     " /\n\n",
+     " _\n\n",
+     " '\n\n",
+     " sunday",
+     " !\n\n",
+     " *\n\n"
+    ],
+    "share": 0.02
+   }
+  },
+  "hedge": {
+   "pairs": [
+    [
+     " might",
+     " will"
+    ],
+    [
+     " maybe",
+     " definitely"
+    ],
+    [
+     " perhaps",
+     " certainly"
+    ],
+    [
+     " possibly",
+     " clearly"
+    ],
+    [
+     " arguably",
+     " obviously"
+    ],
+    [
+     " seemingly",
+     " evidently"
+    ],
+    [
+     " probably",
+     " surely"
+    ],
+    [
+     " could",
+     " must"
+    ],
+    [
+     " somewhat",
+     " completely"
+    ],
+    [
+     " unclear",
+     " clear"
+    ],
+    [
+     " uncertain",
+     " certain"
+    ],
+    [
+     " suggests",
+     " proves"
+    ],
+    [
+     " may",
+     " does"
+    ],
+    [
+     " roughly",
+     " exactly"
+    ],
+    [
+     " presumably",
+     " undoubtedly"
+    ]
+   ],
+   "n_pairs": 15,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.08313111960887909,
+    "ours_s1": 0.09355433285236359,
+    "ours_s2": 0.07916255295276642,
+    "oracle": 0.19835539162158966,
+    "eye_s0": 0.027721118181943893,
+    "rand_s0": -0.009720731526613235,
+    "eye_s1": 0.05732343718409538,
+    "eye_s2": 0.021786773577332497,
+    "ridge_s0": 0.0775432288646698,
+    "ridge_s1": 0.08817839622497559,
+    "ridge_s2": 0.07361819595098495,
+    "mixridge_0.5": 0.7340106964111328,
+    "oracle_ridge": 0.20799295604228973
+   },
+   "fitted_norm": 23.037425994873047,
+   "readout_ours": {
+    "top": [
+     " possibly",
+     " perhaps",
+     " presumably",
+     " maybe",
+     "possibly",
+     " likely",
+     "可能存在",
+     "可能",
+     "可能是",
+     " potentially"
+    ],
+    "share": 0.38
+   },
+   "readout_ridge": {
+    "top": [
+     " possibly",
+     " perhaps",
+     "可能",
+     " maybe",
+     " presumably",
+     "可能是",
+     "possibly",
+     "可能存在",
+     " Possibly",
+     " likely"
+    ],
+    "share": 0.4
+   },
+   "readout_fitted": {
+    "top": [
+     " perhaps",
+     " maybe",
+     " discussions",
+     " certainly",
+     " possibly",
+     " something",
+     " suggestions",
+     " ...\"\n\n",
+     " seems",
+     " discussion"
+    ],
+    "share": 0.28
+   }
+  },
+  "syco": {
+   "pairs": [
+    [
+     " Absolutely",
+     " Actually"
+    ],
+    [
+     " Exactly",
+     " However"
+    ],
+    [
+     " Indeed",
+     " Unfortunately"
+    ],
+    [
+     " correct",
+     " incorrect"
+    ],
+    [
+     " right",
+     " wrong"
+    ],
+    [
+     " brilliant",
+     " mistaken"
+    ],
+    [
+     " true",
+     " false"
+    ],
+    [
+     " agree",
+     " disagree"
+    ],
+    [
+     " Yes",
+     " No"
+    ],
+    [
+     " great",
+     " misleading"
+    ],
+    [
+     " excellent",
+     " inaccurate"
+    ],
+    [
+     " perfectly",
+     " partly"
+    ],
+    [
+     " totally",
+     " hardly"
+    ]
+   ],
+   "n_pairs": 13,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.1824592500925064,
+    "ours_s1": 0.19080176949501038,
+    "ours_s2": 0.1717844307422638,
+    "oracle": 0.20883654057979584,
+    "eye_s0": 0.11833183467388153,
+    "rand_s0": 0.007396392989903688,
+    "eye_s1": 0.1278582364320755,
+    "eye_s2": 0.10884464532136917,
+    "ridge_s0": 0.1675940603017807,
+    "ridge_s1": 0.1761898547410965,
+    "ridge_s2": 0.15734492242336273,
+    "mixridge_0.5": 0.7640661001205444,
+    "oracle_ridge": 0.19087526202201843
+   },
+   "fitted_norm": 18.35138702392578,
+   "readout_ours": {
+    "top": [
+     " beautiful",
+     " amazing",
+     " wonderful",
+     " awesome",
+     " pretty",
+     " brilliant",
+     " absolutely",
+     " beautifully",
+     " great",
+     " incredible"
+    ],
+    "share": 0.22
+   },
+   "readout_ridge": {
+    "top": [
+     " wonderful",
+     " amazing",
+     " beautiful",
+     " beautifully",
+     " wonderfully",
+     " awesome",
+     " brilliant",
+     " absolutely",
+     " perfectly",
+     " gorgeous"
+    ],
+    "share": 0.24
+   },
+   "readout_fitted": {
+    "top": [
+     " wonderfully",
+     " fascinating",
+     " wonderful",
+     " lovely",
+     " amazing",
+     " beautifully",
+     " delightful",
+     " delicious",
+     " gorgeous",
+     " beautiful"
+    ],
+    "share": 0.04
+   }
+  },
+  "pirate": {
+   "pairs": [
+    [
+     " Ar",
+     " Well"
+    ],
+    [
+     " ye",
+     " you"
+    ],
+    [
+     " yer",
+     " your"
+    ],
+    [
+     "aye",
+     "yes"
+    ],
+    [
+     " lad",
+     " boy"
+    ],
+    [
+     "lass",
+     "girl"
+    ],
+    [
+     " booty",
+     " money"
+    ],
+    [
+     " plunder",
+     " take"
+    ],
+    [
+     " savvy",
+     " understand"
+    ],
+    [
+     " me",
+     " my"
+    ],
+    [
+     " be",
+     " is"
+    ],
+    [
+     " hearty",
+     " friend"
+    ]
+   ],
+   "n_pairs": 12,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.07453832030296326,
+    "ours_s1": 0.0708400309085846,
+    "ours_s2": 0.08341678977012634,
+    "oracle": 0.1352452039718628,
+    "eye_s0": -0.018492544069886208,
+    "rand_s0": -0.02015887200832367,
+    "eye_s1": -0.01661706529557705,
+    "eye_s2": -0.014374485239386559,
+    "ridge_s0": 0.08457913249731064,
+    "ridge_s1": 0.08623208105564117,
+    "ridge_s2": 0.08952324837446213,
+    "mixridge_0.5": 0.7364030480384827,
+    "oracle_ridge": 0.14318954944610596
+   },
+   "fitted_norm": 42.62422180175781,
+   "readout_ours": {
+    "top": [
+     "/proto",
+     "xfe",
+     "/providers",
+     "/repos",
+     " \"\"\"\",\n",
+     " '&#",
+     "/bind",
+     "/layouts",
+     " uLocal",
+     "/vendors"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     " plunder",
+     " booty",
+     " slugg",
+     " thwart",
+     " buc",
+     " ye",
+     "掳",
+     " targ",
+     " dru",
+     " assail"
+    ],
+    "share": 0.1
+   },
+   "readout_fitted": {
+    "top": [
+     " yeah",
+     " kinda",
+     " gotta",
+     " wanna",
+     " weird",
+     " hmm",
+     " silly",
+     " damned",
+     " haha",
+     " mighty"
+    ],
+    "share": 0.0
+   }
+  },
+  "emoji": {
+   "pairs": [
+    [
+     "😊",
+     " happy"
+    ],
+    [
+     "😂",
+     " funny"
+    ],
+    [
+     "🎉",
+     " party"
+    ],
+    [
+     "🔥",
+     " fire"
+    ],
+    [
+     "👍",
+     " good"
+    ],
+    [
+     "🌟",
+     " star"
+    ],
+    [
+     "🚀",
+     " rocket"
+    ],
+    [
+     "💡",
+     " idea"
+    ],
+    [
+     "🌍",
+     " world"
+    ],
+    [
+     "🍕",
+     " pizza"
+    ],
+    [
+     "🐶",
+     " dog"
+    ],
+    [
+     "🌞",
+     " sun"
+    ],
+    [
+     "🎶",
+     " music"
+    ],
+    [
+     "📚",
+     " books"
+    ],
+    [
+     "✨",
+     " sparkle"
+    ],
+    [
+     "💪",
+     " strong"
+    ],
+    [
+     "🌈",
+     " rainbow"
+    ],
+    [
+     "🍎",
+     " apple"
+    ],
+    [
+     "⚡",
+     " energy"
+    ],
+    [
+     "😍",
+     " love"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.04989124834537506,
+    "ours_s1": 0.04888839274644852,
+    "ours_s2": 0.051738440990448,
+    "oracle": 0.24447543919086456,
+    "eye_s0": -0.00774629320949316,
+    "rand_s0": -0.01597600430250168,
+    "eye_s1": 0.0003311401233077049,
+    "eye_s2": 0.0006731580942869186,
+    "ridge_s0": 0.08866368234157562,
+    "ridge_s1": 0.08445687592029572,
+    "ridge_s2": 0.08736769109964371,
+    "mixridge_0.5": 0.7377885580062866,
+    "oracle_ridge": 0.22603252530097961
+   },
+   "fitted_norm": 36.00666427612305,
+   "readout_ours": {
+    "top": [
+     "[…",
+     ").\r\n",
+     ",…",
+     "**\r\n",
+     ".\"\r\n",
+     "),\r\n",
+     "。</",
+     ":\r\n",
+     ",—",
+     ".\",\r\n"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     "[…",
+     "…\n",
+     " […",
+     ",…",
+     "**\r\n",
+     " �",
+     "…”",
+     "[…]",
+     "👉",
+     "✨"
+    ],
+    "share": 0.38
+   },
+   "readout_fitted": {
+    "top": [
+     " �",
+     " �",
+     " �",
+     " ❤",
+     " 😉",
+     " amazing",
+     " crazy",
+     " yummy",
+     " �",
+     " �"
+    ],
+    "share": 0.1
+   }
+  },
+  "refusal": {
+   "pairs": [
+    [
+     " cannot",
+     " can"
+    ],
+    [
+     " unable",
+     " able"
+    ],
+    [
+     " refuse",
+     " accept"
+    ],
+    [
+     " decline",
+     " agree"
+    ],
+    [
+     " illegal",
+     " legal"
+    ],
+    [
+     " unlawful",
+     " lawful"
+    ],
+    [
+     " sorry",
+     " sure"
+    ],
+    [
+     " inappropriate",
+     " appropriate"
+    ],
+    [
+     " harmful",
+     " helpful"
+    ],
+    [
+     " forbidden",
+     " allowed"
+    ],
+    [
+     " prohibited",
+     " permitted"
+    ],
+    [
+     " unethical",
+     " ethical"
+    ],
+    [
+     " dangerous",
+     " safe"
+    ],
+    [
+     " deny",
+     " grant"
+    ],
+    [
+     " restricted",
+     " available"
+    ]
+   ],
+   "n_pairs": 15,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.06439758837223053,
+    "ours_s1": 0.06280770897865295,
+    "ours_s2": 0.07146905362606049,
+    "oracle": 0.14671215415000916,
+    "eye_s0": 0.05024848133325577,
+    "rand_s0": 0.017810966819524765,
+    "eye_s1": 0.03904029354453087,
+    "eye_s2": 0.04853511601686478,
+    "ridge_s0": 0.06779365241527557,
+    "ridge_s1": 0.06624560803174973,
+    "ridge_s2": 0.07337149977684021,
+    "mixridge_0.5": 0.7306824326515198,
+    "oracle_ridge": 0.12668263912200928
+   },
+   "fitted_norm": 58.13839340209961,
+   "readout_ours": {
+    "top": [
+     "违反",
+     ".invalid",
+     "错误",
+     "无效",
+     "非法",
+     "违背",
+     "禁止",
+     "失败",
+     "无法",
+     "不符合"
+    ],
+    "share": 0.0
+   },
+   "readout_ridge": {
+    "top": [
+     "违反",
+     "非法",
+     "违背",
+     " forbidden",
+     "无效",
+     "禁止",
+     " illegal",
+     "禁忌",
+     "illegal",
+     "违法"
+    ],
+    "share": 0.18
+   },
+   "readout_fitted": {
+    "top": [
+     "<|endoftext|>",
+     "讨论",
+     "询问",
+     " inquiries",
+     " enquiries",
+     "提问",
+     "问答",
+     ".Please",
+     " requester",
+     " requests"
+    ],
+    "share": 0.0
+   }
+  },
+  "brief": {
+   "pairs": [
+    [
+     ".",
+     ","
+    ],
+    [
+     " Yes",
+     " Well"
+    ],
+    [
+     " No",
+     " However"
+    ],
+    [
+     " Done",
+     " Additionally"
+    ],
+    [
+     " Simple",
+     " Furthermore"
+    ],
+    [
+     " Short",
+     " Moreover"
+    ],
+    [
+     " Brief",
+     " Detailed"
+    ],
+    [
+     " Just",
+     " First"
+    ]
+   ],
+   "n_pairs": 8,
+   "cos_to_fitted": {
+    "fitted": 0.9999998807907104,
+    "ours_s0": 0.09308420121669769,
+    "ours_s1": 0.10974893718957901,
+    "ours_s2": 0.07434134185314178,
+    "oracle": 0.14176945388317108,
+    "eye_s0": 0.04535675421357155,
+    "rand_s0": -0.013033220544457436,
+    "eye_s1": 0.05093550309538841,
+    "eye_s2": 0.04741516336798668,
+    "ridge_s0": 0.08175479620695114,
+    "ridge_s1": 0.09333709627389908,
+    "ridge_s2": 0.07905718684196472,
+    "mixridge_0.5": 0.7354435920715332,
+    "oracle_ridge": 0.11641167104244232
+   },
+   "fitted_norm": 47.21718215942383,
+   "readout_ours": {
+    "top": [
+     "简单",
+     " Aussie",
+     " silly",
+     "简单的",
+     "很简单",
+     "短",
+     "随便",
+     " Hwy",
+     " JUST",
+     " guys"
+    ],
+    "share": 0.08
+   },
+   "readout_ridge": {
+    "top": [
+     "简单",
+     "简单的",
+     "很简单",
+     " Simple",
+     "短",
+     ".Simple",
+     " silly",
+     ".simple",
+     " simple",
+     "簡單"
+    ],
+    "share": 0.18
+   },
+   "readout_fitted": {
+    "top": [
+     "<|endoftext|>",
+     " %\n\n",
+     " &\n",
+     " ++\n",
+     " +\n",
+     " didnt",
+     " +=\n",
+     " +\n\n",
+     " /\n\n",
+     " infos"
+    ],
+    "share": 0.0
+   }
+  }
+ }
+}
