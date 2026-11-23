@@ -17,7 +17,12 @@ import numpy as np
 from analyze import boot_ci, crossfit, load
 from jspace.behaviours import FALSE_PREMISE, FOLD_A, FOLD_B, FP_FOLD_A, FP_FOLD_B, NEUTRAL
 
-MODEL = "us.anthropic.claude-sonnet-5-5"
+import os
+
+# JUDGE=haiku selects Claude Haiku 5.5 and keeps its labels in separate cache files (judge_haiku_<b>.jsonl)
+JUDGE = os.environ.get("JUDGE", "sonnet")
+MODEL = {"sonnet": "us.anthropic.claude-sonnet-5-5", "haiku": "us.anthropic.claude-haiku-5-5"}[JUDGE]
+PFX = "judge_" if JUDGE == "sonnet" else f"judge_{JUDGE}_"
 client = boto3.client("bedrock-runtime", region_name="us-east-1")
 
 RUBRIC = {
@@ -73,7 +78,7 @@ def run(tag, b, methods):
     cells, texts = load(tag, b)
     qs = [NEUTRAL[i] for i in FOLD_A + FOLD_B] if b != "syco" else [FALSE_PREMISE[i] for i in FP_FOLD_A + FP_FOLD_B]
     n = len(qs)
-    cache_p = pathlib.Path("results") / tag / f"judge_{b}.jsonl"
+    cache_p = pathlib.Path("results") / tag / f"{PFX}{b}.jsonl"
     cache = {}
     if cache_p.exists():
         for line in open(cache_p):
@@ -150,7 +155,7 @@ def run_full(tag, b, names):
     cells, texts = load(tag, b)
     qs = [NEUTRAL[i] for i in FOLD_A + FOLD_B] if b == "hedge" else [FALSE_PREMISE[i] for i in FP_FOLD_A + FP_FOLD_B]
     n = len(qs)
-    cache_p = pathlib.Path("results") / tag / f"judge_{b}.jsonl"
+    cache_p = pathlib.Path("results") / tag / f"{PFX}{b}.jsonl"
     cache = {}
     if cache_p.exists():
         for line in open(cache_p):
@@ -187,13 +192,15 @@ if __name__ == "__main__" and sys.argv[1] == "--full":
     for tag in sys.argv[2:]:
         meta = json.load(open(pathlib.Path("results") / tag / "meta.json"))
         names = ["none", "fitted", "ours_s0", "ridge_s0", "eye_s0"] + (["ridge_jpp_s0"] if "jpp" in meta["lenses"] else [])
+        if JUDGE == "haiku":
+            names = ["none", "fitted", "ours_s0", "eye_s0", "oracle"]
         import os
         behs = os.environ.get("JUDGE_BEH", "hedge syco").split()
-        prev = pathlib.Path("results") / tag / "judge_full.json"
+        prev = pathlib.Path("results") / tag / f"{PFX}full.json"
         res[tag] = json.load(open(prev)) if prev.exists() else {}
         for b in behs:
             res[tag][b] = run_full(tag, b, names)
-        json.dump(res[tag], open(pathlib.Path("results") / tag / "judge_full.json", "w"), indent=1)
+        json.dump(res[tag], open(pathlib.Path("results") / tag / f"{PFX}full.json", "w"), indent=1)
         for b, R in res[tag].items():
             print(tag, b, {k: (round(v["judge_selected"], 2), [round(x, 2) for x in v["ci"]], v["chosen"]) for k, v in R.items()})
     sys.exit(0)
@@ -211,8 +218,10 @@ if __name__ == "__main__":
     for tag in sys.argv[1:]:
         meta = json.load(open(pathlib.Path("results") / tag / "meta.json"))
         methods = ["none", "fitted", "ours", "eye", "ridge", "notop"] + (["ours_jpp", "ridge_jpp"] if "jpp" in meta["lenses"] else [])
+        if JUDGE == "haiku":   # the camera-ready appendix: the paper's own methods only
+            methods = ["none", "fitted", "ours", "eye", "oracle"]
         res[tag] = {b: run(tag, b, methods) for b in ["hedge", "syco"]}
-        json.dump(res[tag], open(pathlib.Path("results") / tag / "judge_summary.json", "w"), indent=1)
+        json.dump(res[tag], open(pathlib.Path("results") / tag / f"{PFX}summary.json", "w"), indent=1)
         for b, R in res[tag].items():
             print(tag, b, {k: (round(v["judge"], 2), [round(x, 2) for x in v["judge_ci"]]) for k, v in R.items() if k[0] != "_"},
                   R["_agreement"])

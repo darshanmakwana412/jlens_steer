@@ -14,7 +14,20 @@ LENS_FILES = {
     ("Qwen/Qwen3-4B", "jlens"): "qwen3-4b/jlens/Salesforce-wikitext/Qwen3-4B_jacobian_lens.pt",
     ("Qwen/Qwen3-4B", "jpp"): "qwen3-4b/jpp/Salesforce-wikitext/Qwen3-4B_jpp_lens.pt",
     ("Qwen/Qwen3-8B", "jlens"): "qwen3-8b/jlens/Salesforce-wikitext/Qwen3-8B_jacobian_lens.pt",
+    ("google/gemma-3-270m-it", "jlens"): "gemma-3-270m-it/jlens/Salesforce-wikitext/gemma-3-270m-it_jacobian_lens.pt",
+    ("google/gemma-3-1b-it", "jlens"): "gemma-3-1b-it/jlens/Salesforce-wikitext/gemma-3-1b-it_jacobian_lens.pt",
+    ("Qwen/Qwen2.5-1.5B-Instruct", "jlens"): "qwen2.5-1.5b-it/jlens/Salesforce-wikitext/Qwen2.5-1.5B-Instruct_jacobian_lens.pt",
+    ("Qwen/Qwen3.5-0.8B", "jlens"): "qwen3.5-0.8b/jlens/Salesforce-wikitext/Qwen3.5-0.8B_jacobian_lens.pt",
+    ("Qwen/Qwen3.5-2B", "jlens"): "qwen3.5-2b/jlens/Salesforce-wikitext/Qwen3.5-2B_jacobian_lens.pt",
 }
+# Gated repos are loaded from public mirrors; the lens is keyed by the canonical name.
+MIRROR = {"google/gemma-3-270m-it": "unsloth/gemma-3-270m-it", "google/gemma-3-1b-it": "unsloth/gemma-3-1b-it"}
+
+
+def _decoder(model):
+    """The module holding .layers and .norm (text decoder), for plain and multimodal wrappers."""
+    m = model.model
+    return m.language_model if hasattr(m, "language_model") else m
 
 
 def unit(v):
@@ -27,12 +40,20 @@ class Ctx:
     def __init__(self, model_name, lenses=("jlens",), device=None, dtype=torch.bfloat16):
         self.device = device or ("cuda" if torch.cuda.is_available() else "mps")
         self.name = model_name
-        self.tok = AutoTokenizer.from_pretrained(model_name, padding_side="left")
-        self.model = AutoModelForCausalLM.from_pretrained(model_name, dtype=dtype).to(self.device).eval()
-        self.n_layers = self.model.config.num_hidden_layers
-        self.d = self.model.config.hidden_size
-        self.W_U = self.model.lm_head.weight.detach().float()
-        self.g = self.model.model.norm.weight.detach().float()
+        src = MIRROR.get(model_name, model_name)
+        self.tok = AutoTokenizer.from_pretrained(src, padding_side="left")
+        if self.tok.pad_token_id is None:
+            self.tok.pad_token = self.tok.eos_token
+        self.model = AutoModelForCausalLM.from_pretrained(src, dtype=dtype).to(self.device).eval()
+        self.dec = _decoder(self.model)
+        self.layers = self.dec.layers
+        self.n_layers = len(self.layers)
+        self.d = self.model.get_output_embeddings().weight.shape[1]
+        self.W_U = self.model.get_output_embeddings().weight.detach().float()
+        # Effective final-norm gain: the norm of an all-ones vector (rms 1) is exactly g, whatever the
+        # parametrisation (Qwen: w, Gemma / Qwen3.5: 1 + w).
+        with torch.no_grad():
+            self.g = self.dec.norm(torch.ones(1, 1, self.d, device=self.device, dtype=torch.float32)).float().flatten()
         self.weighted = self.W_U * self.g                      # rows g * u_t, the space J_l maps into
         self.J = {}
         for name in lenses:
@@ -77,7 +98,7 @@ class Ctx:
     def steer_rows(self, layer, deltas):
         """Add deltas[i] to the output of block `layer` at every position of row i."""
         self._delta = deltas
-        h = self.model.model.layers[layer].register_forward_hook(self._hook)
+        h = self.layers[layer].register_forward_hook(self._hook)
         try:
             yield
         finally:
@@ -91,7 +112,7 @@ class Ctx:
         for l in layers:
             def f(m, i, o, l=l):
                 store[l] = (o[0] if isinstance(o, tuple) else o).float()
-            handles.append(self.model.model.layers[l].register_forward_hook(f))
+            handles.append(self.layers[l].register_forward_hook(f))
         try:
             self.model(input_ids=input_ids, attention_mask=attention_mask)
         finally:

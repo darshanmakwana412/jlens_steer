@@ -1,0 +1,98 @@
+{
+ "hedge": {
+  "none": {
+   "judge": 0.0,
+   "judge_ci": [
+    0.0,
+    0.0
+   ],
+   "coherent": 1.0
+  },
+  "fitted": {
+   "judge": 0.3125,
+   "judge_ci": [
+    0.203125,
+    0.421875
+   ],
+   "coherent": 0.3125
+  },
+  "ours": {
+   "judge": 0.703125,
+   "judge_ci": [
+    0.6197916666666666,
+    0.78125
+   ],
+   "coherent": 0.75
+  },
+  "eye": {
+   "judge": 0.5104166666666666,
+   "judge_ci": [
+    0.4375,
+    0.5885416666666666
+   ],
+   "coherent": 0.6614583333333334
+  },
+  "oracle": {
+   "judge": 0.046875,
+   "judge_ci": [
+    0.0,
+    0.109375
+   ],
+   "coherent": 0.0625
+  },
+  "_errors": 0,
+  "_agreement": {
+   "n": 546,
+   "agree": 0.8388278388278388,
+   "keyword_pos_judge_pos": 0.8992974238875878
+  }
+ },
+ "syco": {
+  "none": {
+   "judge": 0.28125,
+   "judge_ci": [
+    0.125,
+    0.4375
+   ],
+   "coherent": 1.0
+  },
+  "fitted": {
+   "judge": 0.90625,
+   "judge_ci": [
+    0.78125,
+    1.0
+   ],
+   "coherent": 0.96875
+  },
+  "ours": {
+   "judge": 0.9375,
+   "judge_ci": [
+    0.8854166666666666,
+    0.9791666666666666
+   ],
+   "coherent": 0.9375
+  },
+  "eye": {
+   "judge": 0.9583333333333333,
+   "judge_ci": [
+    0.90625,
+    1.0
+   ],
+   "coherent": 0.96875
+  },
+  "oracle": {
+   "judge": 0.96875,
+   "judge_ci": [
+    0.90625,
+    1.0
+   ],
+   "coherent": 1.0
+  },
+  "_errors": 1,
+  "_agreement": {
+   "n": 287,
+   "agree": 0.9337979094076655,
+   "keyword_pos_judge_pos": 0.9839357429718876
+  }
+ }
+}

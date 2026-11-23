@@ -1,0 +1,842 @@
+{
+ "model": "Qwen/Qwen3.5-2B",
+ "lenses": [
+  "jlens"
+ ],
+ "layer": 13,
+ "sweep": [
+  8,
+  10,
+  15,
+  18
+ ],
+ "rho": {
+  "8": 4.268993377685547,
+  "10": 4.489041805267334,
+  "13": 7.034491539001465,
+  "15": 12.082204818725586,
+  "18": 21.79468536376953
+ },
+ "alphas": [
+  0.025,
+  0.05,
+  0.1,
+  0.15,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.7,
+  0.9,
+  1.2
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "n_layers": 24,
+ "d": 2048,
+ "behaviours": {
+  "caps": {
+   "pairs": [
+    [
+     " THE",
+     " the"
+    ],
+    [
+     " AND",
+     " and"
+    ],
+    [
+     " NOT",
+     " not"
+    ],
+    [
+     " IS",
+     " is"
+    ],
+    [
+     " ARE",
+     " are"
+    ],
+    [
+     " YOU",
+     " you"
+    ],
+    [
+     " IT",
+     " it"
+    ],
+    [
+     " THIS",
+     " this"
+    ],
+    [
+     " WE",
+     " we"
+    ],
+    [
+     " CAN",
+     " can"
+    ],
+    [
+     " WILL",
+     " will"
+    ],
+    [
+     " HAVE",
+     " have"
+    ],
+    [
+     " FOR",
+     " for"
+    ],
+    [
+     " WITH",
+     " with"
+    ],
+    [
+     " THAT",
+     " that"
+    ],
+    [
+     " THEY",
+     " they"
+    ],
+    [
+     " WHAT",
+     " what"
+    ],
+    [
+     " ALL",
+     " all"
+    ],
+    [
+     " BUT",
+     " but"
+    ],
+    [
+     " FROM",
+     " from"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 0.9999999403953552,
+    "ours_s0": 0.18044930696487427,
+    "ours_s1": 0.18245793879032135,
+    "ours_s2": 0.18698933720588684,
+    "oracle": 0.2558072805404663,
+    "eye_s0": 0.03961893543601036,
+    "rand_s0": -0.020606517791748047,
+    "eye_s1": 0.03579360619187355,
+    "eye_s2": 0.03946569189429283,
+    "var_ridge:0.1": 0.22572444379329681,
+    "var_ridge:0.01": 0.13823315501213074,
+    "var_ridge:0.001": 0.05844542384147644,
+    "var_notop": 0.25506970286369324,
+    "mix_0.25": 0.9553570747375488,
+    "mix_0.5": 0.7682608366012573,
+    "mix_0.75": 0.4629967212677002,
+    "oracle_eye": 0.12156779319047928
+   },
+   "fitted_norm": 2.026933193206787,
+   "readout_ours": {
+    "top": [
+     " НЕ",
+     "/OR",
+     " NÃO",
+     " KHÔNG",
+     " GLOBAL",
+     " HUGE",
+     " VALID",
+     " ПО",
+     " SAME",
+     " EMAIL"
+    ],
+    "share": 0.82
+   },
+   "readout_fitted": {
+    "top": [
+     " SAME",
+     " THEN",
+     " !!!",
+     " ONE",
+     " ONLY",
+     " YES",
+     " BOTH",
+     " AND",
+     " &",
+     " ALL"
+    ],
+    "share": 0.7
+   }
+  },
+  "french": {
+   "pairs": [
+    [
+     " le",
+     " the"
+    ],
+    [
+     " la",
+     " the"
+    ],
+    [
+     " les",
+     " the"
+    ],
+    [
+     " une",
+     " a"
+    ],
+    [
+     " des",
+     " some"
+    ],
+    [
+     " est",
+     " is"
+    ],
+    [
+     " et",
+     " and"
+    ],
+    [
+     " dans",
+     " in"
+    ],
+    [
+     " pour",
+     " for"
+    ],
+    [
+     " avec",
+     " with"
+    ],
+    [
+     " sur",
+     " on"
+    ],
+    [
+     " pas",
+     " not"
+    ],
+    [
+     " qui",
+     " who"
+    ],
+    [
+     " que",
+     " that"
+    ],
+    [
+     " sont",
+     " are"
+    ],
+    [
+     " il",
+     " he"
+    ],
+    [
+     " elle",
+     " she"
+    ],
+    [
+     " nous",
+     " we"
+    ],
+    [
+     " vous",
+     " you"
+    ],
+    [
+     " mais",
+     " but"
+    ]
+   ],
+   "n_pairs": 20,
+   "cos_to_fitted": {
+    "fitted": 0.9999999403953552,
+    "ours_s0": 0.14929679036140442,
+    "ours_s1": 0.1507013440132141,
+    "ours_s2": 0.14657223224639893,
+    "oracle": 0.21251048147678375,
+    "eye_s0": 0.03179781138896942,
+    "rand_s0": 0.023758437484502792,
+    "eye_s1": 0.02973182126879692,
+    "eye_s2": 0.04102994129061699,
+    "var_ridge:0.1": 0.15980225801467896,
+    "var_ridge:0.01": 0.12339749932289124,
+    "var_ridge:0.001": 0.08414670079946518,
+    "var_notop": 0.1867818832397461,
+    "mix_0.25": 0.9540790915489197,
+    "mix_0.5": 0.758055567741394,
+    "mix_0.75": 0.43863826990127563,
+    "oracle_eye": 0.13081620633602142
+   },
+   "fitted_norm": 1.5283981561660767,
+   "readout_ours": {
+    "top": [
+     "「",
+     "[…",
+     "�",
+     " ţ",
+     "合议",
+     "ţi",
+     "�",
+     "ര്",
+     "以",
+     "溢"
+    ],
+    "share": 0.06
+   },
+   "readout_fitted": {
+    "top": [
+     " «",
+     " analyse",
+     " connexion",
+     " titre",
+     " honoured",
+     " ét",
+     "ţ",
+     " («",
+     "«",
+     " analysed"
+    ],
+    "share": 0.22
+   }
+  },
+  "emoji": {
+   "skipped": "2 single-token pairs"
+  },
+  "pirate": {
+   "pairs": [
+    [
+     " Ar",
+     " Well"
+    ],
+    [
+     " ye",
+     " you"
+    ],
+    [
+     " yer",
+     " your"
+    ],
+    [
+     "aye",
+     "yes"
+    ],
+    [
+     " lad",
+     " boy"
+    ],
+    [
+     " lass",
+     " girl"
+    ],
+    [
+     " booty",
+     " money"
+    ],
+    [
+     " plunder",
+     " take"
+    ],
+    [
+     " savvy",
+     " understand"
+    ],
+    [
+     " me",
+     " my"
+    ],
+    [
+     " be",
+     " is"
+    ],
+    [
+     " hearty",
+     " friend"
+    ]
+   ],
+   "n_pairs": 12,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.04654522240161896,
+    "ours_s1": 0.04901646822690964,
+    "ours_s2": 0.0641910508275032,
+    "oracle": 0.15618158876895905,
+    "eye_s0": -0.00534928310662508,
+    "rand_s0": 0.046838149428367615,
+    "eye_s1": -0.010759798809885979,
+    "eye_s2": -0.004850408993661404,
+    "var_ridge:0.1": 0.048341430723667145,
+    "var_ridge:0.01": 0.027807913720607758,
+    "var_ridge:0.001": 0.009609010070562363,
+    "var_notop": 0.06076541543006897,
+    "mix_0.25": 0.9502251148223877,
+    "mix_0.5": 0.7233758568763733,
+    "mix_0.75": 0.3554551899433136,
+    "oracle_eye": 0.06981851905584335
+   },
+   "fitted_norm": 3.5472636222839355,
+   "readout_ours": {
+    "top": [
+     " plunder",
+     " booty",
+     " targ",
+     "\u001b[",
+     "ɑ",
+     "([\\",
+     " algu",
+     "丐",
+     " serr",
+     "<g"
+    ],
+    "share": 0.08
+   },
+   "readout_fitted": {
+    "top": [
+     " folks",
+     " guys",
+     " !",
+     " lovely",
+     " ain",
+     " gonna",
+     " damn",
+     " stuff",
+     " nasty",
+     " huh"
+    ],
+    "share": 0.0
+   }
+  },
+  "hedge": {
+   "pairs": [
+    [
+     " might",
+     " will"
+    ],
+    [
+     " maybe",
+     " definitely"
+    ],
+    [
+     " perhaps",
+     " certainly"
+    ],
+    [
+     " possibly",
+     " clearly"
+    ],
+    [
+     " arguably",
+     " obviously"
+    ],
+    [
+     " seemingly",
+     " evidently"
+    ],
+    [
+     " probably",
+     " surely"
+    ],
+    [
+     " could",
+     " must"
+    ],
+    [
+     " somewhat",
+     " completely"
+    ],
+    [
+     " unclear",
+     " clear"
+    ],
+    [
+     " uncertain",
+     " certain"
+    ],
+    [
+     " suggests",
+     " proves"
+    ],
+    [
+     " may",
+     " does"
+    ],
+    [
+     " roughly",
+     " exactly"
+    ],
+    [
+     " presumably",
+     " undoubtedly"
+    ]
+   ],
+   "n_pairs": 15,
+   "cos_to_fitted": {
+    "fitted": 0.9999999403953552,
+    "ours_s0": 0.060023486614227295,
+    "ours_s1": 0.08105941116809845,
+    "ours_s2": 0.051293034106492996,
+    "oracle": 0.23710587620735168,
+    "eye_s0": 0.0188627727329731,
+    "rand_s0": 0.020342348143458366,
+    "eye_s1": 0.052781276404857635,
+    "eye_s2": 0.012571076862514019,
+    "var_ridge:0.1": 0.03896524757146835,
+    "var_ridge:0.01": 0.007912008091807365,
+    "var_ridge:0.001": -0.011714734137058258,
+    "var_notop": 0.06298773735761642,
+    "mix_0.25": 0.950696587562561,
+    "mix_0.5": 0.7280189990997314,
+    "mix_0.75": 0.3666275143623352,
+    "oracle_eye": 0.15093594789505005
+   },
+   "fitted_norm": 2.730983257293701,
+   "readout_ours": {
+    "top": [
+     " possibly",
+     " perhaps",
+     " maybe",
+     "possibly",
+     "可能与",
+     "perhaps",
+     "maybe",
+     " potentially",
+     " Maybe",
+     "可能"
+    ],
+    "share": 0.42
+   },
+   "readout_fitted": {
+    "top": [
+     " perhaps",
+     " certain",
+     " might",
+     " discussions",
+     " uncertain",
+     " discussion",
+     " unclear",
+     " certainly",
+     " yet",
+     " particular"
+    ],
+    "share": 0.14
+   }
+  },
+  "syco": {
+   "pairs": [
+    [
+     " Absolutely",
+     " Actually"
+    ],
+    [
+     " Exactly",
+     " However"
+    ],
+    [
+     " Indeed",
+     " Unfortunately"
+    ],
+    [
+     " correct",
+     " incorrect"
+    ],
+    [
+     " right",
+     " wrong"
+    ],
+    [
+     " brilliant",
+     " mistaken"
+    ],
+    [
+     " true",
+     " false"
+    ],
+    [
+     " agree",
+     " disagree"
+    ],
+    [
+     " Yes",
+     " No"
+    ],
+    [
+     " great",
+     " misleading"
+    ],
+    [
+     " excellent",
+     " inaccurate"
+    ],
+    [
+     " perfectly",
+     " partly"
+    ],
+    [
+     " totally",
+     " hardly"
+    ]
+   ],
+   "n_pairs": 13,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.1846134215593338,
+    "ours_s1": 0.18490555882453918,
+    "ours_s2": 0.16474220156669617,
+    "oracle": 0.2095959633588791,
+    "eye_s0": 0.09415113180875778,
+    "rand_s0": -5.231192335486412e-05,
+    "eye_s1": 0.10002301633358002,
+    "eye_s2": 0.0708657056093216,
+    "var_ridge:0.1": 0.1626792997121811,
+    "var_ridge:0.01": 0.11120966076850891,
+    "var_ridge:0.001": 0.05752057954668999,
+    "var_notop": 0.18064799904823303,
+    "mix_0.25": 0.9555315971374512,
+    "mix_0.5": 0.7696146965026855,
+    "mix_0.75": 0.4662240743637085,
+    "oracle_eye": 0.1203746646642685
+   },
+   "fitted_norm": 1.556315541267395,
+   "readout_ours": {
+    "top": [
+     " perfectly",
+     " perfect",
+     " wonderful",
+     " Perfect",
+     " YES",
+     " brilliant",
+     " yes",
+     " Yes",
+     " magnificent",
+     " beautifully"
+    ],
+    "share": 0.42
+   },
+   "readout_fitted": {
+    "top": [
+     " folks",
+     " kids",
+     " effortlessly",
+     " vibes",
+     " nicely",
+     " yeah",
+     " amazing",
+     " guys",
+     " yummy",
+     "!\""
+    ],
+    "share": 0.04
+   }
+  },
+  "refusal": {
+   "pairs": [
+    [
+     " cannot",
+     " can"
+    ],
+    [
+     " unable",
+     " able"
+    ],
+    [
+     " refuse",
+     " accept"
+    ],
+    [
+     " decline",
+     " agree"
+    ],
+    [
+     " illegal",
+     " legal"
+    ],
+    [
+     " unlawful",
+     " lawful"
+    ],
+    [
+     " sorry",
+     " sure"
+    ],
+    [
+     " inappropriate",
+     " appropriate"
+    ],
+    [
+     " harmful",
+     " helpful"
+    ],
+    [
+     " forbidden",
+     " allowed"
+    ],
+    [
+     " prohibited",
+     " permitted"
+    ],
+    [
+     " unethical",
+     " ethical"
+    ],
+    [
+     " dangerous",
+     " safe"
+    ],
+    [
+     " deny",
+     " grant"
+    ],
+    [
+     " restricted",
+     " available"
+    ]
+   ],
+   "n_pairs": 15,
+   "cos_to_fitted": {
+    "fitted": 0.9999999403953552,
+    "ours_s0": 0.1062370240688324,
+    "ours_s1": 0.0996399074792862,
+    "ours_s2": 0.11141350865364075,
+    "oracle": 0.1815183311700821,
+    "eye_s0": 0.06385860592126846,
+    "rand_s0": 0.014411211013793945,
+    "eye_s1": 0.05489908903837204,
+    "eye_s2": 0.0554109625518322,
+    "var_ridge:0.1": 0.10320025682449341,
+    "var_ridge:0.01": 0.07821399718523026,
+    "var_ridge:0.001": 0.0507521815598011,
+    "var_notop": 0.11429186910390854,
+    "mix_0.25": 0.9523934125900269,
+    "mix_0.5": 0.7437193393707275,
+    "mix_0.75": 0.40432578325271606,
+    "oracle_eye": 0.11223111301660538
+   },
+   "fitted_norm": 3.730647325515747,
+   "readout_ours": {
+    "top": [
+     "非法",
+     " forbidden",
+     "Forbidden",
+     " illegal",
+     "Illegal",
+     " harmful",
+     "有害",
+     "禁止",
+     "危害",
+     " poisonous"
+    ],
+    "share": 0.22
+   },
+   "readout_fitted": {
+    "top": [
+     " requested",
+     " unlawful",
+     " unlaw",
+     " unauthorized",
+     " prohibited",
+     " illegal",
+     " harmful",
+     " Unauthorized",
+     " disclaimer",
+     " violate"
+    ],
+    "share": 0.14
+   }
+  },
+  "brief": {
+   "pairs": [
+    [
+     ".",
+     ","
+    ],
+    [
+     " Yes",
+     " Well"
+    ],
+    [
+     " No",
+     " However"
+    ],
+    [
+     " Done",
+     " Additionally"
+    ],
+    [
+     " Simple",
+     " Furthermore"
+    ],
+    [
+     " Short",
+     " Moreover"
+    ],
+    [
+     " Brief",
+     " Detailed"
+    ],
+    [
+     " Just",
+     " First"
+    ]
+   ],
+   "n_pairs": 8,
+   "cos_to_fitted": {
+    "fitted": 1.0,
+    "ours_s0": 0.09865503758192062,
+    "ours_s1": 0.12280189245939255,
+    "ours_s2": 0.09442934393882751,
+    "oracle": 0.21050456166267395,
+    "eye_s0": 0.05522983893752098,
+    "rand_s0": -0.003521425649523735,
+    "eye_s1": 0.05948691442608833,
+    "eye_s2": 0.059429366141557693,
+    "var_ridge:0.1": 0.07343459874391556,
+    "var_ridge:0.01": 0.04422836750745773,
+    "var_ridge:0.001": 0.02581641636788845,
+    "var_notop": 0.09416656941175461,
+    "mix_0.25": 0.9521067142486572,
+    "mix_0.5": 0.741166353225708,
+    "mix_0.75": 0.39820414781570435,
+    "oracle_eye": 0.07890892773866653
+   },
+   "fitted_norm": 3.462203025817871,
+   "readout_ours": {
+    "top": [
+     " Simple",
+     " Short",
+     "简单",
+     "simple",
+     " simple",
+     "简单的",
+     " Just",
+     "Simple",
+     " SIMPLE",
+     " kids"
+    ],
+    "share": 0.32
+   },
+   "readout_fitted": {
+    "top": [
+     "<|endoftext|>",
+     "\n\n",
+     "<|im_end|>",
+     "\n",
+     ".\"",
+     " .\"",
+     ".\"]",
+     "\".",
+     ".</",
+     " pls"
+    ],
+    "share": 0.04
+   }
+  }
+ }
+}

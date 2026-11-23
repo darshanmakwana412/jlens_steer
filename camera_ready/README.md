@@ -45,3 +45,22 @@ python diag.py q17 q4 q8
 
 All generation is greedy; the only randomness is the token subsets and the random control, both seeded.
 Runs used one RTX PRO 4500 (32 GB); Qwen3-1.7B takes about 20 minutes.
+
+## Appendix F of the camera-ready (smaller models, held-out coefficients, intervals, judge)
+
+Five more models (g270 = Gemma-3 270M-it, g1 = Gemma-3 1B-it, q25 = Qwen2.5-1.5B-Instruct, q35a = Qwen3.5-0.8B,
+q35b = Qwen3.5-2B), a coefficient grid extended down to 0.002 for all eight models, bootstrap intervals over prompts
+and seeds, and Claude Haiku 5.5 as judge for hedging and sycophancy. Gated Gemma weights are loaded from the
+`unsloth` mirrors; `tools/smoke.py` and `tools/fidelity_layers.py` check that each published lens fits the weights.
+The low coefficients for q17/q4/q8 were generated later (transformers 5.x) from the stored directions.
+
+```bash
+python run.py --model google/gemma-3-1b-it --tag g1 --lean --variants --sweep 9 11 16 19   # likewise g270 q25 q35a q35b
+python run_low.py --model google/gemma-3-1b-it --tag g1                                      # every model
+python analyze.py g1
+JUDGE=haiku python judge.py g1 && JUDGE=haiku python judge.py --full g1                    # needs AWS Bedrock access
+python appendix.py                                                                           # figures, tables, numbers
+```
+
+Qwen3.5 splits every listed emoji into several tokens (2 of 24 pairs survive), so `run.py` skips that behaviour there.
+Ran on one L40S (48 GB) in about two hours for all five models.

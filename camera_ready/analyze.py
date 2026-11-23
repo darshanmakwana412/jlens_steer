@@ -76,6 +76,16 @@ def boot_ci(x):
     return float(np.percentile(m, 2.5)), float(np.percentile(m, 97.5))
 
 
+def boot_ci_seeds(P):
+    """P: seeds x prompts. Resample prompts and seeds jointly, so seed variance is in the interval."""
+    P = np.asarray(P)
+    k, n = P.shape
+    pi = rng.integers(0, n, size=(N_BOOT, n))
+    si = rng.integers(0, k, size=(N_BOOT, k))
+    m = np.array([P[si[b]][:, pi[b]].mean() for b in range(N_BOOT)])
+    return float(np.percentile(m, 2.5)), float(np.percentile(m, 97.5))
+
+
 def method_scores(cells, prefix, n):
     """Seed-averaged cross-fitted per-prompt scores for a method with seeds (prefix_s0..), or a single dir."""
     names = [d for d in cells if d == prefix or (d.startswith(prefix + "_s") and "@" not in d
@@ -89,7 +99,9 @@ def method_scores(cells, prefix, n):
     if not per_seed:
         return None
     X = np.mean(per_seed, 0)
-    return dict(per_prompt=X, mean=float(X.mean()), ci=boot_ci(X), seed_means=[float(s.mean()) for s in per_seed],
+    ci_prompt = boot_ci(X)
+    ci = boot_ci_seeds(per_seed) if len(per_seed) > 1 else ci_prompt
+    return dict(per_prompt=X, mean=float(X.mean()), ci=ci, ci_prompt=ci_prompt, seed_means=[float(s.mean()) for s in per_seed],
                 insample=float(np.mean(ins)), chosen=chosen)
 
 

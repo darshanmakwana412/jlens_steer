@@ -1,0 +1,126 @@
+{
+ "hedge": {
+  "none": {
+   "judge_selected": 0.046875,
+   "ci": [
+    0.0,
+    0.109375
+   ],
+   "chosen": {
+    "A->B": 0.0,
+    "B->A": 0.0
+   },
+   "best_alpha_rate": 0.046875
+  },
+  "fitted": {
+   "judge_selected": 0.046875,
+   "ci": [
+    0.0,
+    0.109375
+   ],
+   "chosen": {
+    "A->B": 0.004,
+    "B->A": 0.002
+   },
+   "best_alpha_rate": 0.0625
+  },
+  "ours_s0": {
+   "judge_selected": 0.140625,
+   "ci": [
+    0.0625,
+    0.234375
+   ],
+   "chosen": {
+    "A->B": 0.002,
+    "B->A": 0.004
+   },
+   "best_alpha_rate": 0.28125
+  },
+  "eye_s0": {
+   "judge_selected": 0.171875,
+   "ci": [
+    0.078125,
+    0.265625
+   ],
+   "chosen": {
+    "A->B": 0.008,
+    "B->A": 0.004
+   },
+   "best_alpha_rate": 0.203125
+  },
+  "oracle": {
+   "judge_selected": 0.09375,
+   "ci": [
+    0.03125,
+    0.171875
+   ],
+   "chosen": {
+    "A->B": 0.002,
+    "B->A": 0.002
+   },
+   "best_alpha_rate": 0.09375
+  }
+ },
+ "syco": {
+  "none": {
+   "judge_selected": 0.875,
+   "ci": [
+    0.75,
+    0.96875
+   ],
+   "chosen": {
+    "A->B": 0.0,
+    "B->A": 0.0
+   },
+   "best_alpha_rate": 0.875
+  },
+  "fitted": {
+   "judge_selected": 0.875,
+   "ci": [
+    0.75,
+    0.96875
+   ],
+   "chosen": {
+    "A->B": 0.004,
+    "B->A": 0.002
+   },
+   "best_alpha_rate": 0.90625
+  },
+  "ours_s0": {
+   "judge_selected": 0.875,
+   "ci": [
+    0.75,
+    0.96875
+   ],
+   "chosen": {
+    "A->B": 0.002,
+    "B->A": 0.002
+   },
+   "best_alpha_rate": 0.875
+  },
+  "eye_s0": {
+   "judge_selected": 0.875,
+   "ci": [
+    0.75,
+    0.96875
+   ],
+   "chosen": {
+    "A->B": 0.002,
+    "B->A": 0.002
+   },
+   "best_alpha_rate": 0.875
+  },
+  "oracle": {
+   "judge_selected": 0.71875,
+   "ci": [
+    0.5625,
+    0.875
+   ],
+   "chosen": {
+    "A->B": 0.002,
+    "B->A": 0.002
+   },
+   "best_alpha_rate": 0.71875
+  }
+ }
+}

@@ -64,6 +64,10 @@ for b in args.behaviours:
     t0 = time.time()
     B = BEHAVIOURS[b]
     pairs = ctx.token_pairs(B["pairs"], B["n_pairs"])
+    if len(pairs) < 3:   # Eq. 2 samples subsets of 3 pairs; e.g. Qwen3.5 splits every listed emoji into several pieces
+        print(f"[{b}] skipped: only {len(pairs)} single-token pairs under this tokenizer", flush=True)
+        meta["behaviours"].setdefault(b, {})["skipped"] = f"{len(pairs)} single-token pairs"
+        continue
     if B["pool"] == "neutral":
         train = [NEUTRAL[i] for i in TRAIN_IDX]
         evalq = [NEUTRAL[i] for i in FOLD_A + FOLD_B]
@@ -166,7 +170,7 @@ for b in args.behaviours:
         for r in recs:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
     old = json.load(open(out / "meta.json")) if (out / "meta.json").exists() else None
-    if old and not main:
+    if old:   # merge, so a run over a subset of behaviours keeps the others' diagnostics
         for k, v in meta["behaviours"].items():
             old["behaviours"].setdefault(k, {}).update(v)
         meta_out = old
