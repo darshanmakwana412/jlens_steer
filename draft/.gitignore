@@ -1,0 +1,6 @@
+# Keep only the LaTeX sources and PDFs; ignore build artifacts and everything else.
+*
+!*/
+!*.tex
+!*.pdf
+!.gitignore

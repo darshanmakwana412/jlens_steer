@@ -1,0 +1,451 @@
+% Extracting Steering Vectors from the J Space
+% Reconstructed from the submitted PDF (102_Extracting_Steering_Vector.pdf).
+% Compile with XeTeX via tectonic:  tectonic main.tex
+\documentclass{article}
+
+% Camera-ready version
+\usepackage[dblblindworkshop, final]{neurips_2026}
+
+% ---------------------------------------------------------------- fonts (XeTeX)
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+% Chinese tokens (the submission used STSongti-SC-Regular = "Songti SC",
+% scaled to 0.92: measured from the glyph boxes in the submitted PDF)
+\newfontfamily\zhfont{Songti SC}[Scale=0.92]
+\newcommand{\zh}[1]{{\zhfont #1}}
+
+% ---------------------------------------------------------------- packages
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsmath}
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage[table]{xcolor}  % colors (+ colortbl)
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{caption}
+\input{tables/numbers_q17.tex}
+\IfFileExists{tables/numbers_q4.tex}{\input{tables/numbers_q4.tex}}{}
+\IfFileExists{tables/numbers_q8.tex}{\input{tables/numbers_q8.tex}}{}
+\makeatletter\newcommand\inputtab[1]{\@@input #1 }\makeatother
+
+% ---------------------------------------------------------------- colours
+% table shading: green = ours ahead by > 0.10, red = fitted ahead by > 0.10
+\definecolor{posgreen}{rgb}{0.88,1,0.88}   % #e0ffe0
+\definecolor{negred}{rgb}{1,0.88,0.88}     % #ffe0e0
+\definecolor{ctrlgrey}{gray}{0.5}          % #808080, J=I and random columns
+% listings
+\definecolor{lstbg}{gray}{0.98}
+\definecolor{lstframe}{gray}{0.8}
+\definecolor{lstkw}{rgb}{0,0,0.8}
+\definecolor{lststr}{rgb}{0.7,0,0}
+\definecolor{lstcmt}{rgb}{0,0.5,0}
+
+\newcommand{\pos}{\cellcolor{posgreen}}
+\newcommand{\negc}{\cellcolor{negred}}
+\newcommand{\dlt}[1]{{\scriptsize(#1)}}
+\newcolumntype{g}{>{\color{ctrlgrey}}r}
+
+% Emoji placeholder. The submitted PDF prints the literal text "[emoji]" for
+% every emoji concept token in Table 3; the actual emoji are not recoverable
+% from the PDF.  TODO: replace with the real emoji tokens.
+% In the submission the placeholder is set at 8pt (\footnotesize), larger than the
+% surrounding 7pt token list; reproduced here.
+\newcommand{\emojiph}[1][]{{\footnotesize\texttt{[emoji]}}}
+\newcommand{\emo}[1]{\raisebox{-0.15ex}{\includegraphics[height=1.7ex]{figures/emoji/#1.png}}}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{lstkw}\bfseries,
+  keywordstyle={[2]\color{lstkw}\bfseries},
+  stringstyle=\color{lststr},
+  commentstyle=\color{lstcmt}\itshape,
+  backgroundcolor=\color{lstbg},
+  frame=single,
+  rulecolor=\color{lstframe},
+  xleftmargin=3pt,
+  framexleftmargin=3pt,
+  belowskip=\smallskipamount,
+  showstringspaces=false,
+  captionpos=t,
+  morekeywords={True,False},
+}
+
+\title{Extracting Steering Vectors from the J Space}
+\workshoptitle{Neural Network Artifacts as a New Data Modality}
+
+\author{%
+  Darshan Makwana \qquad Naman Garg \\
+  Signal Labs \\
+  \texttt{\{darshanm,namang\}@signallabs.ai} \\
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  The Jacobian lens decodes a residual-stream activation into the tokens a model is disposed to say, and it already steers single tokens. We explore whether a published lens can be run backwards into steering vectors for \emph{behaviours}: the unembedding rows of hand-written concept tokens are contrasted against counter-tokens, pulled back through the lens and averaged. The construction needs no behavioural examples, but it does rely on a corpus-fitted lens, hand-written token lists and an empirically chosen coefficient. On 8 behaviours and three Qwen3 models with two lens families, with coefficients selected on held-out prompts and checked by an LLM judge, the derived direction is competitive with a difference-in-means vector on behaviours that are preferences over word choice. Only capitalisation and emoji need the Jacobian; for hedging and sycophancy the same contrasts taken directly in unembedding space work as well. The failures are of two kinds. For French, the subspace spanned by the token pull-backs contains a working direction that the average misses, because the published lens amplifies one input direction; a ridge-regularised pull-back that removes it recovers part of the gap on Qwen3-1.7B and all of it on Qwen3-4B, out-of-sample. For refusal and brevity, and for pirate register on the smaller models, even the projection of a working direction onto that subspace fails. Which case a behaviour falls into changes with model scale. We present this as an exploratory map of which parts of the J space are functionally useful for steering.
+\end{abstract}
+
+% =====================================================================
+\section{Introduction}
+
+Steering vectors are directions added to the residual stream of a language model that shift its behaviour, for instance towards answering in capitals or towards refusing. They are usually fitted as a difference of means over contrasting prompts \citep{turner2023actadd,rimsky2024caa,zou2023repe}, which needs behaviour-specific contrast data; refusal in particular is mediated by a single such direction \citep{arditi2024refusal}. Separately, lenses decode intermediate activations into tokens: the logit lens \citep{nostalgebraist2020logitlens}, the tuned lens \citep{belrose2023tuned}, and the Jacobian lens \citep{gurnee2026workspace}, a matrix per layer whose image we call the J space, now published for dozens of models \citep{neuronpedia2026jlens}, with a refined J++ variant \citep{ayonrinde2026jpplens}.
+
+The Jacobian lens already steers single tokens. The workspace paper swaps the lens vector of one concept for another (\emph{spider} for \emph{ant}), and its released code injects the unit-normalised transpose row of one token, scaled by the residual norm, to plant that word as a ``thought'' \citep{gurnee2026code}; \citet{gong2026firsttoken} extend the readout to multi-token concepts. Whether the lens also carries \emph{behaviours} that no single token names, such as answering in French or hedging, is open. This paper is an exploratory extension of the token-level construction to that case: we contrast hand-written concept tokens with counter-tokens, pull the contrasts back through the lens, average them, and ask where the result steers like a fitted vector and where it does not.
+
+The construction needs no behavioural examples, but it is not data-free: the lens is corpus-fitted, the token lists are hand-written, and the coefficient is chosen empirically. Our contributions are (1) an evaluation of this construction against difference-in-means on 8 behaviours, three Qwen3 models and two lens families, with coefficients selected on held-out prompts, bootstrap intervals and an LLM judge; (2) a separation of the outcomes into four cases using a $J{=}I$ control and an oracle projection: success that needs the Jacobian, success that the unembedding geometry alone explains, an \emph{estimator} failure where the token subspace contains a working direction that the average misses, and \emph{subspace} failures where it does not; and (3) a ridge-regularised pull-back that corrects much of the estimator failure, fixed on one model and tested on the others.
+
+% =====================================================================
+\section{Background}
+
+\paragraph{Steering vectors.}
+Steering adds $\alpha d_\ell$ to the residual stream at layer $\ell$ during generation. Difference-in-means, or contrastive activation addition, takes $d_\ell$ as the difference of mean activations under a positive and a negative condition \citep{rimsky2024caa}. For refusal, \emph{abliteration} \citep{arditi2024refusal} orthogonalises the weights against the refusal direction, so an abliterated checkpoint minus its base, a task vector \citep{ilharco2023task}, exposes that direction.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.62\linewidth]{figures/fig1_pca.png}
+  \caption{Pull-backs $J_{13}^\top(g \odot u_t)$ of every Qwen3-1.7B token with a capitalised twin (grey: lowercase, orange: capitalised), top two principal components. Arrows join twenty pairs; the dashed line is a published capitalisation steering vector projected onto the same components.}
+  \label{fig:pca}
+\end{figure}
+
+\paragraph{Jacobian lens.}
+The Jacobian lens \citep{gurnee2026workspace} estimates the average linearisation of the network from layer $\ell$ to the final layer $L$ and decodes through the model's own final norm and unembedding $W_U$,
+\begin{equation}
+  J_\ell \;=\; \mathbb{E}_x\!\left[\frac{\partial h_L(x)}{\partial h_\ell(x)}\right],
+  \qquad
+  \mathrm{lens}_\ell(h) \;=\; W_U\big(g \odot \mathrm{RMSNorm}(J_\ell h)\,\big),
+  \label{eq:lens}
+\end{equation}
+where $g$ is the gain of the final norm. $J_\ell$ is estimated over a corpus of prompts and is expensive to fit, but the fitted matrices are published. The J++ lens \citep{ayonrinde2026jpplens} keeps the form, one linear map per layer, but is fitted with Jacobian filtering and an LRP backward pass. We rely only on the map being linear.
+
+% =====================================================================
+\section{Method}
+
+\paragraph{Intuition.}
+By Eq.~\ref{eq:lens}, the direction at layer $\ell$ that most raises the lens logit of token $t$ is its pull-back $J_\ell^\top (g \odot u_t)$. For two tokens that differ in one property, the difference of their pull-backs targets that property, and averaging many such contrasts cancels what is specific to each word. Figure~\ref{fig:pca} checks this on capitalisation: the arrows from lowercase tokens to their capitalised twins point the same way, along a published capitalisation steering vector.
+
+\paragraph{Lens inversion.}
+Let $u_t$ be the unembedding row of token $t$. Reading Eq.~\ref{eq:lens} backwards, the layer-$\ell$ activation that most raises the lens logit of $t$ at fixed norm is $J_\ell^\top (g \odot u_t)$. Since a behaviour is not a single token, we contrast a set of concept tokens $P$ with an index-matched set of counter-tokens $N$ (\texttt{cannot} against \texttt{can}, \texttt{THE} against \texttt{the}), sample $k$ subsets $S_i$ of size $c$, and average the normalised pull-backs:
+\begin{equation}
+  d_\ell \;=\; \mathrm{unit}\!\left(\sum_{i=1}^{k} \mathrm{unit}\Big(J_\ell^\top \Big(g \odot \big(\bar u_{P(S_i)} - \bar u_{N(S_i)}\big)\Big)\Big)\right),
+  \qquad
+  \bar u_A = \tfrac{1}{|A|}\!\sum_{t \in A}\!u_t .
+  \label{eq:inv}
+\end{equation}
+The inner normalisation stops a few high-norm unembedding rows from dominating. We use $c = 3$ and $k = 20$.
+
+\paragraph{What the construction uses.}
+Eq.~\ref{eq:inv} needs no behavioural examples, contrastive generations or gradients, but it is not data-free: the lens was fitted by its publishers on WikiText, the token lists are written by hand, the injection scale $\rho_\ell$ comes from a forward pass over neutral prompts, and the coefficient $\alpha$ is chosen empirically. The claim we test is whether a lens fitted once, for reading, plus a word list can replace the behaviour-specific contrast data of difference-in-means.
+
+\paragraph{Ridge pull-back.}
+$J_\ell^\top$ is the steepest-ascent direction of the lens logit, not the activation the lens decodes as the contrast. The two differ when $J_\ell$ is anisotropic, and the published lenses are: on Qwen3-1.7B at layer 15 the top singular value is $78$ against $17$ for the next, so every pull-back $J_\ell^\top c = V S U^\top c$ leans towards the top input singular vector $v_1$ whatever $c$ is. The least-squares solution $J_\ell^{+} c$ instead weights directions inversely to their gain. We interpolate with a ridge pull-back,
+\begin{equation}
+  P_\gamma \;=\; \big(J_\ell^\top J_\ell + \gamma\,\sigma_1^2 I\big)^{-1} J_\ell^\top ,
+  \label{eq:ridge}
+\end{equation}
+which gives $J_\ell^\top$ up to scale as $\gamma \to \infty$ and $J_\ell^{+}$ as $\gamma \to 0$ ($\sigma_1$ is the top singular value). Using $P_\gamma$ in Eq.~\ref{eq:inv} gives the \emph{ridge} estimator. We fixed $\gamma = 0.01$ on Qwen3-1.7B, out of $\{0.1, 0.01, 0.001\}$, before running any other model, so its results on Qwen3-4B and Qwen3-8B are out-of-sample.
+
+\paragraph{Controls.}
+Replacing $J_\ell$ by the identity gives the $J{=}I$ control: the same contrasts taken directly in unembedding space, the simplest unembedding-based steering baseline, which isolates what the lens adds. A unit Gaussian direction is a random control.
+
+\paragraph{Scaling and injection.}
+We add $\alpha \rho_\ell d_\ell$ to the output of block $\ell$ at every position, where $\rho_\ell$ is the mean residual norm at the last prompt position of 32 neutral training prompts never used for evaluation.
+
+\paragraph{Diagnostics.}
+The \emph{lens readout} decodes a direction through Eq.~\ref{eq:lens}. The \emph{oracle projection} tests whether a behaviour is reachable from the tokens at all: whatever weights Eq.~\ref{eq:inv} uses, $d_\ell$ lies in $V = \mathrm{span}\{J_\ell^\top (g \odot (u_p - u_n))\}$ over the pairs. We project a working direction (the fitted one) onto $V$ and steer with the projection. It is one element of $V$, not a maximum over it, so its failure is evidence of unreachability, not proof.
+
+% =====================================================================
+\section{Experiment Setup}
+\label{sec:setup}
+
+\paragraph{Models and lenses.} Qwen3-1.7B \citep{yang2025qwen3} with its published Jacobian lens \citep{neuronpedia2026jlens} is the main model; we fit no lenses. For scale and lens family we repeat everything on Qwen3-4B, which has both a Jacobian and a J++ lens, and on Qwen3-8B. The models share a tokenizer, so all use the same token pairs. Directions are injected at depth $0.55L$ (block 15 of 28, and 19 of 36).
+
+\paragraph{Behaviours and baselines.} 8 behaviours, ordered from lexical to dispositional before any experiment: capitalisation, answering in French, emoji use, pirate register, hedging, sycophantic agreement, refusing harmless requests and extreme brevity. Each has 8 to 20 hand-written concept/counter-token pairs, an instruction pair and a functional test (Appendix~\ref{app:behaviours}). The fitted baseline is difference-in-means over the model's own instructed continuations\footnote{Averaging at the last prompt token instead mostly recovers the difference between the two instruction strings.} on 32 training prompts (16 for sycophancy) disjoint from evaluation. On Qwen3-1.7B we add a published capitalisation vector and the refusal direction of \texttt{mlabonne/Qwen3-1.7B-abliterated} (Appendix~\ref{app:impl}).
+
+\paragraph{Protocol.} Greedy decoding, 48 new tokens, 64 evaluation prompts (32 false-premise prompts for sycophancy), 11 coefficients from $0.025$ to $1.2$. A completion that fails a five-signal quality gate (Appendix~\ref{app:gate}) scores zero, and a coefficient is inadmissible on a prompt set where more than 30\% of completions fail it. The submission selected the coefficient on the prompts it reported; here the prompts are split into two folds, the coefficient is selected on one and scored on the other, and the folds are pooled, so no number is selected on the prompts it is scored on. Subset-sampled directions (ours, ridge, $J{=}I$) and the random control use three seeds. Intervals are 95\% bootstrap intervals over prompts, and a direction \emph{matches} the fitted vector when the interval of the paired per-prompt difference contains zero. The capitalisation, hedging and sycophancy tests are lexical, close to what Eq.~\ref{eq:inv} optimises, so for hedging and sycophancy we also use an LLM judge (Claude Sonnet~5.5, blind to method) that grades the behaviour itself and coherence, with the coefficient re-selected on the judged rate (Appendix~\ref{app:judge}).
+
+\begin{table}[t]
+  \caption{Qwen3-1.7B, layer 15, coefficients cross-fitted on held-out prompts. Brackets: 95\% bootstrap intervals. \colorbox{posgreen}{Green}/\colorbox{negred}{red}: the paired difference to the fitted vector is above/below zero with 95\% confidence; unshaded is a match. \emph{ours} is Eq.~\ref{eq:inv}, \emph{ridge} uses Eq.~\ref{eq:ridge}, \emph{oracle} is the projection of the fitted direction onto the token subspace $V$. Controls in grey. Artifact: $^{\dagger}$published caps vector at its own layer 13; refusal: the abliteration direction. Unsteered rates are $0.00$ except hedging ($0.05$) and sycophancy ($0.22$). The last column is the case of Section~\ref{sec:discussion}.}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.8pt}
+  \begin{tabular}{lllllggll}
+    \toprule
+    & \multicolumn{2}{c}{\textbf{behavioural data}} & \multicolumn{4}{c}{\textbf{a lens and a word list}} & & \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-7}
+    \textbf{Behaviour} & fitted & artifact & \textbf{ours} & \textbf{ridge} & $J{=}I$ & random & oracle & case \\
+    \midrule
+    \inputtab{tables/main.tex}
+    \bottomrule
+  \end{tabular}
+  \label{tab:main}
+\end{table}
+
+\begin{table}[t]
+  \caption{Scale and lens family. Cross-fitted behaviour rate of the fitted vector, Eq.~\ref{eq:inv} (ours), the ridge pull-back and the $J{=}I$ control on three Qwen3 models; on Qwen3-4B also with the J++ lens. $\gamma$ was fixed on Qwen3-1.7B, so the ridge columns of the larger models are out-of-sample. Qwen3-8B was run with one random seed for the random control. Shading as in Table~\ref{tab:main}.}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.6pt}
+  \begin{tabular}{l rrrg rrrg rr rrrg}
+    \toprule
+    & \multicolumn{4}{c}{\textbf{Qwen3-1.7B}, J-lens} & \multicolumn{4}{c}{\textbf{Qwen3-4B}, J-lens} & \multicolumn{2}{c}{\textbf{4B}, J++} & \multicolumn{4}{c}{\textbf{Qwen3-8B}, J-lens} \\
+    \cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-11}\cmidrule(lr){12-15}
+    & fit & ours & ridge & $J{=}I$ & fit & ours & ridge & $J{=}I$ & ours & ridge & fit & ours & ridge & $J{=}I$ \\
+    \midrule
+    \inputtab{tables/models.tex}
+    \bottomrule
+  \end{tabular}
+  \label{tab:models}
+\end{table}
+
+% =====================================================================
+\section{Results}
+\label{sec:results}
+
+\paragraph{Held-out selection changes little.} Selecting the coefficient on the reported prompts, as the submission did, overstates the cross-fitted rate by \INFLMEAN\ on average and at most \INFLMAX\ on Qwen3-1.7B.
+
+\paragraph{Qwen3-1.7B.} Eq.~\ref{eq:inv} matches the fitted vector on capitalisation (\CAPSOURS\ against \CAPSFITTED) and sycophancy (\SYCOOURS\ against \SYCOFITTED), exceeds it on hedging (\HEDGEOURS\ against \HEDGEFITTED), and falls below it on emoji, French, pirate register and brevity (Table~\ref{tab:main}). Refusal is at the floor for both at this layer, while the abliteration direction refuses on \ABLRATE. Without the Jacobian, capitalisation and emoji collapse (\CAPSEYE, \EMOJIEYE) while hedging and sycophancy do not (\HEDGEEYE, \SYCOEYE). The oracle projection steers French (\FRENCHORACLE) where Eq.~\ref{eq:inv} does not (\FRENCHOURS), and fails on pirate register (\PIRATEORACLE), refusal and brevity (\BRIEFORACLE); projecting the abliteration direction onto the refusal subspace also fails (\ABLORACLE\ against \ABLRATE).
+
+\paragraph{The ridge pull-back.} The Eq.~\ref{eq:inv} directions for capitalisation, French, emoji and pirate have $|\cos| = 0.45$ to $0.66$ with $v_1$, against at most $0.11$ for the fitted directions and $0.01$ for ridge (Appendix~\ref{app:readout}). Removing that component lifts French from \FRENCHOURS\ to \FRENCHRIDGE\ and capitalisation from \CAPSOURS\ to \CAPSRIDGE, and does nothing where the oracle also fails. The French recovery is partial: the judge finds predominantly French answers on \JFRRIDGE\ of prompts (\JFROURS\ for Eq.~\ref{eq:inv}, \JFRFITTED\ fitted) but fluent French on only \JFRFLUENTRIDGE\ (fitted \JFRFLUENTFITTED); most mix French function words into English (\emph{``Les Trees lose leurs Leaves in Winter\ldots''}).
+
+\paragraph{Scale and lens family.} On Qwen3-4B (Table~\ref{tab:models}) the four cases recur, and ridge, with $\gamma$ fixed on Qwen3-1.7B, closes the French gap (\FOURFRENCHOURS\ to \FOURFRENCHRIDGE, fitted \FOURFRENCHFITTED) and overtakes the fitted vector on emoji (\FOUREMOJIRIDGE\ against \FOUREMOJIFITTED), though not on capitalisation (\FOURCAPSRIDGE\ against \FOURCAPSFITTED). With the J++ lens, Eq.~\ref{eq:inv} alone reaches \FOURFRENCHOURSJPP\ on French, and the J++ ridge direction is judged fluent French on \FOURJFRFLUENTRIDGEJPP\ of prompts against \FOURJFRFLUENTFITTED\ for the fitted vector; J++ fails on emoji (\FOUREMOJIOURSJPP). On Qwen3-8B two behaviours change case: $J{=}I$ now steers French (\EIGHTFRENCHEYE, judged fluent on \EIGHTJFRFLUENTEYE) better than the lens directions (ridge \EIGHTFRENCHRIDGE), and the pirate oracle now works (\EIGHTPIRATEORACLE\ against fitted \EIGHTPIRATEFITTED) while Eq.~\ref{eq:inv} does not (\EIGHTPIRATEOURS; ridge \EIGHTPIRATERIDGE). Refusal, where the fitted vector now works (\EIGHTREFUSALFITTED), and brevity still fail the oracle.
+
+\paragraph{Behaviour-level judge.} Selected and scored by the judge (Table~\ref{tab:judge}), the ordering on hedging and sycophancy survives on all three models, and the lens directions match or beat the fitted vector. The keyword test overstates hedging for every method, most for the fitted vector: at the coefficient the keyword test picks, it writes off-topic chains of hedge words (\emph{``this question remains subject to a multitude of factors\ldots''}) that the judge scores as incoherent (\JKWHEDGEFITTED). $J{=}I$ matches the lens under the judge on Qwen3-1.7B and 4B but not on Qwen3-8B hedging (\EIGHTJHEDGEEYE\ against \EIGHTJHEDGEOURS).
+
+\begin{table}[t]
+  \caption{Keyword test against LLM judge. Each cell is keyword rate\,/\,\textbf{judge rate}. The keyword rate is cross-fitted on the keyword test (three seeds); the judge rate counts completions that pass the gate and that the judge finds both hedged (or endorsing the false premise) and coherent, with the coefficient cross-fitted on the judged rate itself (seed 0).}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3.5pt}
+  \begin{tabular}{llccccc}
+    \toprule
+    Model & Behaviour & unsteered & fitted & ours & ridge & $J{=}I$ \\
+    \midrule
+    \inputtab{tables/judge.tex}
+    \bottomrule
+  \end{tabular}
+  \label{tab:judge}
+\end{table}
+
+\paragraph{Cosines, mixtures and layers.} The derived and fitted directions have cosine $0.01$ to $0.25$ even when both steer. Mixing them is within $0.07$ of the better one on every behaviour and above both on some (emoji \MIXEMOJI). A layer sweep keeps the pattern, except that emoji matches the fitted vector at layer 12 and $J{=}I$ steers French at layer 18 ($0.80$), as it does on Qwen3-8B. Appendix~\ref{app:readout} has all three.
+
+% =====================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+The submission explained every outcome by one split, between preferences over word choice and behaviours that replace the lexical stream. The controls separate four cases instead.
+
+
+\paragraph{Jacobian-specific success (capitalisation, emoji).} $J{=}I$ is at or near the floor while lens inversion steers, on every model. The pairs are orthographic variants or pictograms, whose unembedding differences carry no usable direction; the lens supplies one. Only these rows show that a published lens carries steering information beyond its unembedding, and how competitive they are depends on the model.
+
+\paragraph{Unembedding-geometry success (hedging, sycophancy).} The same contrasts work without the lens, under the keyword tests and the judge, so they say little about the Jacobian; only on Qwen3-8B does the lens add to judged hedging.
+
+\paragraph{Estimator failure (French; pirate on Qwen3-8B).} The oracle steers and the average does not. In the published J-lens fits, $J_\ell^\top$ amplifies $v_1$ about four times more than any other direction and the average keeps it; ridge removes it and recovers part of the gap on Qwen3-1.7B and all of it on Qwen3-4B. Alignment with $v_1$ is not harmful in itself, since J++ directions are even more aligned and steer French at \FOURFRENCHOURSJPP; what matters is whether the lens fit's top direction is one the model uses. This is cheap to correct and likely affects any construction that pulls tokens back through a Jacobian lens.
+
+\paragraph{Subspace failure (refusal and brevity on every model; pirate on the smaller two).} The projection of a working direction fails too, for refusal from two different working directions, so no reweighting of these tokens is likely to work. The ridge pirate direction reads out as the concept tokens themselves (\texttt{plunder}, \texttt{booty}, \texttt{lass}) yet produces almost none of the register, and the refusal direction reads out as the vocabulary of harm (\texttt{forbidden}, \zh{非法}, \zh{虐待}), not of declining.
+
+Behaviours move between cases with scale, so the case is a property of the model, the lens fit and the token list together, and the lexical-to-dispositional ordering we fixed in advance predicts none of it. The low cosines show that working directions are far from unique: a low cosine to a fitted vector is not evidence against a constructed one.
+
+\paragraph{What would establish functional utility.} The evidence supports a narrow claim: for behaviours that are preferences over a nameable set of tokens, a published lens and a word list give a direction competitive with difference-in-means, and the lens itself matters only for some of them. A broader claim would need held-out behavioural evaluation on open-ended tasks, non-keyword metrics throughout, model families beyond Qwen3, lenses fitted on other corpora, and comparisons with prompting, data-matched difference-in-means and other unembedding- and dictionary-based baselines. Mining the token lists from the lens itself would remove the main hand-written ingredient.
+
+% =====================================================================
+\section{Conclusion}
+
+Running a published Jacobian lens backwards from hand-written token contrasts gives steering vectors competitive with difference-in-means on preferences over word choice, without behavioural examples but with a corpus-fitted lens, token lists and a tuned coefficient. The Jacobian matters only where the contrasted tokens are orthographic variants or pictograms. Failures split into an estimator failure, which a ridge pull-back corrects in part or in full depending on the model, and subspace failures that no reweighting of the tokens can fix. We see this as an exploratory map of which parts of the J space are useful for steering, not a validated method.
+
+\textbf{Limitations.} One model family and tokenizer; all lenses fitted on WikiText; hand-written token lists, so every negative result is about the subspace they span; small prompt sets and 48-token answers; a fixed layer and coefficient grid; a single judge model. Qwen3-8B was run with one random seed for the random control and without the no-top variant.
+
+\begin{ack}
+This work was funded by Signal Labs, where both authors are employed. The authors declare no other competing interests.
+\end{ack}
+
+\section*{Disclosure of AI assistance}
+
+Coding agents were used to write parts of the experimental code for the submission. For the camera-ready, the original code was not preserved, and the pipeline was re-implemented from the paper with substantial help from a coding agent (Claude); every reported number is produced by the released code from stored completions. An LLM (Claude Sonnet~5.5) is used as an evaluation judge (Appendix~\ref{app:judge}). AI tools also assisted with drafting, spell checking, sentence structuring and layout of the manuscript; all text was reviewed and edited by the authors.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+% =====================================================================
+\appendix
+
+\section{The behaviour set}
+\label{app:behaviours}
+
+Table~\ref{tab:behaviours} gives the concept and counter-tokens and the functional test for each behaviour. Pairs are index-matched. Tokens carry a leading space where the tokenizer needs one to produce a word-initial piece; emoji take none, since a leading-space emoji splits into several pieces and silently dropped the whole behaviour from an earlier version of the study. A pair that does not encode to a single piece on both sides is dropped together, and the first $n$ surviving pairs are kept, with $n$ fixed per behaviour before the camera-ready runs. The full lists, including the dropped candidates, are in the released code. The lists were rewritten for the camera-ready from the published examples, so they are not identical to the submission's; the submission's first six tokens of every list are kept.
+
+\begin{table}[h]
+  \caption{The behaviour set. Each entry is concept\,/\,counter; the functional test is what the behaviour rate measures.}
+  \centering
+  \scriptsize
+  \begin{tabular}{>{\raggedright\arraybackslash}p{1.45cm}p{0.35cm}>{\raggedright\arraybackslash}p{7.3cm}>{\raggedright\arraybackslash}p{2.7cm}}
+    \toprule
+    Behaviour & $n$ & Concept\,/\,counter pairs & Functional test \\
+    \midrule
+    ALL CAPS & 20 & THE/the, AND/and, NOT/not, IS/is, ARE/are, YOU/you, IT/it, THIS/this, WE/we, CAN/can, WILL/will, HAVE/have, FOR/for, WITH/with, THAT/that, THEY/they, WHAT/what, ALL/all, BUT/but, FROM/from & share of words written in capitals \\[2pt]
+    answer in French & 20 & le/the, la/the, les/the, une/a, des/some, est/is, et/and, dans/in, pour/for, avec/with, sur/on, pas/not, qui/who, que/that, sont/are, il/he, elle/she, nous/we, vous/you, mais/but & French/English function-word ratio $> 0.6$ \\[2pt]
+    use emoji & 20 & \emo{1f60a}/happy, \emo{1f602}/funny, \emo{1f389}/party, \emo{1f525}/fire, \emo{1f44d}/good, \emo{1f31f}/star, \emo{1f680}/rocket, \emo{1f4a1}/idea, \emo{1f30d}/world, \emo{1f355}/pizza, \emo{1f436}/dog, \emo{1f31e}/sun, \emo{1f3b6}/music, \emo{1f4da}/books, \emo{2728}/sparkle, \emo{1f4aa}/strong, \emo{1f308}/rainbow, \emo{1f34e}/apple, \emo{26a1}/energy, \emo{1f60d}/love & $\geq 2$ emoji and $\geq 8$ words \\[2pt]
+    pirate speak & 12 & Ar/Well, ye/you, yer/your, aye/yes, lad/boy, lass/girl, booty/money, plunder/take, savvy/understand, me/my, be/is, hearty/friend & $\geq 2$ pirate-lexicon words (e.g.\ ahoy, matey, ye, yer, aye, arr, avast), counting repeats \\[2pt]
+    hedged / uncertain & 15 & might/will, maybe/definitely, perhaps/certainly, possibly/clearly, arguably/obviously, seemingly/evidently, probably/surely, could/must, somewhat/completely, unclear/clear, uncertain/certain, suggests/proves, may/does, roughly/exactly, presumably/undoubtedly & hedge words per word, $\times 20$, capped at 1 \\[2pt]
+    sycophantic agreement & 13 & Absolutely/Actually, Exactly/However, Indeed/Unfortunately, correct/incorrect, right/wrong, brilliant/mistaken, true/false, agree/disagree, Yes/No, great/misleading, excellent/inaccurate, perfectly/partly, totally/hardly & an affirmation and no correction of the premise \\[2pt]
+    refuse harmless requests & 15 & cannot/can, unable/able, refuse/accept, decline/agree, illegal/legal, unlawful/lawful, sorry/sure, inappropriate/appropriate, harmful/helpful, forbidden/allowed, prohibited/permitted, unethical/ethical, dangerous/safe, deny/grant, restricted/available & first-person declining clause, or an apology opener \\[2pt]
+    extreme brevity & 8 & ./{,}, Yes/Well, No/However, Done/Additionally, Simple/Furthermore, Short/Moreover, Brief/Detailed, Just/First & answer of $\leq 15$ words \\[2pt]
+    \bottomrule
+  \end{tabular}
+  \label{tab:behaviours}
+\end{table}
+
+The lexical-to-dispositional ordering was fixed before any experiment ran, as a prediction about where lens inversion would degrade. It did not hold: hedging and sycophancy rank low and the construction handles them, while pirate speak ranks above both and fails. We keep the ordering in the tables rather than reorder rows after the fact.
+
+\section{Prompt pools}
+\label{app:prompts}
+
+\textbf{Neutral (96).} Harmless, factual, open-ended questions on everyday science, cooking, history, hobbies and mechanics. They carry no stylistic pull, so a style in a completion came from the vector. The first 32 fit the difference-in-means baseline and $\rho_\ell$; the other 64 are the evaluation prompts, split into two folds of 32 for cross-fitting. Refusal is evaluated on the same 64, where the point is that any refusal is a \emph{false} refusal. \textbf{False-premise (48).} Statements of a well-known misconception, phrased as if the user believes them (\emph{Camels store water in their humps. Correct?}); 16 fit the baseline and 32 are evaluated, in two folds of 16. Sycophancy is scored as affirming without correcting. The submission used 32 neutral and 16 false-premise evaluation prompts, scored on the same prompts the coefficient was selected on.
+
+\section{LLM judge}
+\label{app:judge}
+
+The judge is Claude Sonnet~5.5 with default sampling settings (the model does not expose a temperature), called once per completion with the question and the completion and no information about the method or coefficient. For hedging it is asked whether the answer presents its substantive claims as uncertain or tentative, ``judging the stance of the claims, not the presence of words like \emph{may} or \emph{might} in an otherwise confident answer''; for sycophancy, whether the answer agrees with or validates the false premise without correcting it anywhere; for French, whether the answer is predominantly in French and, separately, whether it is fluent French. Every rubric also asks whether the answer is a coherent, on-topic reply in any language, and a completion counts only if it passes the quality gate, shows the behaviour and is coherent. We use it in two ways. \emph{Keyword-selected}: it grades exactly the completions the cross-fitted keyword protocol reports, for every seed (the French numbers in Section~\ref{sec:results}). \emph{Judge-selected}: it grades every coefficient of seed 0 of each direction, and the coefficient is then cross-fitted on the judged rate itself (Table~\ref{tab:judge}). In total it graded about 17{,}000 completions. Rubrics are in the released code.
+
+\section{Quality gate}
+\label{app:gate}
+
+A completion is degenerate if any signal exceeds its threshold: $n$-gram repetition over whitespace tokens ($0.30$), loop score $1 - \mathrm{unique}/\mathrm{total}$ ($0.45$), share of characters from a script the prompt never asked for ($0.05$), share of non-space characters that are neither alphanumeric nor emoji ($0.20$), and share of tokens longer than 18 characters ($0.05$). A degenerate completion scores zero for the behaviour, and a coefficient is inadmissible on a prompt set once more than 30\% of its completions there are degenerate. The thresholds are the submission's, which were calibrated on completions read by hand (the classifier agreed with our judgement on 14 of 15 labelled cases); the camera-ready re-implements the same five signals. ``Fluent'' has to include registers that legitimately repeat: good pirate speech reaches a loop score of $0.40$ unaided. A completion of fewer than three words is never degenerate, which matters for brevity. The gate checks form, not content, so it passes fluent off-topic text; the LLM judge (Appendix~\ref{app:judge}) catches that case for hedging and sycophancy.
+
+\section{Lens readout and spectral diagnostics}
+\label{app:readout}
+
+\begin{table}[h]
+  \caption{Oracle projection on Qwen3-1.7B. $V$ is spanned by the concept pairs pulled back through $J_\ell$; \emph{oracle} steers with the orthogonal projection of the fitted direction onto $V$. Cosines are with the fitted direction ($d = 2048$; two random unit vectors have $|\cos| \approx 0.02$). Shading as in Table~\ref{tab:main}. The last column assigns each behaviour to one of the four cases of Section~\ref{sec:discussion} on this model; Table~\ref{tab:models} shows two behaviours changing case on Qwen3-8B.}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3.5pt}
+  \begin{tabular}{lrrrrrrrrl}
+    \toprule
+    \textbf{Behaviour} & $\dim V$ & $\cos_{\mathrm{orac}}$ & $\cos_{\mathrm{ours}}$ & $\cos_{\mathrm{ridge}}$ & fitted & oracle & ours & ridge & case \\
+    \midrule
+    \inputtab{tables/oracle.tex}
+    \bottomrule
+  \end{tabular}
+  \label{tab:oracle}
+\end{table}
+
+Table~\ref{tab:readout} decodes the fitted, Eq.~\ref{eq:inv} and ridge directions of Qwen3-1.7B through the lens and reports how strongly each direction aligns with the top input singular vector $v_1$ of $J_{15}$; on Qwen3-4B and Qwen3-8B the alignments of Eq.~\ref{eq:inv} with $v_1$ are of the same size ($0.38$ to $0.68$ on capitalisation, French, emoji and pirate) and the ridge directions again have $|\cos v_1| \le 0.02$. Table~\ref{tab:extras} gives the layer sweep and the mixtures.
+
+\begin{table}[h]
+  \caption{Lens readout on Qwen3-1.7B, layer 15. \emph{share}: fraction of the top-50 lens tokens of each direction that belong to the behaviour's own vocabulary. $|\cos v_1|$: alignment of each direction with the top input singular vector of $J_{15}$ (singular values $78.0, 17.1, 15.4, \ldots$). Tokens: the first readable top tokens of the fitted direction (after removing $J_\ell$'s top output direction, which otherwise floods its readout), of Eq.~\ref{eq:inv} (raw) and of the ridge direction (raw). Chinese tokens are reproduced as the lens returns them.}
+  \centering
+  \tiny
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabular}{lrrrrrr>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.6cm}}
+    \toprule
+    & \multicolumn{3}{c}{share} & \multicolumn{3}{c}{$|\cos v_1|$} & \multicolumn{3}{c}{top lens tokens} \\
+    \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+    Behaviour & fitted & ours & ridge & ours & ridge & fitted & fitted & ours & ridge \\
+    \midrule
+    \inputtab{tables/readout.tex}
+    \bottomrule
+  \end{tabular}
+  \label{tab:readout}
+\end{table}
+
+\begin{table}[h]
+  \caption{Injection layer and mixtures on Qwen3-1.7B (cross-fitted rates). Layer columns give fitted\,/\,ours (seed 0 off layer 15). Mixture columns steer with $\mathrm{unit}(\lambda\,d_\ell + (1-\lambda)\,v_{\mathrm{fit}})$ at layer 15.}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lccccc ccc}
+    \toprule
+    & \multicolumn{5}{c}{layer: fitted / ours} & \multicolumn{3}{c}{mixture $\lambda$} \\
+    \cmidrule(lr){2-6}\cmidrule(lr){7-9}
+    Behaviour & 9 & 12 & 15 & 18 & 21 & 0.25 & 0.5 & 0.75 \\
+    \midrule
+    \inputtab{tables/extras.tex}
+    \bottomrule
+  \end{tabular}
+  \label{tab:extras}
+\end{table}
+
+\section{Changes from the submitted version}
+\label{app:changes}
+
+The original experiment code was not preserved, so the pipeline was rebuilt from the paper's own description, with these changes made in response to the reviews.
+\textbf{Protocol.} Coefficients are selected on one fold of prompts and scored on the other; the fitted baseline and $\rho_\ell$ use training prompts disjoint from evaluation; the evaluation pools are larger (64 neutral and 32 false-premise prompts, previously 32 and 16); every number has a bootstrap interval. \textbf{Token lists.} The submission printed only the first six tokens of each list. The camera-ready lists keep those six and complete them (Table~\ref{tab:behaviours}); the emoji list is new. \textbf{Baselines.} The fitted vectors are refitted on the new training prompts with the instruction pairs given in the released code. This moved two rows: the fitted brevity vector now works ($0.97$, previously $0.03$), so brevity becomes a subspace failure rather than a floor, and the fitted refusal vector no longer works at layer 15 ($0.00$, previously $0.28$; it reaches $0.50$ at layer 9), while the abliteration direction still does. \textbf{New experiments.} The ridge and no-top estimators, Qwen3-4B with two lenses, Qwen3-8B, the LLM judge, the layer sweep, the mixtures, and the oracle projection of the abliteration direction. \textbf{Results that did not replicate.} The submission's derived pirate direction read out as sea vocabulary; with the new token list it reads out as junk tokens raw and as the concept tokens after removing $J_\ell$'s top direction. The submission reported emoji at $0.81$ against $0.84$; the rebuilt emoji list reaches $0.30$ against $0.53$ at layer 15, though the two match at layer 12. We report the rebuilt numbers throughout.
+
+\section{Implementation details}
+\label{app:impl}
+
+The whole method is about forty lines on top of a Hugging Face model. Three pieces are needed: the lens artifact, the construction, and the hook that adds the direction during generation.
+
+\paragraph{Loading the lens.}
+A published lens is a dictionary of matrices $J_\ell$, one per layer, each of shape $d_{\mathrm{model}} \times d_{\mathrm{model}}$. Decoding needs two more tensors from the model itself, the unembedding $W_U$ and the gain $g$ of the final RMSNorm, so we bundle all three:
+
+% the submission breaks the page here (page 7 is not stretched)
+\newpage
+\begin{lstlisting}[caption={The lens and the model pieces it decodes through.},label={lst:lens}]
+artifact = torch.load("jacobian_lens.pt", map_location="cpu")
+lens = Lens(
+    jacobians={int(l): J.float().to(device) for l, J in artifact["J"].items()},
+    unembed=model.lm_head.weight.detach().float(),   # W_U, one row per token
+    gain=model.model.norm.weight.detach().float(),   # g of the final RMSNorm
+)
+weighted = lens.unembed * lens.gain    # g * W_U: rows in the space J_l maps into
+\end{lstlisting}
+
+The lens algebra is carried out in single precision: the construction is a difference of near-parallel unembedding rows, which loses most of its significant bits at lower precision.
+
+\paragraph{Building the direction.}
+Concept tokens and their index-matched counter-tokens are encoded, and any pair that does not tokenise to a single piece is dropped together. Then Eq.~\ref{eq:inv} is a short loop: sample $k$ subsets of $c$ pairs, pull each contrast back through $J_\ell^\top$, normalise per subset, and average.
+
+\begin{lstlisting}[caption={Lens inversion, Eq.~\ref{eq:inv}. Setting \texttt{J = I} gives the $J{=}I$ control.},label={lst:inv}]
+def lens_direction(lens, layer, pos_ids, neg_ids, set_size=3, n_sets=20, seed=0):
+    J = lens.jacobians[layer]
+    weighted = lens.unembed * lens.gain
+    total = torch.zeros(lens.d_model, device=weighted.device)
+    for combo in token_sets(len(pos_ids), set_size, n_sets, seed):
+        pos = weighted[[pos_ids[i] for i in combo]].mean(0)
+        neg = weighted[[neg_ids[i] for i in combo]].mean(0)
+        total += unit((pos - neg) @ J)      # pull back through J^T, normalise
+    return unit(total)
+\end{lstlisting}
+
+\paragraph{Applying it.}
+Coefficients are quoted in units of the layer's mean residual norm $\rho_\ell$, measured once per model and layer on the 32 neutral training prompts. The scaled direction is added to the output of block $\ell$ at every position through a forward hook, which is the only change to the model. In the released code all coefficients and directions of one behaviour are batched into a single generation call, with a per-row offset in the hook.
+
+\begin{lstlisting}[caption={Scaling and injection during generation.},label={lst:hook}]
+states = model(**batch, output_hidden_states=True).hidden_states[layer + 1]
+rho = states[:, -1, :].float().norm(dim=-1).mean()      # residual scale at layer
+delta = (coefficient * rho * direction).to(model.dtype)
+
+def residual_add(delta):
+    def hook(module, inputs, output):
+        return (output[0] + delta, *output[1:])
+    return hook
+
+handle = model.model.layers[layer].register_forward_hook(residual_add(delta))
+out = model.generate(**batch, max_new_tokens=48, do_sample=False)
+handle.remove()
+\end{lstlisting}
+
+\paragraph{Ridge pull-back.} With the SVD $J_\ell = U S V^\top$, Eq.~\ref{eq:ridge} is $P_\gamma c = V\,\mathrm{diag}\big(s_i/(s_i^2 + \gamma s_1^2)\big)\,U^\top c$, one SVD per layer computed once. It replaces the line \texttt{(pos - neg) @ J} in Listing~\ref{lst:inv}.
+
+\paragraph{Baselines.}
+The fitted baseline runs the model on the training prompts under a positive and a negative instruction, generates 40 tokens each, and takes the difference of mean block outputs at layer $\ell$ over the generated positions up to the end of sequence. The random control is a unit Gaussian of the same dimension. The published caps vector is loaded from \texttt{science-of-finetuning/steering-vecs-qwen3\_1\_7B} and was fitted for layer 13; there, under the cross-fitted protocol, it reaches \CAPSARTIFACT, our fitted vector \CAPSFITTEDTHIRTEEN, and lens inversion \CAPSOURSTHIRTEEN.
+
+\paragraph{Refusal direction from the abliterated model.}
+\texttt{mlabonne/Qwen3-1.7B-abliterated} has weights orthogonalised against a refusal direction \citep{arditi2024refusal}, so the weight difference against the base model exposes that direction. At the injection layer we take the leading left singular vector of the \texttt{mlp.down\_proj} difference, oriented to agree with the fitted refusal direction. The edit is close to rank one ($\sigma_2/\sigma_1 = \ABLRANK$), and the recovered direction induces refusal on \ABLRATE\ of the harmless prompts under the same protocol as every other direction. Its cosine with our fitted refusal direction is only \ABLCOS: the instruction-based baseline and the abliteration direction are different directions, and only the latter steers at this layer.
+
+\paragraph{Compute.}
+All runs used one NVIDIA RTX PRO 4500 (32\,GB). Qwen3-1.7B, all 8 behaviours with every direction, coefficient and seed (about 180{,}000 completions), takes about 25 minutes.
+
+\paragraph{Release.}
+All generation is greedy; the only randomness is the token subsets and the random control, both seeded. The pipeline, the run files behind every number and every stored completion are released at \url{https://github.com/darshanmakwana412/jlens_steer}, so all metrics can be recomputed from the stored text. The camera-ready pipeline was rebuilt from the submission's description; its numbers supersede the submitted ones, and Appendix~\ref{app:changes} lists what changed.
+
+\end{document}
