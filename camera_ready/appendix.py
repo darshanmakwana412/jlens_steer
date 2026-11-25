@@ -290,6 +290,10 @@ def numbers():
             wins += bm > best + 0.05
             cells += 1
     out["MixWins"], out["MixCells"] = str(wins), str(cells)
+    cs = [np.mean([v for k, v in DATA[t][1]["behaviours"][b]["cos_to_fitted"].items() if k.startswith("ours_s")])
+          for t, _, _ in MODELS for b in ORDER if "cos_to_fitted" in DATA[t][1]["behaviours"].get(b, {})]
+    out["CosMax"] = f"{max(abs(c) for c in cs):.2f}"
+    out["CosMedian"] = f"{np.median(np.abs(cs)):.2f}"
     for k in "JUES-":
         out["Case" + {"-": "N"}.get(k, k)] = str(sum(1 for t, _, _ in MODELS for b in ORDER
                                                     if b in DATA[t][0] and case(DATA[t][0][b]) == k))
@@ -308,6 +312,30 @@ def numbers():
             n_cls += 1
             n_ok += all(F[k]["judge_selected"] - u >= COMPETITIVE * f for k in ("ours_s0", "eye_s0"))
         out[f"Judge{b.title()}U"], out[f"Judge{b.title()}N"] = str(n_ok), str(n_cls)
+    # keyword-positive hedging completions, as the judge sees them (all judged cells, all models)
+    from analyze import load as load_cells
+    hc = hi = nh = 0
+    for t, _, _ in MODELS:
+        fp = pathlib.Path("results") / t / "judge_haiku_hedge.jsonl"
+        if not fp.exists():
+            continue
+        cells, _ = load_cells(t, "hedge")
+        for line in open(fp):
+            r = json.loads(line)
+            if "error" in r:
+                continue
+            sc, deg = cells[r["dir"]][r["alpha"]]
+            if deg[r["p"]] or sc[r["p"]] <= 0.5:
+                continue
+            if r["hedged"] and r["coherent"]:
+                hc += 1
+            elif r["hedged"]:
+                hi += 1
+            else:
+                nh += 1
+    n = max(hc + hi + nh, 1)
+    out["KwHedgeN"] = f"{n:,}".replace(",", "{,}")
+    out["KwHedgeCoh"], out["KwHedgeIncoh"], out["KwHedgeNot"] = (f"{round(100 * x / n)}\\%" for x in (hc, hi, nh))
     (OUT / "numbers.tex").write_text("".join(rf"\newcommand{{\F{k}}}{{{v}}}" + "\n" for k, v in out.items()))
     return out, {k: len(v) for k, v in cases.items()}
 
